@@ -8,6 +8,11 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
+typedef struct __entity {
+    int key;
+    char newline;
+} entity;
+
 void
 usage(char *prog) 
 {
@@ -52,19 +57,15 @@ main(int argc, char *argv[])
 	exit(1);
     }
 
-    int random = 0;
+    entity randomArray[recordsLeft];
     int i, rc;
     char newline = '\n';
     for (i = 0; i < recordsLeft; i++) {
 	// fill in random key
-	random = rand() % (unsigned int) 0xFFFFFFFF;
-	rc = write(fd, &random, sizeof(int));
-	if (rc != sizeof(int)) {
-	    perror("write");
-	    exit(1);
-	}
-	rc = write(fd, &newline, sizeof(char));
-	if (rc != sizeof(char)) {
+	randomArray[i].key = -10 + rand() % 20;
+	randomArray[i].newline= '\n';
+	rc = write(fd, randomArray+i, sizeof(entity));
+	if (rc != sizeof(entity)) {
 	    perror("write");
 	    exit(1);
 	}

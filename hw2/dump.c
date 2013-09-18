@@ -6,6 +6,11 @@
 #include <ctype.h>
 #include <string.h>
 
+typedef struct __entity {
+    int key;
+    char newline;
+} entity;
+
 void
 usage(char *prog) 
 {
@@ -40,28 +45,21 @@ main(int argc, char *argv[])
     }
 
     while (1) {	
-	int random, rc;
+	int rc;
 	char newline;
-	rc = read(fd, &random, sizeof(int));
+	entity single;
+	rc = read(fd, &single, sizeof(entity));
 	if (rc == 0) // 0 indicates EOF
 	    break;
 	if (rc < 0) {
 	    perror("read");
 	    exit(1);
 	}
-	printf("%d", random);
-	rc = read(fd, &newline, sizeof(char));
-	if (rc == 0) // 0 indicates EOF
-	    break;
-	if (rc < 0) {
-	    perror("read");
-	    exit(1);
-	}
-	printf("%c", newline);
+	printf("%d", single.key);
+	printf("%c", single.newline);
     }
     
     (void) close(fd);
-
     return 0;
 }
 
