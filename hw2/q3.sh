@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "$1" = "-g" ]
+if [ "$1" = "-gen" ]
 then
 for i in {10..19}
 do
@@ -8,7 +8,7 @@ do
 done
 fi
 
-if [ "$1" = "-d" ]
+if [ "$1" = "-dump" ]
 then
 for i in {10..19}
 do
@@ -16,7 +16,17 @@ do
 done
 fi
 
-if [ "$1" = "-c" ]
+if [ "$1" = "-plot" ]
+then
+rm -f 3qsort.dat
+touch 3qsort.dat
+for i in {10..19}
+do
+	./sort.data -i binary/3random.$i.bin >> 3qsort.dat
+done
+fi
+
+if [ "$1" = "-clean" ]
 then
 rm -f -v binary/3*
 rm -f -v text/3*

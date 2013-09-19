@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "$1" = "-g" ]
+if [ "$1" = "-gen" ]
 then
 for i in {5..12}
 do
@@ -8,11 +8,21 @@ do
 done
 fi
 
-if [ "$1" = "-d" ]
+if [ "$1" = "-dump" ]
 then
 for i in {5..12}
 do
 	./dump -i binary/4random.$i.bin > text/4random.$i.txt
+done
+fi
+
+if [ "$1" = "-plot" ]
+then
+rm -f 4scan.dat
+touch 4scan.dat
+for i in {5..12}
+do
+	./scan -i binary/4random.$i.bin >> 4scan.dat
 done
 fi
 

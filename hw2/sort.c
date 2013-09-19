@@ -113,16 +113,16 @@ qsort(randomArray, count, sizeof(entity), compare);
 gettimeofday(&end2, NULL);
 long int diff2 = (end2.tv_usec + 1000000 * end2.tv_sec) - (start2.tv_usec + 1000000 * start2.tv_sec);
 
+
 // Print the required details
 //for (i = 0; i < count; i++) {
 //	printf("%d\n", randomArray[i].key);
 //}
-printf("Sort metrics:\n");
-printf("\tNumber of integers read = %d\n", count);
-printf("\tSmallest integer = %d\n", randomArray[0].key);
-printf("\tLargest integer = %d\n", randomArray[count-1].key);
-printf("\tTime spent in selection sort = %ldms\n", diff1/1000);
-printf("\tTime spent in quick sort = %ldms\n", diff2/1000);
+printf("Number of integers read = %d\n", count);
+printf("Smallest integer = %d\n", randomArray[0].key);
+printf("Largest integer = %d\n", randomArray[count-1].key);
+printf("Time spent in selection sort = %ld uSec\n", diff1);
+printf("Time spent in quick sort = %ld uSec\n", diff2);
 
 // Cleanup
 free(randomArray);
