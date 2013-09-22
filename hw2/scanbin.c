@@ -72,6 +72,7 @@ gettimeofday(&end, NULL);
 long int diff = (end.tv_usec + 1000000 * end.tv_sec) - (start.tv_usec + 1000000 * start.tv_sec);
 
 // Result
+/*
 printf("Input:");
 for (i=0; i<count; i++)
 	printf(" %d", input[i].key);
@@ -80,8 +81,10 @@ printf("Output:");
 for (i=0; i<count; i++)
 	printf(" %d", output[i].key); 
 printf("\n");
+*/
 printf("Number of integers = %d\n", count);
-printf("Last entry in scanned array = %d\n", input[count-1].key);
+printf("Last entry in input array = %d\n", input[count-1].key);
+printf("Last entry in scanned array = %d\n", output[count-1].key);
 printf("Scan time = %ld uSec\n", diff);
 
 // Cleanup

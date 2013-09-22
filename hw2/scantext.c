@@ -30,8 +30,6 @@ if (fp == NULL) {
 while (fgets(numString, 15, fp) != NULL) 
 	count++;
 
-printf("count = %d\n", count);
-
 // Allocate memory for the array to be scanned
 int *input =  NULL;
 input = (int *)malloc(sizeof(int) * count);
@@ -62,6 +60,7 @@ gettimeofday(&end, NULL);
 long int diff = (end.tv_usec + 1000000 * end.tv_sec) - (start.tv_usec + 1000000 * start.tv_sec);
 
 // Result
+/*
 printf("Input:");
 for (i=0; i<count; i++)
 	printf(" %d", input[i]);
@@ -70,8 +69,10 @@ printf("Output:");
 for (i=0; i<count; i++)
 	printf(" %d", output[i]); 
 printf("\n");
+*/
 printf("Number of integers = %d\n", count);
-printf("Last entry in scanned array = %d\n", input[count-1]);
+printf("Last entry in input array = %d\n", input[count-1]);
+printf("Last entry in scanned array = %d\n", output[count-1]);
 printf("Scan time = %ld uSec\n", diff);
 
 // Cleanup
