@@ -76,7 +76,7 @@ int main (int argc, char *argv[]) {
   excl_diff = (excl_end.tv_usec + 1000000 * excl_end.tv_sec) - (excl_start.tv_usec + 1000000 * excl_start.tv_sec);
   //printf("Inclusive: %ld\n", incl_diff);
   //printf("Exclusive: %ld\n", excl_diff);
-  printf("%d\t%ld\t%ld\n", num, incl_diff, excl_diff);
+  printf("Size = %d\n Inclusive Time = %ld\n Exclusive Time = %ld\n", num, incl_diff, excl_diff);
 
   // Cleanup
   cudaFree(dA);
