@@ -5,7 +5,7 @@
 #include <sys/time.h>
 #include <sys/stat.h>
 
-#define BLOCK_DIM 32
+#define BLOCK_DIM 1024
 #define SEED 26
 
 __global__ void data(double *a, double *b, double *c, int count) {
