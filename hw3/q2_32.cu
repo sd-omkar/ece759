@@ -80,8 +80,8 @@ int main (int argc, char *argv[]) {
   // Print metrics
   cudaEventElapsedTime(&time_incl, incl_start, incl_end);
   cudaEventElapsedTime(&time_excl, excl_start, excl_end);
-  time_incl *= 1000;
-  time_excl *= 1000;
+  //time_incl *= 1000;
+  //time_excl *= 1000;
   //printf("Inclusive: %f\n", incl_diff);
   //printf("Exclusive: %f\n", excl_diff);
   //printf("Size = %d\n Inclusive Time = %f\n Exclusive Time = %f\n", num, time_incl, time_excl);
