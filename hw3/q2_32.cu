@@ -30,9 +30,13 @@ int main (int argc, char *argv[]) {
   refC = (double *)malloc(size);
 
   // Timing variables;
-  struct timeval incl_start, incl_end;
-  struct timeval excl_start, excl_end;
-  long int incl_diff, excl_diff;
+  cudaEvent_t incl_start, incl_end;
+  cudaEvent_t excl_start, excl_end;
+  float time_incl, time_excl;
+  cudaEventCreate(&incl_start);
+  cudaEventCreate(&incl_end);
+  cudaEventCreate(&excl_start);
+  cudaEventCreate(&excl_end);
 
   // Populate hA, hB, refC
   srand(SEED);
@@ -47,7 +51,7 @@ int main (int argc, char *argv[]) {
   cudaMalloc((void **)&dA, size);
   cudaMalloc((void **)&dB, size);
   cudaMalloc((void **)&dC, size);
-  gettimeofday(&incl_start, NULL);
+  cudaEventRecord(incl_start, 0);
   cudaMemcpy(dA, hA, size, cudaMemcpyHostToDevice);
   cudaMemcpy(dB, hB, size, cudaMemcpyHostToDevice);
   
@@ -57,11 +61,13 @@ int main (int argc, char *argv[]) {
                 : (int)(num / BLOCK_DIM) + 1;
   dim3 dimGrid(GRID_DIM, 1, 1);
   dim3 dimBlock(BLOCK_DIM, 1, 1);
-  gettimeofday(&excl_start, NULL);
+  cudaEventRecord(excl_start, 0);
   data<<<dimGrid, dimBlock>>>(dA, dB, dC, num);
-  gettimeofday(&excl_end, NULL);
+  cudaEventRecord(excl_end, 0);
+  cudaEventSynchronize(excl_end);
   cudaMemcpy(hC, dC, size, cudaMemcpyDeviceToHost);
-  gettimeofday(&incl_end, NULL);
+  cudaEventRecord(incl_end, 0);
+  cudaEventSynchronize(incl_end);
 
   // Verify results
   for (i=0; i<num; i++) {
@@ -72,11 +78,14 @@ int main (int argc, char *argv[]) {
   }
 
   // Print metrics
-  incl_diff = (incl_end.tv_usec + 1000000 * incl_end.tv_sec) - (incl_start.tv_usec + 1000000 * incl_start.tv_sec);
-  excl_diff = (excl_end.tv_usec + 1000000 * excl_end.tv_sec) - (excl_start.tv_usec + 1000000 * excl_start.tv_sec);
-  //printf("Inclusive: %ld\n", incl_diff);
-  //printf("Exclusive: %ld\n", excl_diff);
-  printf("Size = %d\n Inclusive Time = %ld\n Exclusive Time = %ld\n", num, incl_diff, excl_diff);
+  cudaEventElapsedTime(&time_incl, incl_start, incl_end);
+  cudaEventElapsedTime(&time_excl, excl_start, excl_end);
+  time_incl *= 1000;
+  time_excl *= 1000;
+  //printf("Inclusive: %f\n", incl_diff);
+  //printf("Exclusive: %f\n", excl_diff);
+  //printf("Size = %d\n Inclusive Time = %f\n Exclusive Time = %f\n", num, time_incl, time_excl);
+  printf("%d\t%f\t%f\n", num, time_incl, time_excl);
 
   // Cleanup
   cudaFree(dA);
