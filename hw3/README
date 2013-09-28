@@ -1,0 +1,27 @@
+Makefile:
+
+It has 3 targets: q2  q2_32 and   q2_1024.
+Make all makes them all.
+Make clean removes executbale *.out files.
+
+----------------
+
+Question 1:
+
+Source:     q1.cu
+Executable: q1.out
+
+----------------
+
+Question 2:
+
+Source:     q2_32.cu        q2_1024.cu
+Executable: q2_32.out       q2_1024.out
+Timing:     q2_32.dat       q2_1024.dat
+Plots:      q2_semilog.png  q2_loglog.png
+
+----------------
+
+Notes:
+For Q2, input size was taken as command line argument. Script q2.sh was used to run programs for varying input sizes and to generate timing metrics stored in respective *.dat files. Script q2.py was used to plot the data.
+
