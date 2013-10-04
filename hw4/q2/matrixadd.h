@@ -38,6 +38,7 @@
 
 // Thread block size
 #define MATRIX_SIZE 4096
+#define BLOCK_SIZE 32
 
 // Matrix dimensions
 // (chosen as multiples of the thread block size for simplicity)

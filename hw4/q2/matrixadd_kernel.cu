@@ -52,6 +52,11 @@
 __global__ void MatrixAddKernel(const float* Melems, const float* Nelems, float* Pelems)
 {
    // ADD YOUR CODE HERE
+  int x = blockIdx.x * blockDim.x + threadIdx.x;
+  int y = blockIdx.y * blockDim.y + threadIdx.y;
+  Pelems[x * gridDim.x * blockDim.x + y]
+    = Melems[x * gridDim.x * blockDim.x + y] 
+    + Nelems[x * gridDim.x * blockDim.x + y];
 }
 
 #endif // #ifndef _MATRIXADD_KERNEL_H_

@@ -155,6 +155,53 @@ int main(int argc, char** argv) {
 void MatrixAddOnDevice(const Matrix M, const float alpha, const Matrix N, const float beta, Matrix P)
 {
    // ADD YOUR CODE HERE
+
+  // Allocate devide matrices;
+  Matrix dM = AllocateDeviceMatrix(M);
+  Matrix dN = AllocateDeviceMatrix(N);
+  Matrix dP = AllocateDeviceMatrix(P);
+
+  // Multiply by alpha and beta
+  int aa, bb;
+  for (aa=0; aa<MATRIX_SIZE; aa++)
+    for (bb=0; bb<MATRIX_SIZE; bb++)
+      M.elements[aa] *= alpha;
+  for (aa=0; aa<MATRIX_SIZE; aa++)
+    for (bb=0; bb<MATRIX_SIZE; bb++)
+      N.elements[bb] *= beta;
+
+  // Timing variables
+  cudaEvent_t incl_start, incl_end;
+  cudaEvent_t excl_start, excl_end;
+  float time_incl, time_excl;
+  cudaEventCreate(&incl_start);
+  cudaEventCreate(&incl_end);
+  cudaEventCreate(&excl_start);
+  cudaEventCreate(&excl_end);
+
+  // Copy from host to device
+  cudaEventRecord(incl_start, 0);
+  CopyToDeviceMatrix(dM, M);
+  CopyToDeviceMatrix(dN, N);
+
+  // Invoke kernel
+  dim3 grid(MATRIX_SIZE/BLOCK_SIZE, MATRIX_SIZE/BLOCK_SIZE, 1);
+  dim3 block(BLOCK_SIZE, BLOCK_SIZE, 1);
+  cudaEventRecord(excl_start, 0);
+  MatrixAddKernel<<<grid, block>>>(dM.elements, dN.elements, dP.elements);
+  cudaEventRecord(excl_end, 0);
+  cudaEventSynchronize(excl_end);
+
+  // Get back data from device
+  CopyFromDeviceMatrix(P, dP);
+  cudaEventRecord(incl_end, 0);
+  cudaEventSynchronize(incl_end);
+
+  // Output GPU time
+  cudaEventElapsedTime(&time_incl, incl_start, incl_end);
+  cudaEventElapsedTime(&time_excl, excl_start, excl_end);
+  printf("Inclusive time: %f\n", time_incl);
+  printf("Exclusive time: %f\n", time_excl);
 }
 
 // Allocate a device matrix of same size as M.
