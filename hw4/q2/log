@@ -1,10 +1,4 @@
-CMakeFiles/q2.out.dir/./q2.out_generated_matrixadd_kernel.cu.o: In function `__device_stub__Z15MatrixAddKernelPKfS0_Pf(float const*, float const*, float*)':
-/tmp/tmpxft_00000bad_00000000-1_matrixadd_kernel.cudafe1.stub.c:5: multiple definition of `__device_stub__Z15MatrixAddKernelPKfS0_Pf(float const*, float const*, float*)'
-CMakeFiles/q2.out.dir/./q2.out_generated_matrixadd.cu.o:/tmp/tmpxft_00000c10_00000000-1_matrixadd.cudafe1.stub.c:5: first defined here
-CMakeFiles/q2.out.dir/./q2.out_generated_matrixadd_kernel.cu.o: In function `MatrixAddKernel(float const*, float const*, float*)':
-/home/odeshmukh/work/hw4/q2/matrixadd_kernel.cu:53: multiple definition of `MatrixAddKernel(float const*, float const*, float*)'
-CMakeFiles/q2.out.dir/./q2.out_generated_matrixadd.cu.o:/home/odeshmukh/work/hw4/q2/matrixadd_kernel.cu:53: first defined here
-collect2: ld returned 1 exit status
-make[2]: *** [q2.out] Error 1
-make[1]: *** [CMakeFiles/q2.out.dir/all] Error 2
-make: *** [all] Error 2
+GPU Inclusive time: 64.353951 ms
+GPU Exclusive time: 7.877600 ms
+CPU execution time: 105.529312 ms
+Test PASSED

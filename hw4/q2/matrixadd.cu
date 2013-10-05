@@ -249,8 +249,8 @@ void MatrixAddOnDevice(const Matrix M, const float alpha, const Matrix N, const 
   // Output GPU time
   cudaEventElapsedTime(&time_incl, incl_start, incl_end);
   cudaEventElapsedTime(&time_excl, excl_start, excl_end);
-  printf("Inclusive time: %fms\n", time_incl);
-  printf("Exclusive time: %fms\n", time_excl);
+  printf("GPU Inclusive time: %f ms\n", time_incl);
+  printf("GPU Exclusive time: %f ms\n", time_excl);
 }
 
 // Allocate a device matrix of same size as M.
