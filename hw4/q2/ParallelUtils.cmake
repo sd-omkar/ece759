@@ -116,7 +116,7 @@ macro(enable_cuda_support)
 				${CUDA_SDK_ROOT_DIR}/lib ${CUDA_SDK_ROOT_DIR}/../shared/lib)
 
 		# Set custom compiler flags
-		set(CUDA_NVCC_FLAGS "-lcutil_x86_64" CACHE STRING "" FORCE)
+		set(CUDA_NVCC_FLAGS "" CACHE STRING "" FORCE)
 
 		if(CUDA_USE_CUSTOM_COMPILER)
 				mark_as_advanced(CLEAR CUDA_CUSTOM_COMPILER)

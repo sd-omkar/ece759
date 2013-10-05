@@ -30,4 +30,5 @@ include(ParallelUtils.cmake)
 
 ## Example CUDA program
 enable_cuda_support()
-cuda_add_executable(q2.out matrixadd.cu matrixadd_gold.cpp  matrixadd.h  matrixadd_kernel.cu)
+#cuda_add_executable(q2.out matrixadd.cu matrixadd_gold.cpp  matrixadd.h  matrixadd_kernel.cu)
+cuda_add_executable(q2.out matrixadd.cu matrixadd_gold.cpp)

@@ -1,1 +1,1 @@
-/usr/bin/c++       CMakeFiles/q2.out.dir/matrixadd_gold.cpp.o CMakeFiles/q2.out.dir/./q2.out_generated_matrixadd.cu.o CMakeFiles/q2.out.dir/./q2.out_generated_matrixadd_kernel.cu.o  -o q2.out -rdynamic -lcudart 
+/usr/bin/c++       CMakeFiles/q2.out.dir/matrixadd_gold.cpp.o CMakeFiles/q2.out.dir/./q2.out_generated_matrixadd.cu.o  -o q2.out -rdynamic -lcudart 

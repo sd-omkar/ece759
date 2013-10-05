@@ -48,7 +48,7 @@ SET(CMAKE_CXX_HAS_ISYSROOT "")
 
 
 SET(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "stdc++;m;c")
-SET(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "/usr/local/cuda/4.0/cuda/lib64;/usr/local/cuda/5.5.22/cuda/lib64;/usr/lib/gcc/x86_64-redhat-linux/4.4.6;/usr/lib64;/lib64;/usr/local/cuda/4.0/cuda/lib;/usr/lib64/nvidia/tls;/usr/lib64/nvidia;/usr/local/cuda/5.5.22/cuda/lib;/usr/lib")
+SET(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "/usr/local/cuda/5.5.22/cuda/lib64;/usr/lib/gcc/x86_64-redhat-linux/4.4.6;/usr/lib64;/lib64;/usr/lib64/nvidia/tls;/usr/lib64/nvidia;/usr/local/cuda/5.5.22/cuda/lib;/usr/lib")
 
 
 

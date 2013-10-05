@@ -68,15 +68,15 @@ set(generated_file_path "/home/odeshmukh/work/hw4/q2/CMakeFiles/q2.out.dir//.") 
 set(generated_file_internal "/home/odeshmukh/work/hw4/q2/CMakeFiles/q2.out.dir//./q2.out_generated_matrixadd_kernel.cu.o") # path
 set(generated_cubin_file_internal "/home/odeshmukh/work/hw4/q2/CMakeFiles/q2.out.dir//./q2.out_generated_matrixadd_kernel.cu.o.cubin.txt") # path
 
-set(CUDA_NVCC_EXECUTABLE "/usr/local/cuda/4.0/cuda/bin/nvcc") # path
-set(CUDA_NVCC_FLAGS -lcutil_x86_64;-gencode=arch=compute_20,code=sm_20;-gencode=arch=compute_20,code=compute_20;-use_fast_math;--ptxas-options=-v ;; ) # list
+set(CUDA_NVCC_EXECUTABLE "/usr/local/cuda/5.5.22/cuda/bin/nvcc") # path
+set(CUDA_NVCC_FLAGS -gencode=arch=compute_20,code=sm_20;-gencode=arch=compute_20,code=compute_20;-use_fast_math;--ptxas-options=-v ;; ) # list
 # Build specific configuration flags
 set(CUDA_NVCC_FLAGS_DEBUG  ;; )
 set(CUDA_NVCC_FLAGS_MINSIZEREL  ;; )
 set(CUDA_NVCC_FLAGS_RELEASE  ;; )
 set(CUDA_NVCC_FLAGS_RELWITHDEBINFO  ;; )
 set(nvcc_flags -m64) # list
-set(CUDA_NVCC_INCLUDE_ARGS "-I/usr/local/cuda/4.0/cuda/sdk/C/common/inc;-I/usr/local/cuda/4.0/cuda/sdk/C/../shared/inc;-I/usr/local/cuda/4.0/cuda/include;-I/usr/local/cuda/4.0/cuda/include") # list (needs to be in quotes to handle spaces properly).
+set(CUDA_NVCC_INCLUDE_ARGS "-ICUDA_SDK_ROOT_DIR-NOTFOUND/common/inc;-ICUDA_SDK_ROOT_DIR-NOTFOUND/../shared/inc;-I/usr/local/cuda/5.5.22/cuda/include;-I/usr/local/cuda/5.5.22/cuda/include") # list (needs to be in quotes to handle spaces properly).
 set(format_flag "-c") # string
 
 if(build_cubin AND NOT generated_cubin_file)
@@ -161,7 +161,7 @@ cuda_execute_process(
 # For CUDA 2.3 and below, -G -M doesn't work, so remove the -G flag
 # for dependency generation and hope for the best.
 set(depends_CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS}")
-set(CUDA_VERSION 4.0)
+set(CUDA_VERSION 5.5)
 if(CUDA_VERSION VERSION_LESS "3.0")
   cmake_policy(PUSH)
   # CMake policy 0007 NEW states that empty list elements are not

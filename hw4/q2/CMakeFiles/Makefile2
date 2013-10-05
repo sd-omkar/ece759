@@ -65,7 +65,7 @@ CMAKE_BINARY_DIR = /home/odeshmukh/work/hw4/q2
 CMakeFiles/q2.out.dir/all:
 	$(MAKE) -f CMakeFiles/q2.out.dir/build.make CMakeFiles/q2.out.dir/depend
 	$(MAKE) -f CMakeFiles/q2.out.dir/build.make CMakeFiles/q2.out.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/odeshmukh/work/hw4/q2/CMakeFiles  1 2 3
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/odeshmukh/work/hw4/q2/CMakeFiles  1 2
 	@echo "Built target q2.out"
 .PHONY : CMakeFiles/q2.out.dir/all
 
@@ -75,7 +75,7 @@ all: CMakeFiles/q2.out.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/q2.out.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/odeshmukh/work/hw4/q2/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/odeshmukh/work/hw4/q2/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/q2.out.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/odeshmukh/work/hw4/q2/CMakeFiles 0
 .PHONY : CMakeFiles/q2.out.dir/rule

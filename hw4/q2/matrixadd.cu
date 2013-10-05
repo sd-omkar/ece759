@@ -42,13 +42,13 @@
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
-
+#include <fstream>
 // includes, project
-#include <cutil.h>
+//#include <cutil.h>
 
 // includes, kernels
 #include "matrixadd_kernel.cu"
-
+#include "matrixadd.h"
 ////////////////////////////////////////////////////////////////////////////////
 // declarations, forward
 
@@ -59,11 +59,11 @@ Matrix AllocateDeviceMatrix(const Matrix M);
 Matrix AllocateMatrix(int height, int width, int init);
 void CopyToDeviceMatrix(Matrix Mdevice, const Matrix Mhost);
 void CopyFromDeviceMatrix(Matrix Mhost, const Matrix Mdevice);
+bool CompareResults(float* A, float* B, int elements, float eps);
 int ReadFile(Matrix* M, char* file_name);
 void WriteFile(Matrix M, char* file_name);
 
 void MatrixAddOnDevice(const Matrix M, const float alpha, const Matrix N, const float beta, Matrix P);
-
 
 ////////////////////////////////////////////////////////////////////////////////
 // Program main
@@ -115,16 +115,66 @@ int main(int argc, char** argv) {
 
    // compute the matrix addition on the CPU for comparison
    Matrix reference = AllocateMatrix(MATRIX_SIZE, MATRIX_SIZE, 0);
-   unsigned int timerCPU;
-   CUT_SAFE_CALL(cutCreateTimer(&timerCPU));
-   cutStartTimer(timerCPU);
+   cudaError_t error;
+   cudaEvent_t start;
+   error = cudaEventCreate(&start);
+
+   if (error != cudaSuccess)
+   {
+       fprintf(stderr, "Failed to create start event (error code %s)!\n", cudaGetErrorString(error));
+       exit(EXIT_FAILURE);
+   }
+
+   cudaEvent_t stop;
+   error = cudaEventCreate(&stop);
+
+   if (error != cudaSuccess)
+   {
+       fprintf(stderr, "Failed to create stop event (error code %s)!\n", cudaGetErrorString(error));
+       exit(EXIT_FAILURE);
+   }
+
+   // Record the start event
+   error = cudaEventRecord(start, NULL);
+
+   if (error != cudaSuccess)
+   {
+       fprintf(stderr, "Failed to record start event (error code %s)!\n", cudaGetErrorString(error));
+       exit(EXIT_FAILURE);
+   }
    computeGold(reference.elements, M.elements, alpha, N.elements, beta, HM, WM);
-   cutStopTimer(timerCPU);
+
+   // Record the stop event
+    error = cudaEventRecord(stop, NULL);
+
+    if (error != cudaSuccess)
+    {
+        fprintf(stderr, "Failed to record stop event (error code %s)!\n", cudaGetErrorString(error));
+        exit(EXIT_FAILURE);
+    }
+
+    // Wait for the stop event to complete
+    error = cudaEventSynchronize(stop);
+
+    if (error != cudaSuccess)
+    {
+        fprintf(stderr, "Failed to synchronize on the stop event (error code %s)!\n", cudaGetErrorString(error));
+        exit(EXIT_FAILURE);
+    }
+
+    float msecTotal = 0.0f;
+    error = cudaEventElapsedTime(&msecTotal, start, stop);
+
+    if (error != cudaSuccess)
+    {
+        fprintf(stderr, "Failed to get time elapsed between events (error code %s)!\n", cudaGetErrorString(error));
+        exit(EXIT_FAILURE);
+    }
 
    // check if the device result is equivalent to the expected solution
-   CUTBoolean res = cutComparefe(reference.elements, P.elements, 
+   bool res = CompareResults(reference.elements, P.elements, 
       size_elements, 0.0001f);
-   printf("CPU execution time: %f ms\n", cutGetTimerValue(timerCPU));
+   printf("CPU execution time: %f ms\n", msecTotal);
    printf("Test %s\n", (1 == res) ? "PASSED" : "FAILED");
 
    // output result if output file is requested
@@ -144,7 +194,6 @@ int main(int argc, char** argv) {
    N.elements = NULL;
    free(P.elements);
    P.elements = NULL;
-   cutDeleteTimer(timerCPU);
    return 0;
 }
 
@@ -200,16 +249,22 @@ void MatrixAddOnDevice(const Matrix M, const float alpha, const Matrix N, const 
   // Output GPU time
   cudaEventElapsedTime(&time_incl, incl_start, incl_end);
   cudaEventElapsedTime(&time_excl, excl_start, excl_end);
-  printf("Inclusive time: %f\n", time_incl);
-  printf("Exclusive time: %f\n", time_excl);
+  printf("Inclusive time: %fms\n", time_incl);
+  printf("Exclusive time: %fms\n", time_excl);
 }
 
 // Allocate a device matrix of same size as M.
 Matrix AllocateDeviceMatrix(const Matrix M)
 {
+   cudaError_t error;
    Matrix Mdevice = M;
    int size = M.width * M.height * sizeof(float);
-   cudaMalloc((void**)&Mdevice.elements, size);
+   error = cudaMalloc((void**)&Mdevice.elements, size);
+   if (error != cudaSuccess)
+   {
+        printf("cudaMalloc returned error code %d, line(%d)\n", error, __LINE__);
+        exit(EXIT_FAILURE);
+   }
    return Mdevice;
 }
 
@@ -251,18 +306,38 @@ void CopyFromDeviceMatrix(Matrix Mhost, const Matrix Mdevice)
    cudaMemcpy(Mhost.elements, Mdevice.elements, size, 
       cudaMemcpyDeviceToHost);
 }
+//compare the data stored in two arrays on the host
+bool CompareResults(float* A, float* B, int elements, float eps)
+{
+   for(unsigned int i = 0; i < elements; i++){
+      float error = A[i]-B[i];
+      if(error>eps){
+         return false;
+      } 
+   }
+   return true;
+}
 
 // Read a 16x16 floating point matrix in from file
 int ReadFile(Matrix* M, char* file_name)
 {
    unsigned int data_read = MATRIX_SIZE*MATRIX_SIZE;
-   cutReadFilef(file_name, &(M->elements), &data_read, true);
+   std::ifstream ifile(file_name);
+
+   for(unsigned int i = 0; i < data_read; i++){
+      ifile>>M->elements[i];
+   }
+   ifile.close();
    return data_read;
 }
 
 // Write a 16x16 floating point matrix to file
 void WriteFile(Matrix M, char* file_name)
 {
-   cutWriteFilef(file_name, M.elements, M.width*M.height,
-      0.0001f);
+   std::ofstream ofile(file_name);
+   for(unsigned int i = 0; i < M.width*M.height; i++){
+      ofile<<M.elements[i];
+   }
+   ofile.close();
 }
+
