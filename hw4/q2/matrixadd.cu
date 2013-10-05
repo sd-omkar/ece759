@@ -251,6 +251,14 @@ void MatrixAddOnDevice(const Matrix M, const float alpha, const Matrix N, const 
   cudaEventElapsedTime(&time_excl, excl_start, excl_end);
   printf("GPU Inclusive time: %f ms\n", time_incl);
   printf("GPU Exclusive time: %f ms\n", time_excl);
+
+   // Free device matrices
+   cudaFree(dM.elements);
+   dM.elements = NULL;
+   cudaFree(dN.elements);
+   dN.elements = NULL;
+   cudaFree(dP.elements);
+   dP.elements = NULL;
 }
 
 // Allocate a device matrix of same size as M.

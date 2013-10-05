@@ -1,0 +1,54 @@
+Homework 4
+Author: Omkar Deshmukh
+Email: odeshmukh@wisc.edu
+
+Answers:
+
+1a) The growth of computation capabilities, both on CPU and GPU sides, has been made possible 
+    by scaling of transistors as per the Moore's law. However, since the feature is now
+    about to cross into Angstroms, the physical characteristics of Silicon are limiting
+    this scaling process. Thus, there is need for us to find substitue of Silicon which 
+    can allow us to scale beyond nanometers. Carbon nanotubes hold such promise.
+
+1b) Article and the class discussions touched the areas of Moore's law and how it has
+    allowed our chip to offer almost double the computing power every 2 year, while
+    being commercially viable. We also looked into how number of active, transistor relate 
+    to power consumption; GPU being much more power hungry.
+
+2) Files provide:
+    Makefile  Simple Makefile with all and clean target
+    q1.cu     CUDA source, prints the device info and creats Problem1.out with results.
+    q1.out    Executable
+    job.sh    Script for qsub
+
+3)
+a)  Since there is no sharing of data between threads, I chose not to go with shared memory.
+    So, each element of M and N is read once by corresponding thread. So there are 
+    4096 x 4096 x 2 doubles read from memory. Similarly, 4096 x 4096 are written into P m
+    matrix store in global memory.
+
+b)  As mentioned above, total number of memory accesses (read and write) = 
+    4096 x 4096 x 3 x size of double / line size
+    4096 x 4096 x 3 x 8 / 128
+    = 3145728. 
+    This is because, each memory access can handle 32 floats or
+    16 doubles at a time.
+
+    Memory accesses / floating point computations =
+    3 * 2 = 6. This is because each thread calculates a double, needing 3 memory accesses.
+    If we consider CUDA architecure and factor in the fact that each read from global memory to
+    gets in 16 floats or 8 doubles, the answer would be 6/16.
+
+c)  The times are also reported in the file screenshot.png.
+    GPU Inclusive time: 59.920128 ms
+    GPU Exclusive time: 7.892704 ms
+    CPU execution time: 102.243584 ms
+
+d)  As far as number crunching capabilites are concerned, we need to compare CPU time with
+    Exclusive time. This is because inclusive time includes the overhead of copying data to and from
+    GPU. This time does not contribute to any computation. So the compute prowess of both the
+    devices is indicative of CPU time Vs. Exclusive time comparison.
+
+    However, in case we are assessing the benefits of using GPU as a co-processor to CPU, we need
+    to consider both as a single system. In that case, we need to compare against Inclusive time.
+
