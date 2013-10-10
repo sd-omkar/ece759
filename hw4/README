@@ -21,23 +21,22 @@ Answers:
     q1.out    Executable
     job.sh    Script for qsub
 
-3)
+3   Executable: q2.out)
 a)  Since there is no sharing of data between threads, I chose not to go with shared memory.
     So, each element of M and N is read once by corresponding thread. So there are 
-    4096 x 4096 x 2 doubles read from memory. Similarly, 4096 x 4096 are written into P m
+    4096 x 4096 x 2 floats read from memory. Similarly, 4096 x 4096 are written into P m
     matrix store in global memory.
 
 b)  As mentioned above, total number of memory accesses (read and write) = 
-    4096 x 4096 x 3 x size of double / line size
-    4096 x 4096 x 3 x 8 / 128
-    = 3145728. 
-    This is because, each memory access can handle 32 floats or
-    16 doubles at a time.
+    4096 x 4096 x 3 x size of float / line size
+    4096 x 4096 x 3 x 4 / 128
+    = 1572864
+    This is because, each memory access can handle 32 floats at a time.
 
     Memory accesses / floating point computations =
-    3 * 2 = 6. This is because each thread calculates a double, needing 3 memory accesses.
+    3. This is because each thread calculates a float, needing 3 memory accesses.
     If we consider CUDA architecure and factor in the fact that each read from global memory to
-    gets in 16 floats or 8 doubles, the answer would be 6/16.
+    gets in 32 floats, the answer would be 3/32.
 
 c)  The times are also reported in the file screenshot.png.
     GPU Inclusive time: 59.920128 ms
