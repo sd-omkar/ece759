@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/q1.out.dir/vector_reduction_gold.cpp.o CMakeFiles/q1.out.dir/./q1.out_generated_vector_reduction.cu.o  -o q1.out -rdynamic -lcudart 
