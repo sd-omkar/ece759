@@ -52,7 +52,29 @@
 // Matrix multiplication kernel – thread specification
 __global__ void MatrixMulKernel(const Matrix M, const Matrix N, Matrix P)
 {
+  __shared__ float s_M[BLOCK_SIZE][BLOCK_SIZE];
+  __shared__ float s_N[BLOCK_SIZE][BLOCK_SIZE];
+  int tx = threadIdx.x; 
+  int ty = threadIdx.y;
+  int bx = blockIdx.x;
+  int by = blockIdx.y;
+  int row = ty + by * BLOCK_SIZE;
+  int col = tx + bx * BLOCK_SIZE;
+  float temp = 0;
 
+  // load data into shared memory
+  for (int i=0; i<(M.width / BLOCK_SIZE); i++) {
+    s_M[ty][tx] = M.elements[row * M.width + i * BLOCK_SIZE + tx];
+    s_N[ty][tx] = N.elements[(i * BLOCK_SIZE + ty) * N.width + col];
+    __syncthreads();
+
+    for (int k=0; k<BLOCK_SIZE; k++) {
+      temp += s_M[ty][k] * s_N[k][tx];
+      __syncthreads();
+    }
+
+  }
+  P.elements[row * P.width + col] = temp;
 }
 
 #endif // #ifndef _MATRIXMUL_KERNEL_H_

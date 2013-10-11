@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/q2.out.dir/matrixmul_gold.cpp.o CMakeFiles/q2.out.dir/./q2.out_generated_matrixmul.cu.o  -o q2.out -rdynamic -lcudart 

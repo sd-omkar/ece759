@@ -48,7 +48,7 @@ using namespace std;
 //#include <cutil.h>
 
 // includes, kernels
-#include "matrixmul_kernel.cuh"
+#include "matrixmul_kernel.cu"
 
 // include helper header
 #include "tiledMatMult.h"
@@ -179,8 +179,18 @@ void MatrixMulOnDevice(const Matrix Munpadded, const Matrix Nunpadded, Matrix Pu
 
    // Setup the execution configuration
    // Come up with the number of blocks you need to call
+   int bx = (Pd.width % BLOCK_SIZE == 0)
+            ? Pd.width / BLOCK_SIZE
+            : Pd.width / BLOCK_SIZE + 1;
+
+   int by = (Pd.height % BLOCK_SIZE == 0)
+            ? Pd.height / BLOCK_SIZE
+            : Pd.height / BLOCK_SIZE + 1;
+   dim3 grid(bx, by, 1);
+   dim3 block(BLOCK_SIZE, BLOCK_SIZE, 1);
    
    // Launch the device computation threads
+   MatrixMulKernel<<<grid, block>>>(Md, Nd, Pd);
 
    // Read P from the device and then extract the submatrix with the result
    CopyFromDeviceMatrix(P, Pd); 
