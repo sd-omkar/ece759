@@ -1,0 +1,263 @@
+The system is: Linux - 2.6.32-279.22.1.el6.x86_64 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/gcc 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/odeshmukh/work/hw5/Scaling/CMakeFiles/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /usr/bin/c++ 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/home/odeshmukh/work/hw5/Scaling/CMakeFiles/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/odeshmukh/work/hw5/Scaling/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec3385609575/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec3385609575.dir/build.make CMakeFiles/cmTryCompileExec3385609575.dir/build
+gmake[1]: Entering directory `/home/odeshmukh/work/hw5/Scaling/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/odeshmukh/work/hw5/Scaling/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3385609575.dir/testCCompiler.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec3385609575.dir/testCCompiler.c.o   -c /home/odeshmukh/work/hw5/Scaling/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTryCompileExec3385609575
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3385609575.dir/link.txt --verbose=1
+/usr/bin/gcc         CMakeFiles/cmTryCompileExec3385609575.dir/testCCompiler.c.o  -o cmTryCompileExec3385609575 -rdynamic 
+gmake[1]: Leaving directory `/home/odeshmukh/work/hw5/Scaling/CMakeFiles/CMakeTmp'
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/odeshmukh/work/hw5/Scaling/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec2856153268/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec2856153268.dir/build.make CMakeFiles/cmTryCompileExec2856153268.dir/build
+gmake[1]: Entering directory `/home/odeshmukh/work/hw5/Scaling/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/odeshmukh/work/hw5/Scaling/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2856153268.dir/CMakeCCompilerABI.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec2856153268.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+Linking C executable cmTryCompileExec2856153268
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2856153268.dir/link.txt --verbose=1
+/usr/bin/gcc       -v CMakeFiles/cmTryCompileExec2856153268.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec2856153268 -rdynamic  
+Using built-in specs.
+Target: x86_64-redhat-linux
+Configured with: ../configure --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-bootstrap --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-languages=c,c++,objc,obj-c++,java,fortran,ada --enable-java-awt=gtk --disable-dssi --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-1.5.0.0/jre --enable-libgcj-multifile --enable-java-maintainer-mode --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --disable-libjava-multilib --with-ppl --with-cloog --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux
+Thread model: posix
+gcc version 4.4.6 20110731 (Red Hat 4.4.6-3) (GCC) 
+COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/4.4.6/:/usr/libexec/gcc/x86_64-redhat-linux/4.4.6/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/4.4.6/:/usr/lib/gcc/x86_64-redhat-linux/:/usr/libexec/gcc/x86_64-redhat-linux/4.4.6/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/4.4.6/:/usr/lib/gcc/x86_64-redhat-linux/
+LIBRARY_PATH=/usr/local/cuda/5.5.22/cuda/lib64/../lib64/:/usr/local/cuda/5.5.22/cuda/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/4.4.6/:/usr/lib/gcc/x86_64-redhat-linux/4.4.6/:/usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/nvidia/tls/:/usr/lib64/nvidia/:/usr/local/cuda/5.5.22/cuda/lib64/:/usr/local/cuda/5.5.22/cuda/lib/:/usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec2856153268' '-rdynamic' '-mtune=generic'
+ /usr/libexec/gcc/x86_64-redhat-linux/4.4.6/collect2 --eh-frame-hdr --build-id -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec2856153268 /usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/4.4.6/crtbegin.o -L/usr/local/cuda/5.5.22/cuda/lib64/../lib64 -L/usr/local/cuda/5.5.22/cuda/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/4.4.6 -L/usr/lib/gcc/x86_64-redhat-linux/4.4.6 -L/usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/nvidia/tls -L/usr/lib64/nvidia -L/usr/local/cuda/5.5.22/cuda/lib64 -L/usr/local/cuda/5.5.22/cuda/lib -L/usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../.. CMakeFiles/cmTryCompileExec2856153268.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-redhat-linux/4.4.6/crtend.o /usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../../../lib64/crtn.o
+gmake[1]: Leaving directory `/home/odeshmukh/work/hw5/Scaling/CMakeFiles/CMakeTmp'
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/odeshmukh/work/hw5/Scaling/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:/usr/bin/gmake "cmTryCompileExec2856153268/fast"]
+  ignore line: [/usr/bin/gmake -f CMakeFiles/cmTryCompileExec2856153268.dir/build.make CMakeFiles/cmTryCompileExec2856153268.dir/build]
+  ignore line: [gmake[1]: Entering directory `/home/odeshmukh/work/hw5/Scaling/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /home/odeshmukh/work/hw5/Scaling/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building C object CMakeFiles/cmTryCompileExec2856153268.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec2856153268.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTryCompileExec2856153268]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2856153268.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/gcc       -v CMakeFiles/cmTryCompileExec2856153268.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec2856153268 -rdynamic  ]
+  ignore line: [Using built-in specs.]
+  ignore line: [Target: x86_64-redhat-linux]
+  ignore line: [Configured with: ../configure --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-bootstrap --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-languages=c,c++,objc,obj-c++,java,fortran,ada --enable-java-awt=gtk --disable-dssi --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-1.5.0.0/jre --enable-libgcj-multifile --enable-java-maintainer-mode --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --disable-libjava-multilib --with-ppl --with-cloog --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 4.4.6 20110731 (Red Hat 4.4.6-3) (GCC) ]
+  ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/4.4.6/:/usr/libexec/gcc/x86_64-redhat-linux/4.4.6/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/4.4.6/:/usr/lib/gcc/x86_64-redhat-linux/:/usr/libexec/gcc/x86_64-redhat-linux/4.4.6/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/4.4.6/:/usr/lib/gcc/x86_64-redhat-linux/]
+  ignore line: [LIBRARY_PATH=/usr/local/cuda/5.5.22/cuda/lib64/../lib64/:/usr/local/cuda/5.5.22/cuda/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/4.4.6/:/usr/lib/gcc/x86_64-redhat-linux/4.4.6/:/usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/nvidia/tls/:/usr/lib64/nvidia/:/usr/local/cuda/5.5.22/cuda/lib64/:/usr/local/cuda/5.5.22/cuda/lib/:/usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec2856153268' '-rdynamic' '-mtune=generic']
+  link line: [ /usr/libexec/gcc/x86_64-redhat-linux/4.4.6/collect2 --eh-frame-hdr --build-id -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec2856153268 /usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/4.4.6/crtbegin.o -L/usr/local/cuda/5.5.22/cuda/lib64/../lib64 -L/usr/local/cuda/5.5.22/cuda/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/4.4.6 -L/usr/lib/gcc/x86_64-redhat-linux/4.4.6 -L/usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/nvidia/tls -L/usr/lib64/nvidia -L/usr/local/cuda/5.5.22/cuda/lib64 -L/usr/local/cuda/5.5.22/cuda/lib -L/usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../.. CMakeFiles/cmTryCompileExec2856153268.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-redhat-linux/4.4.6/crtend.o /usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../../../lib64/crtn.o]
+    arg [/usr/libexec/gcc/x86_64-redhat-linux/4.4.6/collect2] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTryCompileExec2856153268] ==> ignore
+    arg [/usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../../../lib64/crt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../../../lib64/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-redhat-linux/4.4.6/crtbegin.o] ==> ignore
+    arg [-L/usr/local/cuda/5.5.22/cuda/lib64/../lib64] ==> dir [/usr/local/cuda/5.5.22/cuda/lib64/../lib64]
+    arg [-L/usr/local/cuda/5.5.22/cuda/lib/../lib64] ==> dir [/usr/local/cuda/5.5.22/cuda/lib/../lib64]
+    arg [-L/usr/lib/gcc/x86_64-redhat-linux/4.4.6] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/4.4.6]
+    arg [-L/usr/lib/gcc/x86_64-redhat-linux/4.4.6] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/4.4.6]
+    arg [-L/usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../../../lib64] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/usr/lib64/nvidia/tls] ==> dir [/usr/lib64/nvidia/tls]
+    arg [-L/usr/lib64/nvidia] ==> dir [/usr/lib64/nvidia]
+    arg [-L/usr/local/cuda/5.5.22/cuda/lib64] ==> dir [/usr/local/cuda/5.5.22/cuda/lib64]
+    arg [-L/usr/local/cuda/5.5.22/cuda/lib] ==> dir [/usr/local/cuda/5.5.22/cuda/lib]
+    arg [-L/usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../..] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../..]
+    arg [CMakeFiles/cmTryCompileExec2856153268.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/usr/lib/gcc/x86_64-redhat-linux/4.4.6/crtend.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../../../lib64/crtn.o] ==> ignore
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  collapse dir [/usr/local/cuda/5.5.22/cuda/lib64/../lib64] ==> [/usr/local/cuda/5.5.22/cuda/lib64]
+  collapse dir [/usr/local/cuda/5.5.22/cuda/lib/../lib64] ==> [/usr/local/cuda/5.5.22/cuda/lib64]
+  collapse dir [/usr/lib/gcc/x86_64-redhat-linux/4.4.6] ==> [/usr/lib/gcc/x86_64-redhat-linux/4.4.6]
+  collapse dir [/usr/lib/gcc/x86_64-redhat-linux/4.4.6] ==> [/usr/lib/gcc/x86_64-redhat-linux/4.4.6]
+  collapse dir [/usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../../../lib64] ==> [/usr/lib64]
+  collapse dir [/lib/../lib64] ==> [/lib64]
+  collapse dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse dir [/usr/lib64/nvidia/tls] ==> [/usr/lib64/nvidia/tls]
+  collapse dir [/usr/lib64/nvidia] ==> [/usr/lib64/nvidia]
+  collapse dir [/usr/local/cuda/5.5.22/cuda/lib64] ==> [/usr/local/cuda/5.5.22/cuda/lib64]
+  collapse dir [/usr/local/cuda/5.5.22/cuda/lib] ==> [/usr/local/cuda/5.5.22/cuda/lib]
+  collapse dir [/usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../..] ==> [/usr/lib]
+  implicit libs: [c]
+  implicit dirs: [/usr/local/cuda/5.5.22/cuda/lib64;/usr/lib/gcc/x86_64-redhat-linux/4.4.6;/usr/lib64;/lib64;/usr/lib64/nvidia/tls;/usr/lib64/nvidia;/usr/local/cuda/5.5.22/cuda/lib;/usr/lib]
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /home/odeshmukh/work/hw5/Scaling/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec3108961890/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec3108961890.dir/build.make CMakeFiles/cmTryCompileExec3108961890.dir/build
+gmake[1]: Entering directory `/home/odeshmukh/work/hw5/Scaling/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/odeshmukh/work/hw5/Scaling/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec3108961890.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTryCompileExec3108961890.dir/testCXXCompiler.cxx.o -c /home/odeshmukh/work/hw5/Scaling/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTryCompileExec3108961890
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3108961890.dir/link.txt --verbose=1
+/usr/bin/c++          CMakeFiles/cmTryCompileExec3108961890.dir/testCXXCompiler.cxx.o  -o cmTryCompileExec3108961890 -rdynamic 
+gmake[1]: Leaving directory `/home/odeshmukh/work/hw5/Scaling/CMakeFiles/CMakeTmp'
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /home/odeshmukh/work/hw5/Scaling/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec2958321614/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec2958321614.dir/build.make CMakeFiles/cmTryCompileExec2958321614.dir/build
+gmake[1]: Entering directory `/home/odeshmukh/work/hw5/Scaling/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/odeshmukh/work/hw5/Scaling/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec2958321614.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTryCompileExec2958321614.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTryCompileExec2958321614
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2958321614.dir/link.txt --verbose=1
+/usr/bin/c++        -v CMakeFiles/cmTryCompileExec2958321614.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec2958321614 -rdynamic  
+Using built-in specs.
+Target: x86_64-redhat-linux
+Configured with: ../configure --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-bootstrap --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-languages=c,c++,objc,obj-c++,java,fortran,ada --enable-java-awt=gtk --disable-dssi --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-1.5.0.0/jre --enable-libgcj-multifile --enable-java-maintainer-mode --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --disable-libjava-multilib --with-ppl --with-cloog --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux
+Thread model: posix
+gcc version 4.4.6 20110731 (Red Hat 4.4.6-3) (GCC) 
+COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/4.4.6/:/usr/libexec/gcc/x86_64-redhat-linux/4.4.6/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/4.4.6/:/usr/lib/gcc/x86_64-redhat-linux/:/usr/libexec/gcc/x86_64-redhat-linux/4.4.6/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/4.4.6/:/usr/lib/gcc/x86_64-redhat-linux/
+LIBRARY_PATH=/usr/local/cuda/5.5.22/cuda/lib64/../lib64/:/usr/local/cuda/5.5.22/cuda/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/4.4.6/:/usr/lib/gcc/x86_64-redhat-linux/4.4.6/:/usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/nvidia/tls/:/usr/lib64/nvidia/:/usr/local/cuda/5.5.22/cuda/lib64/:/usr/local/cuda/5.5.22/cuda/lib/:/usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec2958321614' '-rdynamic' '-shared-libgcc' '-mtune=generic'
+ /usr/libexec/gcc/x86_64-redhat-linux/4.4.6/collect2 --eh-frame-hdr --build-id -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec2958321614 /usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/4.4.6/crtbegin.o -L/usr/local/cuda/5.5.22/cuda/lib64/../lib64 -L/usr/local/cuda/5.5.22/cuda/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/4.4.6 -L/usr/lib/gcc/x86_64-redhat-linux/4.4.6 -L/usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/nvidia/tls -L/usr/lib64/nvidia -L/usr/local/cuda/5.5.22/cuda/lib64 -L/usr/local/cuda/5.5.22/cuda/lib -L/usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../.. CMakeFiles/cmTryCompileExec2958321614.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/4.4.6/crtend.o /usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../../../lib64/crtn.o
+gmake[1]: Leaving directory `/home/odeshmukh/work/hw5/Scaling/CMakeFiles/CMakeTmp'
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/odeshmukh/work/hw5/Scaling/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:/usr/bin/gmake "cmTryCompileExec2958321614/fast"]
+  ignore line: [/usr/bin/gmake -f CMakeFiles/cmTryCompileExec2958321614.dir/build.make CMakeFiles/cmTryCompileExec2958321614.dir/build]
+  ignore line: [gmake[1]: Entering directory `/home/odeshmukh/work/hw5/Scaling/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /home/odeshmukh/work/hw5/Scaling/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building CXX object CMakeFiles/cmTryCompileExec2958321614.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTryCompileExec2958321614.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTryCompileExec2958321614]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2958321614.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++        -v CMakeFiles/cmTryCompileExec2958321614.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec2958321614 -rdynamic  ]
+  ignore line: [Using built-in specs.]
+  ignore line: [Target: x86_64-redhat-linux]
+  ignore line: [Configured with: ../configure --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-bootstrap --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-languages=c,c++,objc,obj-c++,java,fortran,ada --enable-java-awt=gtk --disable-dssi --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-1.5.0.0/jre --enable-libgcj-multifile --enable-java-maintainer-mode --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --disable-libjava-multilib --with-ppl --with-cloog --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 4.4.6 20110731 (Red Hat 4.4.6-3) (GCC) ]
+  ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/4.4.6/:/usr/libexec/gcc/x86_64-redhat-linux/4.4.6/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/4.4.6/:/usr/lib/gcc/x86_64-redhat-linux/:/usr/libexec/gcc/x86_64-redhat-linux/4.4.6/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/4.4.6/:/usr/lib/gcc/x86_64-redhat-linux/]
+  ignore line: [LIBRARY_PATH=/usr/local/cuda/5.5.22/cuda/lib64/../lib64/:/usr/local/cuda/5.5.22/cuda/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/4.4.6/:/usr/lib/gcc/x86_64-redhat-linux/4.4.6/:/usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/nvidia/tls/:/usr/lib64/nvidia/:/usr/local/cuda/5.5.22/cuda/lib64/:/usr/local/cuda/5.5.22/cuda/lib/:/usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec2958321614' '-rdynamic' '-shared-libgcc' '-mtune=generic']
+  link line: [ /usr/libexec/gcc/x86_64-redhat-linux/4.4.6/collect2 --eh-frame-hdr --build-id -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec2958321614 /usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/4.4.6/crtbegin.o -L/usr/local/cuda/5.5.22/cuda/lib64/../lib64 -L/usr/local/cuda/5.5.22/cuda/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/4.4.6 -L/usr/lib/gcc/x86_64-redhat-linux/4.4.6 -L/usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/nvidia/tls -L/usr/lib64/nvidia -L/usr/local/cuda/5.5.22/cuda/lib64 -L/usr/local/cuda/5.5.22/cuda/lib -L/usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../.. CMakeFiles/cmTryCompileExec2958321614.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/4.4.6/crtend.o /usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../../../lib64/crtn.o]
+    arg [/usr/libexec/gcc/x86_64-redhat-linux/4.4.6/collect2] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTryCompileExec2958321614] ==> ignore
+    arg [/usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../../../lib64/crt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../../../lib64/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-redhat-linux/4.4.6/crtbegin.o] ==> ignore
+    arg [-L/usr/local/cuda/5.5.22/cuda/lib64/../lib64] ==> dir [/usr/local/cuda/5.5.22/cuda/lib64/../lib64]
+    arg [-L/usr/local/cuda/5.5.22/cuda/lib/../lib64] ==> dir [/usr/local/cuda/5.5.22/cuda/lib/../lib64]
+    arg [-L/usr/lib/gcc/x86_64-redhat-linux/4.4.6] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/4.4.6]
+    arg [-L/usr/lib/gcc/x86_64-redhat-linux/4.4.6] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/4.4.6]
+    arg [-L/usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../../../lib64] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/usr/lib64/nvidia/tls] ==> dir [/usr/lib64/nvidia/tls]
+    arg [-L/usr/lib64/nvidia] ==> dir [/usr/lib64/nvidia]
+    arg [-L/usr/local/cuda/5.5.22/cuda/lib64] ==> dir [/usr/local/cuda/5.5.22/cuda/lib64]
+    arg [-L/usr/local/cuda/5.5.22/cuda/lib] ==> dir [/usr/local/cuda/5.5.22/cuda/lib]
+    arg [-L/usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../..] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../..]
+    arg [CMakeFiles/cmTryCompileExec2958321614.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/usr/lib/gcc/x86_64-redhat-linux/4.4.6/crtend.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../../../lib64/crtn.o] ==> ignore
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  collapse dir [/usr/local/cuda/5.5.22/cuda/lib64/../lib64] ==> [/usr/local/cuda/5.5.22/cuda/lib64]
+  collapse dir [/usr/local/cuda/5.5.22/cuda/lib/../lib64] ==> [/usr/local/cuda/5.5.22/cuda/lib64]
+  collapse dir [/usr/lib/gcc/x86_64-redhat-linux/4.4.6] ==> [/usr/lib/gcc/x86_64-redhat-linux/4.4.6]
+  collapse dir [/usr/lib/gcc/x86_64-redhat-linux/4.4.6] ==> [/usr/lib/gcc/x86_64-redhat-linux/4.4.6]
+  collapse dir [/usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../../../lib64] ==> [/usr/lib64]
+  collapse dir [/lib/../lib64] ==> [/lib64]
+  collapse dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse dir [/usr/lib64/nvidia/tls] ==> [/usr/lib64/nvidia/tls]
+  collapse dir [/usr/lib64/nvidia] ==> [/usr/lib64/nvidia]
+  collapse dir [/usr/local/cuda/5.5.22/cuda/lib64] ==> [/usr/local/cuda/5.5.22/cuda/lib64]
+  collapse dir [/usr/local/cuda/5.5.22/cuda/lib] ==> [/usr/local/cuda/5.5.22/cuda/lib]
+  collapse dir [/usr/lib/gcc/x86_64-redhat-linux/4.4.6/../../..] ==> [/usr/lib]
+  implicit libs: [stdc++;m;c]
+  implicit dirs: [/usr/local/cuda/5.5.22/cuda/lib64;/usr/lib/gcc/x86_64-redhat-linux/4.4.6;/usr/lib64;/lib64;/usr/lib64/nvidia/tls;/usr/lib64/nvidia;/usr/local/cuda/5.5.22/cuda/lib;/usr/lib]
+
+
