@@ -1,0 +1,18 @@
+For redcution, all the files are in ArrayReduction folder. 
+Makefile generates executable q1.out
+Report is in the file COMMENTS.pdf
+
+For matrix multiplication, the report file COMMENTS.pdf 
+can be found in either Tiled_matrixmul or Scaling folders.
+In both the folders, Makefile generates executable q2.out
+The difference here being, the code in Scaling folder
+has been modified to handle 2 argument case. In this case,
+assuming user want to multiply 2 random sqaure matrices,
+argv[1] and argv[2] represent square matrix dimentiosn.
+So you can run the code as "q2.out 1024 1024"
+
+Inside Tiled_matrixmul folder, the data folder has logs
+that are used to answer Q1, 2, 3.
+
+Inside Scaling folder, the data folder has logs
+that are used to answer Q4, 5, 6, 7.
