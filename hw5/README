@@ -16,3 +16,9 @@ that are used to answer Q1, 2, 3.
 
 Inside Scaling folder, the data folder has logs
 that are used to answer Q4, 5, 6, 7.
+
+PS: Last minute addition
+For Q7, the test might fail also because floating
+point computations are not entirely associative.
+This, along with small difference accumulating
+over large row size, can cause the the test to fail.
