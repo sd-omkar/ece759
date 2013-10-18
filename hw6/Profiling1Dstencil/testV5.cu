@@ -50,9 +50,15 @@ void applyStencil1D_SEQ(int sIdx, int eIdx, const float *weights, float *in, flo
   }
 }
 
-__global__ void applyStencil1D(int sIdx, int eIdx, const float *weights, float *in, float *out) {
-    int i = sIdx + blockIdx.x*blockDim.x + threadIdx.x;
-    if( i < eIdx ) {
+__global__ void applyStencil1D(int sIdx, int eIdx, const float *weights, float *input, float *out) {
+    __shared__ float in[1024];
+    int tid = blockIdx.x*blockDim.x + threadIdx.x;
+    in[tid] = input[tid];
+    __syncthreads();
+    
+    int i = sIdx + tid;
+    int g_eIdx = gridDim.x * blockDim.x - sIdx;
+    if( i < g_eIdx ) {
         float result = 0.f;
         result += weights[0]*in[i-3];
         result += weights[1]*in[i-2];
@@ -68,9 +74,9 @@ __global__ void applyStencil1D(int sIdx, int eIdx, const float *weights, float *
 
 int main(int argc, char *argv[]) {
   if (argc != 2) {
-    printf("Missing input N\n");                                                               
-    exit(1);                                                                                   
-    }
+    printf("Missing input N\n");
+    exit(1);
+  }
   int N = atoi(argv[1]);
   int size = N * sizeof(float); 
   int wsize = (2 * RADIUS + 1) * sizeof(float); 

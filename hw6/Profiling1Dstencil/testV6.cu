@@ -1,6 +1,5 @@
 #include<iostream>
 #include<stdlib.h>
-#include<stdio.h>
 #include <cuda.h>
 #include <math.h>
 
@@ -67,10 +66,6 @@ __global__ void applyStencil1D(int sIdx, int eIdx, const float *weights, float *
 }
 
 int main(int argc, char *argv[]) {
-  if (argc != 2) {
-    printf("Missing input N\n");                                                               
-    exit(1);                                                                                   
-    }
   int N = atoi(argv[1]);
   int size = N * sizeof(float); 
   int wsize = (2 * RADIUS + 1) * sizeof(float); 
@@ -87,7 +82,7 @@ int main(int argc, char *argv[]) {
   
   cudaMemcpy(d_weights,weights,wsize,cudaMemcpyHostToDevice);
   cudaMemcpy(d_in, in, size, cudaMemcpyHostToDevice);
-  applyStencil1D<<<(N+1023)/1024, 1024>>>(RADIUS, N-RADIUS, d_weights, d_in, d_out);
+  applyStencil1D<<<(N+511)/512, 512>>>(RADIUS, N-RADIUS, d_weights, d_in, d_out);
   applyStencil1D_SEQ(RADIUS, N-RADIUS, weights, in, out);
   cudaMemcpy(cuda_out, d_out, size, cudaMemcpyDeviceToHost);
 
