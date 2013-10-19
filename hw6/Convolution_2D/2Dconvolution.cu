@@ -58,7 +58,7 @@ Matrix AllocateDeviceMatrix(const Matrix M);
 Matrix AllocateMatrix(int height, int width, int init);
 void CopyToDeviceMatrix(Matrix Mdevice, const Matrix Mhost);
 void CopyFromDeviceMatrix(Matrix Mhost, const Matrix Mdevice);
-bool CompareResults(float* A, float* B, int width, int height, float eps);
+int CompareResults(float* A, float* B, int width, int height, float eps);
 bool ReadParams(int* params, int size, char* file_name);
 int ReadFile(Matrix* M, char* file_name);
 void WriteFile(Matrix M, char* file_name);
@@ -70,6 +70,7 @@ void ConvolutionOnDevice(const Matrix M, const Matrix N, Matrix P);
 ////////////////////////////////////////////////////////////////////////////////
 // Matrix multiplication kernel thread specification
 ////////////////////////////////////////////////////////////////////////////////
+__constant__ float sM[KERNEL_SIZE][KERNEL_SIZE];
 
 __global__ void ConvolutionKernel(Matrix M, Matrix N, Matrix P)
 {
@@ -83,20 +84,18 @@ __global__ void ConvolutionKernel(Matrix M, Matrix N, Matrix P)
   int KR = 2;
   int i, j;
 
-  // Load M into shared memory
-  __shared__ float sM[KERNEL_SIZE][KERNEL_SIZE];
+  // Load M into constant memory
+  /*__constant__ float sM[KERNEL_SIZE][KERNEL_SIZE];
   if (x < KERNEL_SIZE && y < KERNEL_SIZE)
-    sM[y][x] = M.elements[x + y * M.width];
+    sM[y][x] = M.elements[x + y * M.width];*/
 
   __shared__ float sN[BLOCK_SIZE + 4][BLOCK_SIZE  + 4];
-  //sN[ty+2][tx+2] = N.elements[x + y * N.width];
 
   // Handle 4 corner cases of P
   i = x - KR; j = y - KR;
   if (i < 0 || j < 0)
     sN[tx][ty] = 0.f;
   else
-    //sN[tx][ty] = N.elements[x - KR - N.width * y];
     //sN[tx][ty] = 7.f;
     sN[ty][tx] = N.elements[tid - KR - KR * N.width];
   
@@ -104,7 +103,6 @@ __global__ void ConvolutionKernel(Matrix M, Matrix N, Matrix P)
   if (i > N.width - 1 || j < 0)
     sN[tx + KR + KR][ty] = 0.f;
   else
-    //sN[tx + KR][ty] = N.elements[x + KR - N.width * y];
     //sN[tx + KR + KR][ty] = 7.f;
     sN[ty][tx + KR + KR] = N.elements[tid + KR - KR * N.width];
 
@@ -112,7 +110,6 @@ __global__ void ConvolutionKernel(Matrix M, Matrix N, Matrix P)
   if (i < 0 || j > N.height - 1)
     sN[tx][ty + KR + KR] = 0.f;
   else
-    //sN[tx][ty + KR] = N.elements[x - KR + N.width * y];
     //sN[tx][ty + KR + KR] = 7.f;
     sN[ty + KR + KR][tx] = N.elements[tid - KR + KR * N.width];
 
@@ -120,7 +117,6 @@ __global__ void ConvolutionKernel(Matrix M, Matrix N, Matrix P)
   if (i > N.width - 1 || j > N.height -1)
     sN[tx + KR + KR][ty + KR + KR] = 0.f;
   else
-    //sN[tx + KR][ty + KR] = N.elements[x + KR + N.width * y];
     //sN[tx + KR + KR][ty + KR + KR] = 7.f;
     sN[ty + KR + KR][tx + KR + KR] = N.elements[tid + KR + KR * N.width];
 
@@ -200,8 +196,8 @@ int main(int argc, char** argv) {
         
     // in this case check if the result is equivalent to the expected soluion
 
-    bool res = CompareResults(reference.elements, P.elements, P.width , P.height, 0.01f);
-    printf("Test %s\n", (1 == res) ? "PASSED" : "FAILED");
+    int count = CompareResults(reference.elements, P.elements, P.width , P.height, 0.01f);
+    //printf("Test %s\n", (1 == res) ? "PASSED" : "FAILED");
     
     if(argc == 5)
     {
@@ -209,7 +205,7 @@ int main(int argc, char** argv) {
 	}
 	else if(argc == 2)
 	{
-	    WriteFile(P, argv[1]);
+	//    WriteFile(P, argv[1]);
 	}   
 
 	// Free matrices
@@ -240,7 +236,8 @@ void ConvolutionOnDevice(const Matrix M, const Matrix N, Matrix P)
     cudaEventCreate(&gpu_end);
  
     cudaEventRecord(gpu_start, NULL);
-    CopyToDeviceMatrix(Md, M);
+    //CopyToDeviceMatrix(Md, M);
+    cudaMemcpyToSymbol(sM, M.elements, M.width*M.height*sizeof(float));
     CopyToDeviceMatrix(Nd, N);
     CopyToDeviceMatrix(Pd, P); // Clear memory
 
@@ -331,16 +328,24 @@ void FreeMatrix(Matrix* M)
 }
 
 //compare the data stored in two arrays on the host
-bool CompareResults(float* A, float* B, int width, int height, float eps)
+int CompareResults(float* A, float* B, int width, int height, float eps)
 {
+  int count1 = 0;
    for(unsigned int i = 0; i < height; i++){
      for (unsigned int j = 0; j < width; j++) { 
       float error = A[j*height + i] - B[i*width + j];
       if(error>eps)
-        return false;
+        count1++;
      }
    }
-   return true;
+   int count2 = 0;
+  for (unsigned int i = 0; i < width*height; i++) {
+      float error = A[i] - B[i];
+      if(error>eps)
+        count2++;
+  }
+  printf("Count 1 = %d \nCount 2 = %d\n", count1, count2);
+   return count1;
 }
 
 bool ReadParams(int* params, int size, char* file_name){
