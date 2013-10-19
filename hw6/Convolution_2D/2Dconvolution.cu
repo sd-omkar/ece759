@@ -45,6 +45,7 @@
 #include <fstream>
 // includes, project
 #include "2Dconvolution.h"
+#include "2Dconvolution_gold.cpp"
 
 using namespace std;
 ////////////////////////////////////////////////////////////////////////////////
@@ -57,7 +58,7 @@ Matrix AllocateDeviceMatrix(const Matrix M);
 Matrix AllocateMatrix(int height, int width, int init);
 void CopyToDeviceMatrix(Matrix Mdevice, const Matrix Mhost);
 void CopyFromDeviceMatrix(Matrix Mhost, const Matrix Mdevice);
-bool CompareResults(float* A, float* B, int elements, float eps);
+bool CompareResults(float* A, float* B, int width, int height, float eps);
 bool ReadParams(int* params, int size, char* file_name);
 int ReadFile(Matrix* M, char* file_name);
 void WriteFile(Matrix M, char* file_name);
@@ -69,11 +70,70 @@ void ConvolutionOnDevice(const Matrix M, const Matrix N, Matrix P);
 ////////////////////////////////////////////////////////////////////////////////
 // Matrix multiplication kernel thread specification
 ////////////////////////////////////////////////////////////////////////////////
+
 __global__ void ConvolutionKernel(Matrix M, Matrix N, Matrix P)
 {
 
 // Your code comes here...
+  int tx = threadIdx.x;
+  int ty = threadIdx.y;
+  int x = tx + blockIdx.x * blockDim.x;
+  int y = ty + blockIdx.y * blockDim.y;
+  int tid = x + y * N.width;
+  int KR = 2;
+  int i, j;
 
+  // Load M into shared memory
+  __shared__ float sM[KERNEL_SIZE][KERNEL_SIZE];
+  if (x < KERNEL_SIZE && y < KERNEL_SIZE)
+    sM[y][x] = M.elements[x + y * M.width];
+
+  __shared__ float sN[BLOCK_SIZE + 4][BLOCK_SIZE  + 4];
+  //sN[ty+2][tx+2] = N.elements[x + y * N.width];
+
+  // Handle 4 corner cases of P
+  i = x - KR; j = y - KR;
+  if (i < 0 || j < 0)
+    sN[tx][ty] = 0.f;
+  else
+    //sN[tx][ty] = N.elements[x - KR - N.width * y];
+    //sN[tx][ty] = 7.f;
+    sN[ty][tx] = N.elements[tid - KR - KR * N.width];
+  
+  i = x + KR; j = y - KR;
+  if (i > N.width - 1 || j < 0)
+    sN[tx + KR + KR][ty] = 0.f;
+  else
+    //sN[tx + KR][ty] = N.elements[x + KR - N.width * y];
+    //sN[tx + KR + KR][ty] = 7.f;
+    sN[ty][tx + KR + KR] = N.elements[tid + KR - KR * N.width];
+
+  i = x - KR; j = y + KR;
+  if (i < 0 || j > N.height - 1)
+    sN[tx][ty + KR + KR] = 0.f;
+  else
+    //sN[tx][ty + KR] = N.elements[x - KR + N.width * y];
+    //sN[tx][ty + KR + KR] = 7.f;
+    sN[ty + KR + KR][tx] = N.elements[tid - KR + KR * N.width];
+
+  i = x + KR; j = y + KR;
+  if (i > N.width - 1 || j > N.height -1)
+    sN[tx + KR + KR][ty + KR + KR] = 0.f;
+  else
+    //sN[tx + KR][ty + KR] = N.elements[x + KR + N.width * y];
+    //sN[tx + KR + KR][ty + KR + KR] = 7.f;
+    sN[ty + KR + KR][tx + KR + KR] = N.elements[tid + KR + KR * N.width];
+
+  __syncthreads();
+
+  float sum = 0.f;
+  // Convolute
+  int x1 = KR + tx;
+  int y1 = KR + ty;
+  for (i = -KR; i <= KR; i++)
+    for (j = -KR; j <= KR; j++)
+      sum += sN[x1 + i][y1 + j] * sM[KR + i][KR + j];
+  P.elements[tid] = sum;
 }
 
 
@@ -87,8 +147,14 @@ int main(int argc, char** argv) {
 	Matrix  P;
 	
 	srand(2013);
-	
-	if(argc != 5 && argc != 4) 
+	if (argc == 2) {
+          int in = atoi(argv[1]);
+		// Allocate and initialize the matrices
+		M  = AllocateMatrix(KERNEL_SIZE, KERNEL_SIZE, 1);
+		N  = AllocateMatrix(in, in, 1);
+		P  = AllocateMatrix(N.height, N.width, 0);
+        }
+        else if(argc != 5 && argc != 4 && argc != 2) 
 	{
 		// Allocate and initialize the matrices
 		M  = AllocateMatrix(KERNEL_SIZE, KERNEL_SIZE, 1);
@@ -112,16 +178,29 @@ int main(int argc, char** argv) {
 		(void)ReadFile(&N, argv[3]);
 	}
 
+    printf("Image size = %d x %d\n", P.width, P.height);
 	// M * N on the device
     ConvolutionOnDevice(M, N, P);
     
     // compute the matrix multiplication on the CPU for comparison
     Matrix reference = AllocateMatrix(P.height, P.width, 0);
+
+    float cpu;
+    cudaEvent_t cpu_start, cpu_end;
+    cudaEventCreate(&cpu_start);
+    cudaEventCreate(&cpu_end);
+    cudaEventRecord(cpu_start, NULL);
+    
     computeGold(reference.elements, M.elements, N.elements, N.height, N.width);
+    
+    cudaEventRecord(cpu_end, NULL);
+    cudaEventSynchronize(cpu_end);
+    cudaEventElapsedTime(&cpu, cpu_start, cpu_end);
+    printf("CPU time = %f \n", cpu);
         
     // in this case check if the result is equivalent to the expected soluion
 
-    bool res = CompareResults(reference.elements, P.elements, P.width * P.height, 0.01f);;
+    bool res = CompareResults(reference.elements, P.elements, P.width , P.height, 0.01f);
     printf("Test %s\n", (1 == res) ? "PASSED" : "FAILED");
     
     if(argc == 5)
@@ -148,27 +227,37 @@ void ConvolutionOnDevice(const Matrix M, const Matrix N, Matrix P)
 {
     // Load M and N to the device
     Matrix Md = AllocateDeviceMatrix(M);
-    CopyToDeviceMatrix(Md, M);
     Matrix Nd = AllocateDeviceMatrix(N);
-    CopyToDeviceMatrix(Nd, N);
-
     // Allocate P on the device
     Matrix Pd = AllocateDeviceMatrix(P);
-    CopyToDeviceMatrix(Pd, P); // Clear memory
 
     // Setup the execution configuration
-
-
+    dim3 grid((P.width + BLOCK_SIZE -1)/BLOCK_SIZE, (P.height + BLOCK_SIZE -1)/BLOCK_SIZE, 1);
+    dim3 block(BLOCK_SIZE, BLOCK_SIZE, 1);
+    float gpu;
+    cudaEvent_t gpu_start, gpu_end;
+    cudaEventCreate(&gpu_start);
+    cudaEventCreate(&gpu_end);
  
-    // Launch the device computation threads!
+    cudaEventRecord(gpu_start, NULL);
+    CopyToDeviceMatrix(Md, M);
+    CopyToDeviceMatrix(Nd, N);
+    CopyToDeviceMatrix(Pd, P); // Clear memory
 
+    // Launch the device computation threads!
+    ConvolutionKernel<<<grid, block>>>(Md, Nd, Pd);
     // Read P from the device
     CopyFromDeviceMatrix(P, Pd); 
+    cudaEventRecord(gpu_end, NULL);
+    cudaEventSynchronize(gpu_end);
+    cudaEventElapsedTime(&gpu, gpu_start, gpu_end);
 
     // Free device matrices
     FreeDeviceMatrix(&Md);
     FreeDeviceMatrix(&Nd);
     FreeDeviceMatrix(&Pd);
+
+    printf("GPU time = %f \n", gpu);
 
 }
 
@@ -242,13 +331,14 @@ void FreeMatrix(Matrix* M)
 }
 
 //compare the data stored in two arrays on the host
-bool CompareResults(float* A, float* B, int elements, float eps)
+bool CompareResults(float* A, float* B, int width, int height, float eps)
 {
-   for(unsigned int i = 0; i < elements; i++){
-      float error = A[i]-B[i];
-      if(error>eps){
-         return false;
-      } 
+   for(unsigned int i = 0; i < height; i++){
+     for (unsigned int j = 0; j < width; j++) { 
+      float error = A[j*height + i] - B[i*width + j];
+      if(error>eps)
+        return false;
+     }
    }
    return true;
 }

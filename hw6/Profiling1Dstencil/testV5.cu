@@ -50,26 +50,33 @@ void applyStencil1D_SEQ(int sIdx, int eIdx, const float *weights, float *in, flo
   }
 }
 
-__global__ void applyStencil1D(int sIdx, int eIdx, const float *weights, float *input, float *out) {
-    __shared__ float in[1024];
+__global__ void applyStencil1D(int sIdx, int eIdx, const float *weights, const float *input, float *out) {
+    __shared__ float in[RADIUS * 2 + 1027];
+    __shared__ float sw[RADIUS * 2 + 1];
     int tid = blockIdx.x*blockDim.x + threadIdx.x;
-    in[tid] = input[tid];
+    int x = threadIdx.x + RADIUS;
+    
+    in[x] = input[tid];
+    if (threadIdx.x < RADIUS) {
+      in[x - RADIUS] = input[tid - RADIUS];
+      in[x + blockDim.x] = input[tid + blockDim.x];
+    }
+    if (threadIdx.x < RADIUS * 2 + 1)
+      sw[threadIdx.x] = weights[threadIdx.x];
     __syncthreads();
     
-    int i = sIdx + tid;
-    int g_eIdx = gridDim.x * blockDim.x - sIdx;
-    if( i < g_eIdx ) {
-        float result = 0.f;
-        result += weights[0]*in[i-3];
-        result += weights[1]*in[i-2];
-        result += weights[2]*in[i-1];
-        result += weights[3]*in[i];
-        result += weights[4]*in[i+1];
-        result += weights[5]*in[i+2];
-        result += weights[6]*in[i+3];
-        result /=7.f;
-        out[i] = result;
+    float result = 0.f;
+    if (tid < eIdx) {
+    result += sw[0]*in[x-3];
+    result += sw[1]*in[x-2];
+    result += sw[2]*in[x-1];
+    result += sw[3]*in[x];
+    result += sw[4]*in[x+1];
+    result += sw[5]*in[x+2];
+    result += sw[6]*in[x+3];
+    result /=7.f;
     }
+    out[tid] = result;
 }
 
 int main(int argc, char *argv[]) {
@@ -87,18 +94,38 @@ int main(int argc, char *argv[]) {
   float *cuda_out= (float *)malloc(size); 
   initializeWeights(weights, RADIUS);
   initializeArray(in, N);
-  float *d_weights;  cudaMalloc(&d_weights, wsize);
-  float *d_in;       cudaMalloc(&d_in, size);
-  float *d_out;      cudaMalloc(&d_out, size);
+  float *d_weights;  cudaMalloc((void **)&d_weights, wsize);
+  float *d_in;       cudaMalloc((void **)&d_in, size);
+  float *d_out;      cudaMalloc((void **)&d_out, size);
   
+  // Timing variables
+  float cpu, gpu;
+  cudaEvent_t gpu_start, gpu_end;
+  cudaEvent_t cpu_start, cpu_end;
+  cudaEventCreate(&gpu_start);
+  cudaEventCreate(&gpu_end);
+  cudaEventCreate(&cpu_start);
+  cudaEventCreate(&cpu_end);
+
+  cudaEventRecord(gpu_start, NULL);
   cudaMemcpy(d_weights,weights,wsize,cudaMemcpyHostToDevice);
   cudaMemcpy(d_in, in, size, cudaMemcpyHostToDevice);
-  applyStencil1D<<<(N+1023)/1024, 1024>>>(RADIUS, N-RADIUS, d_weights, d_in, d_out);
-  applyStencil1D_SEQ(RADIUS, N-RADIUS, weights, in, out);
+  applyStencil1D<<<((N+1023)/1024), 1024>>>(RADIUS, N-RADIUS, d_weights, d_in, d_out);
   cudaMemcpy(cuda_out, d_out, size, cudaMemcpyDeviceToHost);
+  cudaEventRecord(gpu_end, NULL);
+  cudaEventSynchronize(gpu_end);
+  cudaEventElapsedTime(&gpu, gpu_start, gpu_end);
+  
+  cudaEventRecord(cpu_start, NULL);
+  applyStencil1D_SEQ(RADIUS, N-RADIUS, weights, in, out);
+  cudaEventRecord(cpu_end, NULL);
+  cudaEventSynchronize(cpu_end);
+  cudaEventElapsedTime(&cpu, cpu_start, cpu_end);
 
   int nDiffs = checkResults(RADIUS, N-RADIUS, cuda_out, out);
   nDiffs==0? std::cout<<"Looks good.\n": std::cout<<"Doesn't look good: " << nDiffs << "differences\n";
+  std::cout << "GPU time =  " << gpu*1000 << "\n";
+  std::cout << "CPU time =  " << cpu*1000 << "\n";
 
   //free resources
   free(weights); free(in); free(out); free(cuda_out);

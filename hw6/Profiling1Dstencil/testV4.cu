@@ -84,15 +84,45 @@ int main(int argc, char *argv[]) {
   float *d_weights;  cudaMalloc(&d_weights, wsize);
   float *d_in;       cudaMalloc(&d_in, size);
   float *d_out;      cudaMalloc(&d_out, size);
+
+  // Timing variables
+  float cpu, gpu;
+  cudaEvent_t gpu_start, gpu_end;
+  cudaEvent_t cpu_start, cpu_end;
+  cudaEventCreate(&gpu_start);
+  cudaEventCreate(&gpu_end);
+  cudaEventCreate(&cpu_start);
+  cudaEventCreate(&cpu_end);
   
+  cudaEventRecord(gpu_start, NULL);
   cudaMemcpy(d_weights,weights,wsize,cudaMemcpyHostToDevice);
   cudaMemcpy(d_in, in, size, cudaMemcpyHostToDevice);
-  applyStencil1D<<<(N+1023)/1024, 1024>>>(RADIUS, N-RADIUS, d_weights, d_in, d_out);
-  applyStencil1D_SEQ(RADIUS, N-RADIUS, weights, in, out);
+ 
+  dim3 grid;
+  if (N < 67108864)
+    grid.x = (N+1023)/1024;
+  else {
+    grid.x = (N+1023)/1024/2;
+    grid.y = 2;
+  }
+  dim3 block(1024, 1, 1);
+  
+  applyStencil1D<<<grid, block>>>(RADIUS, N-RADIUS, d_weights, d_in, d_out);
   cudaMemcpy(cuda_out, d_out, size, cudaMemcpyDeviceToHost);
+  cudaEventRecord(gpu_end, NULL);
+  cudaEventSynchronize(gpu_end);
+  cudaEventElapsedTime(&gpu, gpu_start, gpu_end);
+
+  cudaEventRecord(cpu_start, NULL);
+  applyStencil1D_SEQ(RADIUS, N-RADIUS, weights, in, out);
+  cudaEventRecord(cpu_end, NULL);
+  cudaEventSynchronize(cpu_end);
+  cudaEventElapsedTime(&cpu, cpu_start, cpu_end);
 
   int nDiffs = checkResults(RADIUS, N-RADIUS, cuda_out, out);
   nDiffs==0? std::cout<<"Looks good.\n": std::cout<<"Doesn't look good: " << nDiffs << "differences\n";
+  std::cout << "GPU time =  " << gpu*1000 << "\n";
+  std::cout << "CPU time =  " << cpu*1000 << "\n";
 
   //free resources
   free(weights); free(in); free(out); free(cuda_out);
