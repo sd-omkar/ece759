@@ -91,45 +91,47 @@ __global__ void ConvolutionKernel(Matrix M, Matrix N, Matrix P)
 
   __shared__ float sN[BLOCK_SIZE + 4][BLOCK_SIZE  + 4];
 
+  if (tid < N.width * N.height ) {
   // Handle 4 corner cases of P
   i = x - KR; j = y - KR;
   if (i < 0 || j < 0)
-    sN[tx][ty] = 0.f;
+    sN[ty][tx] = 0.f;
   else
     //sN[tx][ty] = 7.f;
     sN[ty][tx] = N.elements[tid - KR - KR * N.width];
+  __syncthreads();
   
   i = x + KR; j = y - KR;
   if (i > N.width - 1 || j < 0)
-    sN[tx + KR + KR][ty] = 0.f;
+    sN[ty][tx + KR + KR] = 0.f;
   else
     //sN[tx + KR + KR][ty] = 7.f;
     sN[ty][tx + KR + KR] = N.elements[tid + KR - KR * N.width];
+  __syncthreads();
 
   i = x - KR; j = y + KR;
   if (i < 0 || j > N.height - 1)
-    sN[tx][ty + KR + KR] = 0.f;
+    sN[ty + KR + KR][tx] = 0.f;
   else
     //sN[tx][ty + KR + KR] = 7.f;
     sN[ty + KR + KR][tx] = N.elements[tid - KR + KR * N.width];
+  __syncthreads();
 
   i = x + KR; j = y + KR;
   if (i > N.width - 1 || j > N.height -1)
-    sN[tx + KR + KR][ty + KR + KR] = 0.f;
+    sN[ty + KR + KR][tx + KR + KR] = 0.f;
   else
     //sN[tx + KR + KR][ty + KR + KR] = 7.f;
     sN[ty + KR + KR][tx + KR + KR] = N.elements[tid + KR + KR * N.width];
-
   __syncthreads();
 
   float sum = 0.f;
   // Convolute
-  int x1 = KR + tx;
-  int y1 = KR + ty;
-  for (i = -KR; i <= KR; i++)
-    for (j = -KR; j <= KR; j++)
-      sum += sN[x1 + i][y1 + j] * sM[KR + i][KR + j];
+  for (i = 0; i < KERNEL_SIZE; i++)
+    for (j = 0; j < KERNEL_SIZE; j++)
+      sum += sN[ty + i][tx + j] * sM[i][j];
   P.elements[tid] = sum;
+  }
 }
 
 
