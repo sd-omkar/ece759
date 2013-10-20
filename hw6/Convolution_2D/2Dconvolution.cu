@@ -91,7 +91,6 @@ __global__ void ConvolutionKernel(Matrix M, Matrix N, Matrix P)
 
   __shared__ float sN[BLOCK_SIZE + 4][BLOCK_SIZE  + 4];
 
-  if (tid < N.width * N.height ) {
   // Handle 4 corner cases of P
   i = x - KR; j = y - KR;
   if (i < 0 || j < 0)
@@ -130,8 +129,9 @@ __global__ void ConvolutionKernel(Matrix M, Matrix N, Matrix P)
   for (i = 0; i < KERNEL_SIZE; i++)
     for (j = 0; j < KERNEL_SIZE; j++)
       sum += sN[ty + i][tx + j] * sM[i][j];
-  P.elements[tid] = sum;
-  }
+
+  if (tx < N.width && ty < N.height)
+    P.elements[tid] = sum;
 }
 
 
@@ -194,7 +194,7 @@ int main(int argc, char** argv) {
     cudaEventRecord(cpu_end, NULL);
     cudaEventSynchronize(cpu_end);
     cudaEventElapsedTime(&cpu, cpu_start, cpu_end);
-    printf("CPU time = %f \n", cpu);
+    printf("CPU time = %f \n", cpu*1000);
         
     // in this case check if the result is equivalent to the expected soluion
 
@@ -256,7 +256,7 @@ void ConvolutionOnDevice(const Matrix M, const Matrix N, Matrix P)
     FreeDeviceMatrix(&Nd);
     FreeDeviceMatrix(&Pd);
 
-    printf("GPU time = %f \n", gpu);
+    printf("GPU time = %f \n", gpu*1000);
 
 }
 
@@ -332,22 +332,14 @@ void FreeMatrix(Matrix* M)
 //compare the data stored in two arrays on the host
 int CompareResults(float* A, float* B, int width, int height, float eps)
 {
-  int count1 = 0;
-   for(unsigned int i = 0; i < height; i++){
-     for (unsigned int j = 0; j < width; j++) { 
-      float error = A[j*height + i] - B[i*width + j];
-      if(error>eps)
-        count1++;
-     }
-   }
-   int count2 = 0;
+   int count = 0;
   for (unsigned int i = 0; i < width*height; i++) {
       float error = A[i] - B[i];
       if(error>eps)
-        count2++;
+        count++;
   }
-  printf("Count 1 = %d \nCount 2 = %d\n", count1, count2);
-   return count1;
+  printf("No. of differences = %d\n", count);
+   return count;
 }
 
 bool ReadParams(int* params, int size, char* file_name){
