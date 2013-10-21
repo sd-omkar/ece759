@@ -51,7 +51,9 @@ void applyStencil1D_SEQ(int sIdx, int eIdx, const float *weights, float *in, flo
 }
 
 __global__ void applyStencil1D(int sIdx, int eIdx, const float *weights, float *in, float *out) {
-    int i = sIdx + blockIdx.x*blockDim.x + threadIdx.x;
+    int x = blockIdx.x*blockDim.x + threadIdx.x;
+    int y = blockIdx.y*blockDim.y + threadIdx.y;
+    int i = sIdx + x + y * blockDim.x * gridDim.x;
     if( i < eIdx ) {
         float result = 0.f;
         result += weights[0]*in[i-3];
@@ -102,11 +104,11 @@ int main(int argc, char *argv[]) {
   if (N < 67108864)
     grid.x = (N+1023)/1024;
   else {
-    grid.x = (N+1023)/1024/2;
+    grid.x = 1 + (N+1023)/1024/2;
     grid.y = 2;
   }
   dim3 block(1024, 1, 1);
-  
+ 
   applyStencil1D<<<grid, block>>>(RADIUS, N-RADIUS, d_weights, d_in, d_out);
   cudaMemcpy(cuda_out, d_out, size, cudaMemcpyDeviceToHost);
   cudaEventRecord(gpu_end, NULL);

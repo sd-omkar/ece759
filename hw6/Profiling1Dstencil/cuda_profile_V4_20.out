@@ -1,0 +1,90 @@
+1000
+Looks good.
+GPU time =  184.256
+CPU time =  7.808
+# CUDA_PROFILE_LOG_VERSION 2.0
+# CUDA_DEVICE 0 GeForce GTX 480
+# CUDA_CONTEXT 1
+# TIMESTAMPFACTOR 132c5385524c12d2
+method,gputime,cputime,occupancy
+method=[ memcpyHtoD ] gputime=[ 1.792 ] cputime=[ 7.848 ] 
+method=[ memcpyHtoD ] gputime=[ 1.760 ] cputime=[ 7.768 ] 
+method=[ _Z14applyStencil1DiiPKfPfS1_ ] gputime=[ 6.336 ] cputime=[ 13.577 ] occupancy=[ 0.667 ] 
+method=[ memcpyDtoH ] gputime=[ 3.424 ] cputime=[ 17.581 ] 
+
+
+10000
+Looks good.
+GPU time =  220.864
+CPU time =  68.32
+# CUDA_PROFILE_LOG_VERSION 2.0
+# CUDA_DEVICE 0 GeForce GTX 480
+# CUDA_CONTEXT 1
+# TIMESTAMPFACTOR 132c5385524bd597
+method,gputime,cputime,occupancy
+method=[ memcpyHtoD ] gputime=[ 1.792 ] cputime=[ 6.208 ] 
+method=[ memcpyHtoD ] gputime=[ 7.168 ] cputime=[ 28.170 ] 
+method=[ _Z14applyStencil1DiiPKfPfS1_ ] gputime=[ 6.080 ] cputime=[ 14.397 ] occupancy=[ 0.667 ] 
+method=[ memcpyDtoH ] gputime=[ 14.912 ] cputime=[ 53.476 ] 
+
+
+100000
+Looks good.
+GPU time =  794.176
+CPU time =  704.352
+# CUDA_PROFILE_LOG_VERSION 2.0
+# CUDA_DEVICE 0 GeForce GTX 480
+# CUDA_CONTEXT 1
+# TIMESTAMPFACTOR 132c5385524b99dd
+method,gputime,cputime,occupancy
+method=[ memcpyHtoD ] gputime=[ 1.824 ] cputime=[ 5.568 ] 
+method=[ memcpyHtoD ] gputime=[ 86.752 ] cputime=[ 189.645 ] 
+method=[ _Z14applyStencil1DiiPKfPfS1_ ] gputime=[ 25.888 ] cputime=[ 15.072 ] occupancy=[ 0.667 ] 
+method=[ memcpyDtoH ] gputime=[ 129.632 ] cputime=[ 375.221 ] 
+
+
+1000000
+Looks good.
+GPU time =  4695.52
+CPU time =  6000.03
+# CUDA_PROFILE_LOG_VERSION 2.0
+# CUDA_DEVICE 0 GeForce GTX 480
+# CUDA_CONTEXT 1
+# TIMESTAMPFACTOR 132c5385524b5d2d
+method,gputime,cputime,occupancy
+method=[ memcpyHtoD ] gputime=[ 1.792 ] cputime=[ 6.011 ] 
+method=[ memcpyHtoD ] gputime=[ 1396.640 ] cputime=[ 1689.335 ] 
+method=[ _Z14applyStencil1DiiPKfPfS1_ ] gputime=[ 227.392 ] cputime=[ 14.962 ] occupancy=[ 0.667 ] 
+method=[ memcpyDtoH ] gputime=[ 1647.200 ] cputime=[ 2666.598 ] 
+
+
+10000000
+Looks good.
+GPU time =  36292.1
+CPU time =  62652.8
+# CUDA_PROFILE_LOG_VERSION 2.0
+# CUDA_DEVICE 0 GeForce GTX 480
+# CUDA_CONTEXT 1
+# TIMESTAMPFACTOR 132c5385524b0ec8
+method,gputime,cputime,occupancy
+method=[ memcpyHtoD ] gputime=[ 1.824 ] cputime=[ 5.785 ] 
+method=[ memcpyHtoD ] gputime=[ 15401.664 ] cputime=[ 15687.406 ] 
+method=[ _Z14applyStencil1DiiPKfPfS1_ ] gputime=[ 2211.616 ] cputime=[ 18.382 ] occupancy=[ 0.667 ] 
+method=[ memcpyDtoH ] gputime=[ 17395.584 ] cputime=[ 20213.688 ] 
+
+
+100000000
+Looks good.
+GPU time =  275947
+CPU time =  630203
+# CUDA_PROFILE_LOG_VERSION 2.0
+# CUDA_DEVICE 0 GeForce GTX 480
+# CUDA_CONTEXT 1
+# TIMESTAMPFACTOR 132c5385524a0c04
+method,gputime,cputime,occupancy
+method=[ memcpyHtoD ] gputime=[ 1.440 ] cputime=[ 5.525 ] 
+method=[ memcpyHtoD ] gputime=[ 107960.867 ] cputime=[ 108188.031 ] 
+method=[ _Z14applyStencil1DiiPKfPfS1_ ] gputime=[ 22053.951 ] cputime=[ 18.447 ] occupancy=[ 0.667 ] 
+method=[ memcpyDtoH ] gputime=[ 144984.641 ] cputime=[ 167422.797 ] 
+
+

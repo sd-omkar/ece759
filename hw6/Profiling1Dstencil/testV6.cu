@@ -12,8 +12,10 @@ int checkResults(int startElem, int endElem, float* cudaRes, float* res)
     int nDiffs=0;
     const float smallVal = 0.000001f;
     for(int i=startElem; i<endElem; i++)
-        if(fabs(cudaRes[i]-res[i])>smallVal)
+        if(fabs(cudaRes[i]-res[i])>smallVal) {
             nDiffs++;
+            //printf ("%d\n", i);
+        }
     return nDiffs;
 }
 
@@ -51,9 +53,12 @@ void applyStencil1D_SEQ(int sIdx, int eIdx, const float *weights, float *in, flo
 }
 
 __global__ void applyStencil1D(int sIdx, int eIdx, const float *weights, const float *input, float *out) {
-    __shared__ float in[RADIUS * 2 + 1027];
+    __shared__ float in[RADIUS * 2 + 1024];
     __shared__ float sw[RADIUS * 2 + 1];
-    int tid = blockIdx.x*blockDim.x + threadIdx.x;
+    int tx = blockIdx.x*blockDim.x + threadIdx.x;
+    int ty = blockIdx.y*blockDim.y + threadIdx.y;
+    //int tid = blockIdx.x*blockDim.x + threadIdx.x;
+    int tid = tx + ty * blockDim.x * gridDim.x;
     int x = threadIdx.x + RADIUS;
     
     in[x] = input[tid];
@@ -110,7 +115,17 @@ int main(int argc, char *argv[]) {
   cudaEventRecord(gpu_start, NULL);
   cudaMemcpy(d_weights,weights,wsize,cudaMemcpyHostToDevice);
   cudaMemcpy(d_in, in, size, cudaMemcpyHostToDevice);
-  applyStencil1D<<<((N+1023)/1024), 1024>>>(RADIUS, N-RADIUS, d_weights, d_in, d_out);
+
+  dim3 grid;
+  if (N < 67108864)
+    grid.x = (N+1023)/1024;
+  else {
+    grid.x = 1 + (N+1023)/1024/2;
+    grid.y = 2;
+  }
+  dim3 block(1024, 1, 1);
+  
+  applyStencil1D<<<grid, block>>>(RADIUS, N-RADIUS, d_weights, d_in, d_out);
   cudaMemcpy(cuda_out, d_out, size, cudaMemcpyDeviceToHost);
   cudaEventRecord(gpu_end, NULL);
   cudaEventSynchronize(gpu_end);
