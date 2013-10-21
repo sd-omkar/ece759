@@ -121,7 +121,7 @@ method=[ memcpyDtoH ] gputime=[ 5459.552 ] cputime=[ 7009.169 ]
 
 Image size = 4096 x 4096
 GPU time = 61461.601562 
-CPU time = 1768837.625000 
+CPU time = 1768837.625000    
 No. of differences = 0
 # CUDA_PROFILE_LOG_VERSION 2.0
 # CUDA_DEVICE 0 GeForce GTX 480
