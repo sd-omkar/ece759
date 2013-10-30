@@ -87,6 +87,8 @@ runTest( int argc, char** argv)
     
     const unsigned int array_mem_size = sizeof(double) * num_elements;
     double* h_data;
+    //if (cudaSuccess != cudaMallocHost(&h_data, array_mem_size)) 
+    //  perror("cudaMallocHost");
     if ((h_data = (double*) malloc(array_mem_size)) == NULL)
       perror("malloc");
     //if (posix_memalign((void **)&h_data, 8, array_mem_size) != 0)
@@ -119,7 +121,8 @@ runTest( int argc, char** argv)
     printf( "Test %s\n", (1 == result_regtest) ? "PASSED" : "FAILED");
     printf( "device: %lf  host: %lf\n", result, reference);
     // cleanup memory
-    free( h_data);
+   // free(h_data);
+    cudaFree(h_data);
 }
 
 // **===----------------- Modify this function ---------------------===**
