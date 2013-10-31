@@ -1,0 +1,58 @@
+Notes:
+
+--------------------
+
+Memcpy
+
+Provided files:
+    source:     q1.cu
+    executable: a.out
+    script:     run.sh      To run from size 2^1 to 2^30
+    logs:       log         Text file containing 4 output for each iteration
+    Plots       data.xls    Spreadsheet with calculations and plots
+Compiled with:
+    nvcc -O3 -arch=sm_20 q1.cu
+
+Because of pinned memory, the data transfers, both to and from, take lesser time. The reason being pages holding the 
+data are kept pinned in memory and not swapped out to the disk. Another obeservation is that the H2D copy is faster
+than D2H, mostly because it is carried out by different engines of the GPU.
+ 
+--------------------
+
+Reduction
+
+Provided files:
+    sourse      vector_reduction.cu vector_reduction_gold.cpp vector_reduction_kernel.h
+    Makefile    Different targets. Compiled with "make fast" for optimized executable
+    executable: q2.out  q2_pinned.out
+
+After expermenting with different hosts and different versions of executable,
+I found following observations:    
+
+I got the best CPU performance on Euler01. Pinning the memory had adverse effect on CPU timings but greatly reduced GPU time 
+
+[odeshmukh@euler01 Reduction]$ ./q2.out 50000000 10
+Cpu time = 37.865761
+Gpu time = 1920.364990
+Test PASSED
+device: -500181376.000000  host: -500181376.000000
+
+[odeshmukh@euler01 Reduction]$ ./q2_pinned.out 50000000 10
+Cpu time = 56.784897
+Gpu time = 111.421280
+Test PASSED
+device: -500181376.000000  host: -5
+
+On the other hand, I could get the most out of the GPU on Euler04 with pinned memory.  
+
+[odeshmukh@euler04 Reduction]$ ./q2.out 50000000 10
+Cpu time = 64.185181
+Gpu time = 117.351997
+Test PASSED
+device: -500181376.000000  host: -500181376.000000
+
+[odeshmukh@euler04 Reduction]$ ./q2_pinned.out 50000000 10
+Cpu time = 63.301857
+Gpu time = 82.995041
+Test PASSED
+device: -500181376.000000  host: -500181376.000000
