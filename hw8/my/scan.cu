@@ -6,7 +6,7 @@
 #include <assert.h>
 #include "scan_gold.cpp"
 
-#define BLOCK_SIZE 1024
+#define BLOCK_SIZE 512
 
 int checkResults(int startElem, int endElem, float* cudaRes, float* res)
 {
@@ -24,8 +24,8 @@ void initializeArray(float* arr, int nElements)
     const int myMaxNumber = 5;
     srand(26);
     for( int i=0; i<nElements; i++)
-      //arr[i] = (float)(rand() % (myMaxNumber - myMinNumber + 1) + myMinNumber);
-      arr[i] = 1.f;
+      arr[i] = (float)(rand() % (myMaxNumber - myMinNumber + 1) + myMinNumber);
+      //arr[i] = 1.f;
 }
 
 __global__ void scan_simple(float *out, float *in, int length) {
@@ -71,7 +71,7 @@ __global__ void scan_tree(float *out, float *in, int length) {
     offset <<= 1;
   }
 
-  if (tx == 0) data[length - 1] = in[tid];
+  if (tx == 0) data[2*blockDim.x - 1] = in[2*blockDim.x * (blockIdx.x + 1) - 1];
 
   // Sum down
   for (int jump = 1; jump < blockDim.x<<1; jump <<= 1) {
@@ -88,9 +88,32 @@ __global__ void scan_tree(float *out, float *in, int length) {
     }
   }
   __syncthreads();
+  if (tx == 0) data[0] = in[tid];
 
   out[2*tid] = data[2*tx];
   out[2*tid + 1] = data[2*tx + 1];
+}
+
+__global__ void reduce(float *g_data) {
+  extern __shared__ float data[];
+  int tid = threadIdx.x + blockIdx.x * blockDim.x;
+  int bid = blockIdx.x + 1;
+  int tx = threadIdx.x;
+
+  // Load partially scanned blocks and partial sums
+  data[tx] = g_data[tid + blockDim.x];
+  float *sum = data + blockDim.x;
+  for (int i = 0; i < gridDim.x; i++)
+    sum[i] = g_data[blockDim.x + i * blockDim.x -1];
+  __syncthreads();
+
+  // Add partial sum
+  for (int i = 0; i < bid; i++)
+    data[tx] += sum[i];
+  __syncthreads();
+
+  // Write back to global memory
+  g_data[tid + blockDim.x] = data[tx];
 }
 
 int main(int argc, char *argv[]) {
@@ -138,8 +161,13 @@ int main(int argc, char *argv[]) {
 
   assert(cudaSuccess == cudaMemcpy(d_in, h_in, size, cudaMemcpyHostToDevice));
   
-  //scan_simple<<<grid_simple, block, sizeof(float)*BLOCK_SIZE*2>>>(d_out, d_in, N);
-  scan_tree<<<grid_tree, block, sizeof(float)*BLOCK_SIZE*2>>>(d_out, d_in, N);
+  scan_simple<<<grid_simple, block, sizeof(float)*BLOCK_SIZE*2>>>(d_out, d_in, N);
+  int blocks_left = grid_simple.x - 1;
+  //scan_tree<<<grid_tree, block, sizeof(float)*BLOCK_SIZE*2>>>(d_out, d_in, N);
+  //int blocks_left = grid_tree.x - 1;
+  if (blocks_left > 0)
+    reduce<<<blocks_left, BLOCK_SIZE, sizeof(float)*(BLOCK_SIZE + blocks_left)>>>(d_out);
+    //reduce<<<blocks_left, BLOCK_SIZE*2, sizeof(float)*(BLOCK_SIZE*2 + blocks_left)>>>(d_out);
   
   assert(cudaSuccess == cudaMemcpy(cuda_out, d_out, size, cudaMemcpyDeviceToHost));
   
@@ -157,6 +185,7 @@ int main(int argc, char *argv[]) {
   cudaEventElapsedTime(&cpu, cpu_start, cpu_end);
 
   int nDiffs = checkResults(1, N-1, cuda_out, h_out + 1);
+  std::cout << "Size = " << N << "\n";
   nDiffs==0? std::cout<<"Looks good.\n": std::cout<<"Doesn't look good: " << nDiffs << "differences\n";
   std::cout << "GPU time =  " << gpu << "\n";
   std::cout << "CPU time =  " << cpu << "\n";
