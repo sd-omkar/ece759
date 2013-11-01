@@ -6,7 +6,7 @@
 #include <assert.h>
 #include "scan_gold.cpp"
 
-#define BLOCK_SIZE 512
+#define BLOCK_SIZE 1024
 
 int checkResults(int startElem, int endElem, float* cudaRes, float* res)
 {
@@ -24,18 +24,18 @@ void initializeArray(float* arr, int nElements)
     const int myMaxNumber = 5;
     srand(26);
     for( int i=0; i<nElements; i++)
-        arr[i] = (float)(rand() % (myMaxNumber - myMinNumber + 1) + myMinNumber);
+      //arr[i] = (float)(rand() % (myMaxNumber - myMinNumber + 1) + myMinNumber);
+      arr[i] = 1.f;
 }
 
-__global__ void scan(float *out, float *in, int length) {
+__global__ void scan_simple(float *out, float *in, int length) {
   extern __shared__ float data[];
-  
   int tid = threadIdx.x + blockIdx.x * blockDim.x;
   int tx = threadIdx.x;
-  int pout = 0; int pin = 1;
-
   data[tx] = in[tid];
-
+  int pout = 0; int pin = 1;
+  
+  if (tid < length) {
   for (int offset = 1; offset < blockDim.x; offset <<= 1) {
     pout = 1 - pout;
     pin = 1 - pin;
@@ -49,6 +49,48 @@ __global__ void scan(float *out, float *in, int length) {
   }
 
   out[tid] = data[pout * blockDim.x + tx];
+  }
+}
+
+__global__ void scan_tree(float *out, float *in, int length) {
+  extern __shared__ float data[];
+  int tid = threadIdx.x + blockIdx.x * blockDim.x;
+  int tx = threadIdx.x;
+  int offset = 1;
+  data[2*tx] = in[2*tid];
+  data[2*tx + 1] = in[2*tid + 1];
+
+  // Sum up
+  for (int jump = blockDim.x; jump > 0; jump >>= 1) {
+    __syncthreads();
+    if (tx < jump) {
+      int a = offset * (2*tx + 1) - 1;
+      int b = offset * (2*tx + 2) - 1;
+      data[b] += data[a];
+    }
+    offset <<= 1;
+  }
+
+  if (tx == 0) data[length - 1] = in[tid];
+
+  // Sum down
+  for (int jump = 1; jump < blockDim.x<<1; jump <<= 1) {
+    offset >>= 1;
+    __syncthreads();
+
+    if (tx < jump) {
+      int a = offset * (2*tx + 1) - 1;
+      int b = offset * (2*tx + 2) - 1;
+
+      float temp = data[a];
+      data[a] = data[b];
+      data[b] += temp;
+    }
+  }
+  __syncthreads();
+
+  out[2*tid] = data[2*tx];
+  out[2*tid + 1] = data[2*tx + 1];
 }
 
 int main(int argc, char *argv[]) {
@@ -87,20 +129,17 @@ int main(int argc, char *argv[]) {
   cudaEventCreate(&cpu_start);
   cudaEventCreate(&cpu_end);
   
-  dim3 grid;
-  if (N <= 65536 * BLOCK_SIZE)
-    grid.x = (N + BLOCK_SIZE - 1)/(BLOCK_SIZE);
-  else {
-    printf("Input %d too big\n", N);                                                          
-    exit(1);                                                                                   
-  }
+  dim3 grid_simple, grid_tree;
+  grid_simple.x = (N + BLOCK_SIZE - 1)/(BLOCK_SIZE);
+  grid_tree.x = (N + 2*BLOCK_SIZE - 1)/(2*BLOCK_SIZE);
   dim3 block(BLOCK_SIZE, 1, 1);
   
   cudaEventRecord(gpu_start, NULL);
 
   assert(cudaSuccess == cudaMemcpy(d_in, h_in, size, cudaMemcpyHostToDevice));
   
-  scan<<<grid, block, sizeof(float)*BLOCK_SIZE*2>>>(d_out, d_in, N);
+  //scan_simple<<<grid_simple, block, sizeof(float)*BLOCK_SIZE*2>>>(d_out, d_in, N);
+  scan_tree<<<grid_tree, block, sizeof(float)*BLOCK_SIZE*2>>>(d_out, d_in, N);
   
   assert(cudaSuccess == cudaMemcpy(cuda_out, d_out, size, cudaMemcpyDeviceToHost));
   
