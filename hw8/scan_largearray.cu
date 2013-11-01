@@ -42,6 +42,7 @@
 #include <string.h>
 #include <math.h>
 #include <cutil.h>
+#include "scan_gold.cpp"
 
 // You can use any other block size you wish.
 #define BLOCK_SIZE 256
