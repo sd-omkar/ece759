@@ -6,7 +6,7 @@
 #include <assert.h>
 #include "scan_gold.cpp"
 
-#define BLOCK_SIZE 512
+#define BLOCK_SIZE 1024
 
 int checkResults(int startElem, int endElem, float* cudaRes, float* res)
 {
@@ -49,9 +49,11 @@ __global__ void scan_simple(float *out, float *in, int length) {
   }
 
   out[tid] = data[pout * blockDim.x + tx];
+  if (tx == blockDim.x - 1) in[tid] = data[pout * blockDim.x + tx];
   }
 }
 
+/*
 __global__ void scan_tree(float *out, float *in, int length) {
   extern __shared__ float data[];
   int tid = threadIdx.x + blockIdx.x * blockDim.x;
@@ -93,8 +95,9 @@ __global__ void scan_tree(float *out, float *in, int length) {
   out[2*tid] = data[2*tx];
   out[2*tid + 1] = data[2*tx + 1];
 }
+*/
 
-__global__ void reduce(float *g_data) {
+__global__ void reduce(float *g_data, float *old_data) {
   extern __shared__ float data[];
   int tid = threadIdx.x + blockIdx.x * blockDim.x;
   int bid = blockIdx.x + 1;
@@ -104,7 +107,7 @@ __global__ void reduce(float *g_data) {
   data[tx] = g_data[tid + blockDim.x];
   float *sum = data + blockDim.x;
   for (int i = 0; i < gridDim.x; i++)
-    sum[i] = g_data[blockDim.x + i * blockDim.x -1];
+    sum[i] = old_data[blockDim.x + i * blockDim.x -1];
   __syncthreads();
 
   // Add partial sum
@@ -125,14 +128,20 @@ int main(int argc, char *argv[]) {
   int size = N * sizeof(float); 
   
   //allocate resources
-  float *h_in      = (float *)malloc(size);
-  assert(h_in != NULL);
+  float *h_in;
+  //h_in = (float *)malloc(size);
+  //assert(h_in != NULL);
+  assert(cudaSuccess == cudaMallocHost(&h_in, size));
   
-  float *h_out     = (float *)malloc(size); 
-  assert(h_out != NULL);
+  float *h_out;
+  //h_out = (float *)malloc(size); 
+  //assert(h_out != NULL);
+  assert(cudaSuccess == cudaMallocHost(&h_out, size));
   
-  float *cuda_out  = (float *)malloc(size); 
-  assert(cuda_out != NULL);
+  float *cuda_out;
+  //cuda_out = (float *)malloc(size); 
+  //assert(cuda_out != NULL);
+  assert(cudaSuccess == cudaMallocHost(&cuda_out, size));
   
   float *d_in;      
   assert(cudaSuccess == cudaMalloc(&d_in, size));
@@ -166,7 +175,7 @@ int main(int argc, char *argv[]) {
   //scan_tree<<<grid_tree, block, sizeof(float)*BLOCK_SIZE*2>>>(d_out, d_in, N);
   //int blocks_left = grid_tree.x - 1;
   if (blocks_left > 0)
-    reduce<<<blocks_left, BLOCK_SIZE, sizeof(float)*(BLOCK_SIZE + blocks_left)>>>(d_out);
+    reduce<<<blocks_left, BLOCK_SIZE, sizeof(float)*(BLOCK_SIZE + blocks_left)>>>(d_out, d_in);
     //reduce<<<blocks_left, BLOCK_SIZE*2, sizeof(float)*(BLOCK_SIZE*2 + blocks_left)>>>(d_out);
   
   assert(cudaSuccess == cudaMemcpy(cuda_out, d_out, size, cudaMemcpyDeviceToHost));
@@ -191,9 +200,9 @@ int main(int argc, char *argv[]) {
   std::cout << "CPU time =  " << cpu << "\n";
 
   //free resources
-  free(h_in); 
-  free(h_out); 
-  free(cuda_out);
+  cudaFree(h_in); 
+  cudaFree(h_out); 
+  cudaFree(cuda_out);
   cudaFree(d_in);  
   cudaFree(d_out);
   return 0;
