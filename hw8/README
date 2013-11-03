@@ -21,4 +21,4 @@ Obeservations:
 
 Notes:
     1) When optimization was set to level "O3", the scan failed beyong input size of 65536 elements.
-    2) Block size of 512 elements gave full occupancy. However this resulted in decreased performance as compared to block size of 1024 which gave the occupancy of 0.667
+    2) Block size of 512 elements gave full occupancy. However this resulted in decreased performance as compared to block size of 1024 which gave the occupancy of 0.667.
