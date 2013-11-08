@@ -1,0 +1,24 @@
+Report:
+
+Files Provided:
+    source/         Source files and a Makefile. Compile with default make target. Executable with "make fast" not working beyond 65536 elements.
+    data/           Compiled executables and their corresponding log files. The logs contain output of the program and cuda_profile_0.log output. Use "run.sh" to run from size of 2^10 to 2^24.
+    NVVP Snapshot   Profiling output for the input size of 2^24 elements.
+
+Description:
+    1) The scan is done in 2 steps. The first step calls kernel "scan_simple" which implements the O(n.lon(n)) algorithm by Hillis and Steele. In second step, kernel "reduce" uses the partial sums calculated in step 1 to reduce the array beyond BLOCK_SIZE.
+    2) Both the steps work with tiled shared memory of BLOCK_SIZE.
+    3) This implementation can handle any input size, it is not restricted to power-of-2.
+    4) Of the 4 goals, this implementation has tried achieving the following:
+        - Tiled solution
+        - O(n.log(n))) Algorithm
+        - Handle any input size
+    5) As far as shared memory bank conflicts are concerned, they occur only in step 1 of the program. The second kernel is free of bank conflicts.
+
+Obeservations:
+    1) Due the fact that step 2 run the kernel with reduction, the implementation fails to gain the same level of parallelism as obeserved in step 1. Thus GPU performance is much slower than expected.
+    2) This is evident in the profiling output of NVVP. (Snapshot provided). About 98% of GPU compute time is spent in kernel "reduce". The time spent in memory transfers is 11% of inclusive GPU time.
+
+Notes:
+    1) When optimization was set to level "O3", the scan failed beyong input size of 65536 elements.
+    2) Block size of 512 elements gave full occupancy. However this resulted in decreased performance as compared to block size of 1024 which gave the occupancy of 0.667.
