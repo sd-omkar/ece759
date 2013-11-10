@@ -3,6 +3,7 @@
 #include <thrust/generate.h>
 #include <thrust/copy.h>
 #include <thrust/scan.h>
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <cstdio>
@@ -52,7 +53,7 @@ int main (int argc, char *argv[]) {
   thrust::device_vector<float> d_result = h_data;
   thrust::exclusive_scan(d_result.begin(), d_result.end(), d_result.begin());
 
-  thrust::copy(d_result.begin(), d_result.end(), d_data.begin());
+  thrust::copy(d_result.begin(), d_result.end(), h_result.begin());
 
   cudaEventRecord(end_scan, NULL);
   cudaEventSynchronize(end_scan);
@@ -65,9 +66,20 @@ int main (int argc, char *argv[]) {
   cout << "\tHost result: " << h_sum << endl;
   cout << "\tDevice result: " << d_sum << endl;
 
+  if (thrust::equal(h_data.begin(), h_data.end(), h_result.begin())) {
   cout << "Prefix scan time: " << time_scan << endl;
   cout << "\tHost result: " << h_data[size-1] << endl;
-  cout << "\tDevice result: " << d_data[size-1] << endl;
+  cout << "\tDevice result: " << h_result[size-1] << endl;
+  }
+  else {
+    printf("Mismatch in scan results\n");
+    // Only for debugging
+    for(std::vector<float>::size_type i = 0; i != h_data.size(); i++) 
+    {
+      cout << h_data[i] << endl;
+      cout << h_result[i] << endl;
+    }
+  }
 
   return 0;
 }

@@ -1,0 +1,24 @@
+/usr/local/cuda/5.5.22/cuda/bin/..//include/thrust/system/detail/generic/count.inl(40): warning: calling a __host__ function from a __host__ __device__ function is not allowed
+          detected during:
+            instantiation of "CountType thrust::system::detail::generic::count_if_transform<InputType, Predicate, CountType>::operator()(const InputType &) [with InputType=int, Predicate=count5, CountType=signed long]" 
+/usr/local/cuda/5.5.22/cuda/bin/..//include/thrust/detail/function.h(187): here
+            instantiation of "Result thrust::detail::host_device_function<Function, Result>::operator()(const Argument &) const [with Function=thrust::system::detail::generic::count_if_transform<int, count5, signed long>, Result=signed long, Argument=thrust::device_reference<int>]" 
+/usr/local/cuda/5.5.22/cuda/bin/..//include/thrust/iterator/transform_iterator.h(306): here
+            instantiation of "thrust::detail::transform_iterator_base<AdaptableUnaryFunction, Iterator, Reference, Value>::type::reference thrust::transform_iterator<AdaptableUnaryFunction, Iterator, Reference, Value>::dereference() const [with AdaptableUnaryFunction=thrust::system::detail::generic::count_if_transform<int, count5, signed long>, Iterator=thrust::detail::normal_iterator<thrust::device_ptr<int>>, Reference=signed long, Value=thrust::use_default]" 
+/usr/local/cuda/5.5.22/cuda/bin/..//include/thrust/iterator/iterator_facade.h(128): here
+            instantiation of "Facade::reference thrust::iterator_core_access::dereference(const Facade &) [with Facade=thrust::transform_iterator<thrust::system::detail::generic::count_if_transform<int, count5, signed long>, thrust::detail::normal_iterator<thrust::device_ptr<int>>, signed long, thrust::use_default>]" 
+/usr/local/cuda/5.5.22/cuda/bin/..//include/thrust/iterator/iterator_facade.h(305): here
+            instantiation of "thrust::iterator_facade<Derived, Value, System, Traversal, Reference, Difference>::reference thrust::iterator_facade<Derived, Value, System, Traversal, Reference, Difference>::operator*() const [with Derived=thrust::transform_iterator<thrust::system::detail::generic::count_if_transform<int, count5, signed long>, thrust::detail::normal_iterator<thrust::device_ptr<int>>, signed long, thrust::use_default>, Value=signed long, System=thrust::device_system_tag, Traversal=thrust::random_access_device_iterator_tag, Reference=signed long, Difference=signed long]" 
+/usr/local/cuda/5.5.22/cuda/bin/..//include/thrust/system/cuda/detail/reduce.inl(95): here
+            [ 7 instantiation contexts not shown ]
+            instantiation of "OutputType thrust::system::detail::generic::transform_reduce(thrust::execution_policy<ExecutionPolicy> &, InputIterator, InputIterator, UnaryFunction, OutputType, BinaryFunction) [with ExecutionPolicy=thrust::system::cuda::detail::tag, InputIterator=thrust::detail::normal_iterator<thrust::device_ptr<int>>, UnaryFunction=thrust::system::detail::generic::count_if_transform<int, count5, signed long>, OutputType=signed long, BinaryFunction=thrust::plus<signed long>]" 
+/usr/local/cuda/5.5.22/cuda/bin/..//include/thrust/detail/transform_reduce.inl(45): here
+            instantiation of "OutputType thrust::transform_reduce(const thrust::detail::execution_policy_base<DerivedPolicy> &, InputIterator, InputIterator, UnaryFunction, OutputType, BinaryFunction) [with DerivedPolicy=thrust::system::cuda::detail::tag, InputIterator=thrust::detail::normal_iterator<thrust::device_ptr<int>>, UnaryFunction=thrust::system::detail::generic::count_if_transform<int, count5, signed long>, OutputType=signed long, BinaryFunction=thrust::plus<signed long>]" 
+(68): here
+            instantiation of "thrust::iterator_traits<InputIterator>::difference_type thrust::system::detail::generic::count_if(thrust::execution_policy<DerivedPolicy> &, InputIterator, InputIterator, Predicate) [with DerivedPolicy=thrust::system::cuda::detail::tag, InputIterator=thrust::detail::normal_iterator<thrust::device_ptr<int>>, Predicate=count5]" 
+/usr/local/cuda/5.5.22/cuda/bin/..//include/thrust/detail/count.inl(47): here
+            instantiation of "thrust::iterator_traits<InputIterator>::difference_type thrust::count_if(const thrust::detail::execution_policy_base<DerivedPolicy> &, InputIterator, InputIterator, Predicate) [with DerivedPolicy=thrust::system::cuda::detail::tag, InputIterator=thrust::detail::normal_iterator<thrust::device_ptr<int>>, Predicate=count5]" 
+/usr/local/cuda/5.5.22/cuda/bin/..//include/thrust/detail/count.inl(75): here
+            instantiation of "thrust::iterator_traits<InputIterator>::difference_type thrust::count_if(InputIterator, InputIterator, Predicate) [with InputIterator=thrust::detail::normal_iterator<thrust::device_ptr<int>>, Predicate=count5]" 
+q3.cu(46): here
+
