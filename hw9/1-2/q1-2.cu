@@ -74,11 +74,11 @@ int main (int argc, char *argv[]) {
   else {
     printf("Mismatch in scan results\n");
     // Only for debugging
-    for(std::vector<float>::size_type i = 0; i != h_data.size(); i++) 
+    /*for(std::vector<float>::size_type i = 0; i != h_data.size(); i++) 
     {
       cout << h_data[i] << endl;
       cout << h_result[i] << endl;
-    }
+    }*/
   }
 
   return 0;

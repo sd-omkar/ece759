@@ -20,10 +20,10 @@ int main (int argc, char *argv[]) {
   //populate data
   thrust::device_vector<int> day(N);
   day[0] = 0; day[1] = 0; day[2] = 1;
-  day[3] = 0; day[4] = 0; day[5] = 1;
-  day[6] = 0; day[7] = 0; day[8] = 1;
-  day[9] = 0; day[10] = 0; day[11] = 1;
-  day[12] = 0; day[13] = 0; day[14] = 1;
+  day[3] = 2; day[4] = 5; day[5] = 5;
+  day[6] = 6; day[7] = 6; day[8] = 7;
+  day[9] = 8; day[10] = 9; day[11] = 9;
+  day[12] = 9; day[13] = 10; day[14] = 11;
 
   thrust::device_vector<int> site(N);
   site[0] = 2; site[1] = 3; site[2] = 0;
