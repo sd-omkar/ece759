@@ -5,9 +5,10 @@
 
 #define N 1000001
 
-float fx(float x) {
-  return ( exp(sin(x)) * cos(x/40.f) );
-}
+#define fx(x) exp(sin(x))*cos(x/40.f)
+//float fx(float x) {
+//  return ( exp(sin(x)) * cos(x/40.f) );
+//}
 
 int main() {
   // Problem-1

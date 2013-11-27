@@ -1,0 +1,16 @@
+Files provided:
+  Source:     q1.c
+  Executable: a.out
+  Makefile
+
+Output:
+  Serial
+        Answer = 32.111652
+        Time = 158.825188 ms
+  Parallel
+        Answer = 32.121010
+        Time = 6.335029 ms
+  Number of processors = 64
+  Max threads = 64
+
+  
