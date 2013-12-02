@@ -1,16 +1,36 @@
-Files provided:
+Q3) Integral
+Files:
+Source:     q1.c
+Executable: a.out
+Makefile
+Data in log files gives results and timings for multiple run configurations.
+Results:
+Nodes	PPN		Avg. Time
+1		1		122.6648 ms
+1		4		44.5351  ms
+1		8		52.3768  ms
+2		4		44.8789  ms
+4		2		24.5717  ms
+
+Q4) Recution
+Files:
+CUDA/
+  Source:     vector_reduction_gold.cpp  vector_reduction.cu  vector_reduction_kernel.h
+  Executable: reduce.out
+  Makefile
+MPI/
   Source:     q1.c
   Executable: a.out
   Makefile
+Results:
+Max array size:   60000000
+CPU Time:         63.572674  ms
+CUDA GPU Time:    141.098724 ms
+MPI Time(np=64):  1684.6586  ms	 
 
-Output:
-  Serial
-        Answer = 32.111652
-        Time = 158.825188 ms
-  Parallel
-        Answer = 32.121010
-        Time = 6.335029 ms
-  Number of processors = 64
-  Max threads = 64
-
-  
+Q5) Transfers
+Files:
+Source:     q1.c
+Executable: a.out
+Makefile
+Results: Plots in *.png files

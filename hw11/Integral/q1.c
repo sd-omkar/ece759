@@ -37,7 +37,7 @@ int main(int argc, char *argv[]) {
 
   start_s = MPI_Wtime();
   for(int i=rank; i<N; i += size)
-    partial += coeff[i] * fx(x[i]);
+    partial += coeff[i] * fx(i*0.0001);
   partial = partial * 0.0001 / 48;
   MPI_Reduce(&partial, &final, 1, MPI_FLOAT, MPI_SUM, 0, MPI_COMM_WORLD);
   end_s = MPI_Wtime();
