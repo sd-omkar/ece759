@@ -25,10 +25,12 @@ int main(int argc, char *argv[]) {
   coeff[3] = coeff[N-3] = 49.f;
 
   // x
+  /*
   float x[N];
   for (int i=0; i<N; i++)
     //x[i] = (i+i+1)/2 * 0.0001;
     x[i] = (i) * 0.0001;
+  */
 
   float partial = 0.f;
   float final = 0.f;

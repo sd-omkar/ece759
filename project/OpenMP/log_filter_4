@@ -1,0 +1,154 @@
+
+Width:          8192
+Height:         8192
+Filter Size:    1 x 1
+Iterations:     3
+CPU Timing:     True
+Testing:        CPU (4-threads) , 
+
+
+********    Starting CPU (4-threads) run    ********
+CPU (4-threads): 0.092
+
+Width:          8192
+Height:         8192
+Filter Size:    2 x 2
+Iterations:     3
+CPU Timing:     True
+Testing:        CPU (4-threads) , 
+
+
+********    Starting CPU (4-threads) run    ********
+CPU (4-threads): 0.286667
+
+Width:          8192
+Height:         8192
+Filter Size:    3 x 3
+Iterations:     3
+CPU Timing:     True
+Testing:        CPU (4-threads) , 
+
+
+********    Starting CPU (4-threads) run    ********
+CPU (4-threads): 0.399667
+
+Width:          8192
+Height:         8192
+Filter Size:    4 x 4
+Iterations:     3
+CPU Timing:     True
+Testing:        CPU (4-threads) , 
+
+
+********    Starting CPU (4-threads) run    ********
+CPU (4-threads): 0.841667
+
+Width:          8192
+Height:         8192
+Filter Size:    5 x 5
+Iterations:     3
+CPU Timing:     True
+Testing:        CPU (4-threads) , 
+
+
+********    Starting CPU (4-threads) run    ********
+CPU (4-threads): 1.124
+
+Width:          8192
+Height:         8192
+Filter Size:    6 x 6
+Iterations:     3
+CPU Timing:     True
+Testing:        CPU (4-threads) , 
+
+
+********    Starting CPU (4-threads) run    ********
+CPU (4-threads): 1.484
+
+Width:          8192
+Height:         8192
+Filter Size:    7 x 7
+Iterations:     3
+CPU Timing:     True
+Testing:        CPU (4-threads) , 
+
+
+********    Starting CPU (4-threads) run    ********
+CPU (4-threads): 1.91367
+
+Width:          8192
+Height:         8192
+Filter Size:    8 x 8
+Iterations:     3
+CPU Timing:     True
+Testing:        CPU (4-threads) , 
+
+
+********    Starting CPU (4-threads) run    ********
+CPU (4-threads): 2.42433
+
+Width:          8192
+Height:         8192
+Filter Size:    9 x 9
+Iterations:     3
+CPU Timing:     True
+Testing:        CPU (4-threads) , 
+
+
+********    Starting CPU (4-threads) run    ********
+CPU (4-threads): 2.983
+
+Width:          8192
+Height:         8192
+Filter Size:    10 x 10
+Iterations:     3
+CPU Timing:     True
+Testing:        CPU (4-threads) , 
+
+
+********    Starting CPU (4-threads) run    ********
+CPU (4-threads): 3.62867
+
+Width:          8192
+Height:         8192
+Filter Size:    11 x 11
+Iterations:     3
+CPU Timing:     True
+Testing:        CPU (4-threads) , 
+
+
+********    Starting CPU (4-threads) run    ********
+CPU (4-threads): 4.33067
+
+Width:          8192
+Height:         8192
+Filter Size:    12 x 12
+Iterations:     3
+CPU Timing:     True
+Testing:        CPU (4-threads) , 
+
+
+********    Starting CPU (4-threads) run    ********
+CPU (4-threads): 5.11067
+
+Width:          8192
+Height:         8192
+Filter Size:    13 x 13
+Iterations:     3
+CPU Timing:     True
+Testing:        CPU (4-threads) , 
+
+
+********    Starting CPU (4-threads) run    ********
+CPU (4-threads): 8.25267
+
+Width:          8192
+Height:         8192
+Filter Size:    14 x 14
+Iterations:     3
+CPU Timing:     True
+Testing:        CPU (4-threads) , 
+
+
+********    Starting CPU (4-threads) run    ********
+CPU (4-threads): 9.363

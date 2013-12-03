@@ -1,0 +1,64 @@
+Image size = 8192 x 8192
+GPU time = 237371.421875 
+# CUDA_PROFILE_LOG_VERSION 2.0
+# CUDA_DEVICE 0 GeForce GTX 480
+# CUDA_CONTEXT 1
+# TIMESTAMPFACTOR 1337216b3b58da81
+method,gputime,cputime,occupancy
+method=[ memcpyHtoD ] gputime=[ 1.248 ] cputime=[ 7.496 ] 
+method=[ memcpyHtoD ] gputime=[ 73612.828 ] cputime=[ 73812.227 ] 
+method=[ memcpyHtoD ] gputime=[ 73441.859 ] cputime=[ 73563.969 ] 
+method=[ _Z17ConvolutionKernel6MatrixS_S_ ] gputime=[ 8164.128 ] cputime=[ 10.471 ] occupancy=[ 1.000 ] 
+method=[ memcpyDtoH ] gputime=[ 80774.211 ] cputime=[ 89390.219 ] 
+
+Image size = 8192 x 8192
+GPU time = 245897.953125 
+# CUDA_PROFILE_LOG_VERSION 2.0
+# CUDA_DEVICE 0 GeForce GTX 480
+# CUDA_CONTEXT 1
+# TIMESTAMPFACTOR 1337216b3b4852a0
+method,gputime,cputime,occupancy
+method=[ memcpyHtoD ] gputime=[ 1.280 ] cputime=[ 7.439 ] 
+method=[ memcpyHtoD ] gputime=[ 75897.344 ] cputime=[ 76098.094 ] 
+method=[ memcpyHtoD ] gputime=[ 74063.648 ] cputime=[ 74199.953 ] 
+method=[ _Z17ConvolutionKernel6MatrixS_S_ ] gputime=[ 12326.624 ] cputime=[ 9.841 ] occupancy=[ 1.000 ] 
+method=[ memcpyDtoH ] gputime=[ 82200.258 ] cputime=[ 95013.633 ] 
+
+Image size = 8192 x 8192
+GPU time = 244400.890625 
+# CUDA_PROFILE_LOG_VERSION 2.0
+# CUDA_DEVICE 0 GeForce GTX 480
+# CUDA_CONTEXT 1
+# TIMESTAMPFACTOR 1337216b3b3a3112
+method,gputime,cputime,occupancy
+method=[ memcpyHtoD ] gputime=[ 1.280 ] cputime=[ 7.500 ] 
+method=[ memcpyHtoD ] gputime=[ 73858.719 ] cputime=[ 74054.414 ] 
+method=[ memcpyHtoD ] gputime=[ 73582.492 ] cputime=[ 73713.383 ] 
+method=[ _Z17ConvolutionKernel6MatrixS_S_ ] gputime=[ 14122.528 ] cputime=[ 10.540 ] occupancy=[ 1.000 ] 
+method=[ memcpyDtoH ] gputime=[ 81450.781 ] cputime=[ 96035.453 ] 
+
+Image size = 8192 x 8192
+GPU time = 251667.062500 
+# CUDA_PROFILE_LOG_VERSION 2.0
+# CUDA_DEVICE 0 GeForce GTX 480
+# CUDA_CONTEXT 1
+# TIMESTAMPFACTOR 1337216b3b2d3383
+method,gputime,cputime,occupancy
+method=[ memcpyHtoD ] gputime=[ 1.280 ] cputime=[ 7.408 ] 
+method=[ memcpyHtoD ] gputime=[ 75442.336 ] cputime=[ 75631.633 ] 
+method=[ memcpyHtoD ] gputime=[ 75205.633 ] cputime=[ 75321.836 ] 
+method=[ _Z17ConvolutionKernel6MatrixS_S_ ] gputime=[ 16600.352 ] cputime=[ 13.618 ] occupancy=[ 1.000 ] 
+method=[ memcpyDtoH ] gputime=[ 82928.578 ] cputime=[ 100072.641 ] 
+
+Image size = 8192 x 8192
+GPU time = 249211.265625 
+# CUDA_PROFILE_LOG_VERSION 2.0
+# CUDA_DEVICE 0 GeForce GTX 480
+# CUDA_CONTEXT 1
+# TIMESTAMPFACTOR 1337216b3b1f1b96
+method,gputime,cputime,occupancy
+method=[ memcpyHtoD ] gputime=[ 1.248 ] cputime=[ 7.722 ] 
+method=[ memcpyHtoD ] gputime=[ 73804.578 ] cputime=[ 74002.406 ] 
+method=[ memcpyHtoD ] gputime=[ 73481.508 ] cputime=[ 73598.023 ] 
+method=[ _Z17ConvolutionKernel6MatrixS_S_ ] gputime=[ 19472.863 ] cputime=[ 11.254 ] occupancy=[ 1.000 ] 
+method=[ memcpyDtoH ] gputime=[ 81036.062 ] cputime=[ 100970.656 ] 

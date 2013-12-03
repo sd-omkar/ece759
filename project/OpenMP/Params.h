@@ -129,9 +129,9 @@ void InitParams(int argc, char* argv[])
     params.nInWidth = params.nWidth + (params.nFilterWidth-1);
     params.nInHeight = params.nHeight + (params.nFilterWidth-1);
 
-    params.ompThreads.push_back(16);
-    //params.ompThreads.push_back(1);
-    //params.ompThreads.push_back(8);
+    //params.ompThreads.push_back(4);
+    //params.ompThreads.push_back(16);
+    params.ompThreads.push_back(64);
     params.nOmpRuns = params.ompThreads.size();
 }
 
