@@ -1,7 +1,7 @@
 #!/bin/bash
-#PBS -N cpu_filter
+#PBS -N sse_filter
 #PBS -l nodes=1:ppn=1,walltime=10:00:00
-#PBS -d /home/odeshmukh/work/project/Base
+#PBS -d /home/odeshmukh/work/project/SSE
 
 for i in {1..14}
 do
