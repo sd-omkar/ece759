@@ -8,7 +8,7 @@ Testing:        CPU (1-threads) ,
 
 
 ********    Starting CPU (1-threads) run    ********
-CPU (1-threads): 16.216
+CPU (1-threads): 13.4877
 
 Width:          5000
 Height:         5000
@@ -19,7 +19,7 @@ Testing:        CPU (1-threads) ,
 
 
 ********    Starting CPU (1-threads) run    ********
-CPU (1-threads): 25.2993
+CPU (1-threads): 20.9003
 
 Width:          6000
 Height:         6000
@@ -30,7 +30,7 @@ Testing:        CPU (1-threads) ,
 
 
 ********    Starting CPU (1-threads) run    ********
-CPU (1-threads): 36.3657
+CPU (1-threads): 30.4007
 
 Width:          7000
 Height:         7000
@@ -41,7 +41,7 @@ Testing:        CPU (1-threads) ,
 
 
 ********    Starting CPU (1-threads) run    ********
-CPU (1-threads): 49.7027
+CPU (1-threads): 42.0823
 
 Width:          8000
 Height:         8000
@@ -52,7 +52,7 @@ Testing:        CPU (1-threads) ,
 
 
 ********    Starting CPU (1-threads) run    ********
-CPU (1-threads): 65.3283
+CPU (1-threads): 53.9237
 
 Width:          9000
 Height:         9000
@@ -63,7 +63,7 @@ Testing:        CPU (1-threads) ,
 
 
 ********    Starting CPU (1-threads) run    ********
-CPU (1-threads): 82.4397
+CPU (1-threads): 67.8127
 
 Width:          10000
 Height:         10000
@@ -74,7 +74,7 @@ Testing:        CPU (1-threads) ,
 
 
 ********    Starting CPU (1-threads) run    ********
-CPU (1-threads): 101.053
+CPU (1-threads): 83.4737
 
 Width:          11000
 Height:         11000
@@ -85,7 +85,7 @@ Testing:        CPU (1-threads) ,
 
 
 ********    Starting CPU (1-threads) run    ********
-CPU (1-threads): 123.388
+CPU (1-threads): 102.595
 
 Width:          12000
 Height:         12000
@@ -96,7 +96,7 @@ Testing:        CPU (1-threads) ,
 
 
 ********    Starting CPU (1-threads) run    ********
-CPU (1-threads): 146.2
+CPU (1-threads): 120.229
 
 Width:          13000
 Height:         13000
@@ -107,7 +107,7 @@ Testing:        CPU (1-threads) ,
 
 
 ********    Starting CPU (1-threads) run    ********
-CPU (1-threads): 170.648
+CPU (1-threads): 141.622
 
 Width:          14000
 Height:         14000
@@ -118,7 +118,7 @@ Testing:        CPU (1-threads) ,
 
 
 ********    Starting CPU (1-threads) run    ********
-CPU (1-threads): 198.318
+CPU (1-threads): 164.196
 
 Width:          15000
 Height:         15000
@@ -129,7 +129,7 @@ Testing:        CPU (1-threads) ,
 
 
 ********    Starting CPU (1-threads) run    ********
-CPU (1-threads): 227.099
+CPU (1-threads): 188.062
 
 Width:          16000
 Height:         16000
@@ -140,4 +140,4 @@ Testing:        CPU (1-threads) ,
 
 
 ********    Starting CPU (1-threads) run    ********
-CPU (1-threads): 259.003
+CPU (1-threads): 215.066
