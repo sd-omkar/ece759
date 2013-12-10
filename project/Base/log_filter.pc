@@ -8,7 +8,7 @@ Testing:        CPU (1-threads) ,
 
 
 ********    Starting CPU (1-threads) run    ********
-CPU (1-threads): 9.45767
+CPU (1-threads): 8.399
 
 Width:          8192
 Height:         8192
@@ -19,7 +19,7 @@ Testing:        CPU (1-threads) ,
 
 
 ********    Starting CPU (1-threads) run    ********
-CPU (1-threads): 33.0163
+CPU (1-threads): 29.115
 
 Width:          8192
 Height:         8192
@@ -30,7 +30,7 @@ Testing:        CPU (1-threads) ,
 
 
 ********    Starting CPU (1-threads) run    ********
-CPU (1-threads): 71.727
+CPU (1-threads): 63.822
 
 Width:          8192
 Height:         8192
@@ -41,7 +41,7 @@ Testing:        CPU (1-threads) ,
 
 
 ********    Starting CPU (1-threads) run    ********
-CPU (1-threads): 125.169
+CPU (1-threads): 109.901
 
 Width:          8192
 Height:         8192
@@ -52,7 +52,7 @@ Testing:        CPU (1-threads) ,
 
 
 ********    Starting CPU (1-threads) run    ********
-CPU (1-threads): 192.347
+CPU (1-threads): 168.805
 
 Width:          8192
 Height:         8192
@@ -63,4 +63,4 @@ Testing:        CPU (1-threads) ,
 
 
 ********    Starting CPU (1-threads) run    ********
-CPU (1-threads): 274.693
+CPU (1-threads): 240.019

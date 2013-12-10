@@ -1,2 +1,2 @@
 all:
-	g++ -O3 main.cpp Timer.cpp -fopenmp
+	g++ main.cpp Timer.cpp -fopenmp

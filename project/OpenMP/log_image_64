@@ -1,187 +1,143 @@
 
 Width:          4000
 Height:         4000
-Filter Size:    9 x 9
+Filter Size:    16 x 16
 Iterations:     3
 CPU Timing:     True
 Testing:        CPU (64-threads) , 
 
 
 ********    Starting CPU (64-threads) run    ********
-CPU (64-threads): 0.0533333
-
-Width:          4500
-Height:         4500
-Filter Size:    9 x 9
-Iterations:     3
-CPU Timing:     True
-Testing:        CPU (64-threads) , 
-
-
-********    Starting CPU (64-threads) run    ********
-CPU (64-threads): 0.0676667
+CPU (64-threads): 0.946
 
 Width:          5000
 Height:         5000
-Filter Size:    9 x 9
+Filter Size:    16 x 16
 Iterations:     3
 CPU Timing:     True
 Testing:        CPU (64-threads) , 
 
 
 ********    Starting CPU (64-threads) run    ********
-CPU (64-threads): 0.0836667
-
-Width:          5500
-Height:         5500
-Filter Size:    9 x 9
-Iterations:     3
-CPU Timing:     True
-Testing:        CPU (64-threads) , 
-
-
-********    Starting CPU (64-threads) run    ********
-CPU (64-threads): 0.100667
+CPU (64-threads): 1.337
 
 Width:          6000
 Height:         6000
-Filter Size:    9 x 9
+Filter Size:    16 x 16
 Iterations:     3
 CPU Timing:     True
 Testing:        CPU (64-threads) , 
 
 
 ********    Starting CPU (64-threads) run    ********
-CPU (64-threads): 0.120333
-
-Width:          6500
-Height:         6500
-Filter Size:    9 x 9
-Iterations:     3
-CPU Timing:     True
-Testing:        CPU (64-threads) , 
-
-
-********    Starting CPU (64-threads) run    ********
-CPU (64-threads): 0.140667
+CPU (64-threads): 1.90667
 
 Width:          7000
 Height:         7000
-Filter Size:    9 x 9
+Filter Size:    16 x 16
 Iterations:     3
 CPU Timing:     True
 Testing:        CPU (64-threads) , 
 
 
 ********    Starting CPU (64-threads) run    ********
-CPU (64-threads): 0.161667
-
-Width:          7500
-Height:         7500
-Filter Size:    9 x 9
-Iterations:     3
-CPU Timing:     True
-Testing:        CPU (64-threads) , 
-
-
-********    Starting CPU (64-threads) run    ********
-CPU (64-threads): 0.190333
+CPU (64-threads): 2.594
 
 Width:          8000
 Height:         8000
-Filter Size:    9 x 9
+Filter Size:    16 x 16
 Iterations:     3
 CPU Timing:     True
 Testing:        CPU (64-threads) , 
 
 
 ********    Starting CPU (64-threads) run    ********
-CPU (64-threads): 0.378667
-
-Width:          8500
-Height:         8500
-Filter Size:    9 x 9
-Iterations:     3
-CPU Timing:     True
-Testing:        CPU (64-threads) , 
-
-
-********    Starting CPU (64-threads) run    ********
-CPU (64-threads): 0.238333
+CPU (64-threads): 3.371
 
 Width:          9000
 Height:         9000
-Filter Size:    9 x 9
+Filter Size:    16 x 16
 Iterations:     3
 CPU Timing:     True
 Testing:        CPU (64-threads) , 
 
 
 ********    Starting CPU (64-threads) run    ********
-CPU (64-threads): 0.271
-
-Width:          9500
-Height:         9500
-Filter Size:    9 x 9
-Iterations:     3
-CPU Timing:     True
-Testing:        CPU (64-threads) , 
-
-
-********    Starting CPU (64-threads) run    ********
-CPU (64-threads): 0.298
+CPU (64-threads): 4.27833
 
 Width:          10000
 Height:         10000
-Filter Size:    9 x 9
+Filter Size:    16 x 16
 Iterations:     3
 CPU Timing:     True
 Testing:        CPU (64-threads) , 
 
 
 ********    Starting CPU (64-threads) run    ********
-CPU (64-threads): 0.528
-
-Width:          10500
-Height:         10500
-Filter Size:    9 x 9
-Iterations:     3
-CPU Timing:     True
-Testing:        CPU (64-threads) , 
-
-
-********    Starting CPU (64-threads) run    ********
-CPU (64-threads): 0.365667
+CPU (64-threads): 5.29133
 
 Width:          11000
 Height:         11000
-Filter Size:    9 x 9
+Filter Size:    16 x 16
 Iterations:     3
 CPU Timing:     True
 Testing:        CPU (64-threads) , 
 
 
 ********    Starting CPU (64-threads) run    ********
-CPU (64-threads): 0.396333
-
-Width:          11500
-Height:         11500
-Filter Size:    9 x 9
-Iterations:     3
-CPU Timing:     True
-Testing:        CPU (64-threads) , 
-
-
-********    Starting CPU (64-threads) run    ********
-CPU (64-threads): 0.443
+CPU (64-threads): 6.37133
 
 Width:          12000
 Height:         12000
-Filter Size:    9 x 9
+Filter Size:    16 x 16
 Iterations:     3
 CPU Timing:     True
 Testing:        CPU (64-threads) , 
 
 
 ********    Starting CPU (64-threads) run    ********
-CPU (64-threads): 0.680333
+CPU (64-threads): 9.112
+
+Width:          13000
+Height:         13000
+Filter Size:    16 x 16
+Iterations:     3
+CPU Timing:     True
+Testing:        CPU (64-threads) , 
+
+
+********    Starting CPU (64-threads) run    ********
+CPU (64-threads): 9.02267
+
+Width:          14000
+Height:         14000
+Filter Size:    16 x 16
+Iterations:     3
+CPU Timing:     True
+Testing:        CPU (64-threads) , 
+
+
+********    Starting CPU (64-threads) run    ********
+CPU (64-threads): 10.3977
+
+Width:          15000
+Height:         15000
+Filter Size:    16 x 16
+Iterations:     3
+CPU Timing:     True
+Testing:        CPU (64-threads) , 
+
+
+********    Starting CPU (64-threads) run    ********
+CPU (64-threads): 12.56
+
+Width:          16000
+Height:         16000
+Filter Size:    16 x 16
+Iterations:     3
+CPU Timing:     True
+Testing:        CPU (64-threads) , 
+
+
+********    Starting CPU (64-threads) run    ********
+CPU (64-threads): 13.527

@@ -3,7 +3,7 @@
 #PBS -l nodes=1:ppn=64,walltime=10:00:00
 #PBS -d /home/odeshmukh/work/project/OpenMP
 
-for i in {1..14}
+for i in {4..24..4}
 do
   ./a.out.4 -f $i -x 8192 -y 8192 >> log_filter_4
   ./a.out.16 -f $i -x 8192 -y 8192 >> log_filter_16
