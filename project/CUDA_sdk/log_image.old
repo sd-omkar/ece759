@@ -1,0 +1,975 @@
+[./convolutionSeparable] - Starting...
+GPU Device 0: "GeForce GTX 480" with compute capability 2.0
+
+Image Width x Height = 3968 x 3968
+
+Allocating and initializing host arrays...
+Allocating and initializing CUDA arrays...
+Running GPU convolution (16 identical iterations)...
+
+
+Reading back GPU results...
+
+convolutionSeparable, Throughput = 2.7799 MPixels/sec, Time = 5.66381 s, Size = 15745024 Pixels, NumDevsUsed = 1, Workgroup = 0
+Checking the results...
+ ...running convolutionRowCPU()
+ ...running convolutionColumnCPU()
+ ...comparing the results
+ ...Relative L2 norm: 0.000000E+00
+
+Shutting down...
+Test passed
+---------------
+# CUDA_PROFILE_LOG_VERSION 2.0
+# CUDA_DEVICE 0 GeForce GTX 480
+# CUDA_CONTEXT 1
+# TIMESTAMPFACTOR 13371fa1175397c5
+method,gputime,cputime,occupancy
+method=[ memcpyHtoD ] gputime=[ 1.792 ] cputime=[ 8.009 ] 
+method=[ memcpyHtoD ] gputime=[ 15916.320 ] cputime=[ 16026.011 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 1502.720 ] cputime=[ 13.389 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 1271.776 ] cputime=[ 4.726 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 1498.528 ] cputime=[ 10.495 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 1268.608 ] cputime=[ 6.118 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 1497.696 ] cputime=[ 6.039 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 1271.360 ] cputime=[ 5.762 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 1497.536 ] cputime=[ 6.785 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 1271.424 ] cputime=[ 5.811 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 1497.408 ] cputime=[ 5.453 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 1268.032 ] cputime=[ 5.351 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 1509.408 ] cputime=[ 5.945 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 1282.048 ] cputime=[ 5.767 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 1510.400 ] cputime=[ 6.189 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 1280.544 ] cputime=[ 5.730 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 1510.240 ] cputime=[ 5.823 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 1281.280 ] cputime=[ 5.728 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 1510.816 ] cputime=[ 6.660 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 1281.600 ] cputime=[ 5.953 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 1509.472 ] cputime=[ 6.074 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 1282.752 ] cputime=[ 5.719 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 1521.760 ] cputime=[ 5.761 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 1299.136 ] cputime=[ 5.733 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 1523.232 ] cputime=[ 5.509 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 1296.288 ] cputime=[ 5.792 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 1521.728 ] cputime=[ 5.932 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 1292.448 ] cputime=[ 5.469 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 1524.288 ] cputime=[ 6.188 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 1293.920 ] cputime=[ 5.535 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 1527.712 ] cputime=[ 5.547 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 1309.728 ] cputime=[ 5.472 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 1536.480 ] cputime=[ 6.236 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 1310.720 ] cputime=[ 6.116 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 1533.120 ] cputime=[ 5.535 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 1308.288 ] cputime=[ 5.467 ] occupancy=[ 0.667 ] 
+method=[ memcpyDtoH ] gputime=[ 25941.633 ] cputime=[ 26390.240 ] 
+---------------
+[./convolutionSeparable] - Starting...
+GPU Device 0: "GeForce GTX 480" with compute capability 2.0
+
+Image Width x Height = 4480 x 4480
+
+Allocating and initializing host arrays...
+Allocating and initializing CUDA arrays...
+Running GPU convolution (16 identical iterations)...
+
+
+Reading back GPU results...
+
+convolutionSeparable, Throughput = 2.7844 MPixels/sec, Time = 7.20806 s, Size = 20070400 Pixels, NumDevsUsed = 1, Workgroup = 0
+Checking the results...
+ ...running convolutionRowCPU()
+ ...running convolutionColumnCPU()
+ ...comparing the results
+ ...Relative L2 norm: 0.000000E+00
+
+Shutting down...
+Test passed
+---------------
+# CUDA_PROFILE_LOG_VERSION 2.0
+# CUDA_DEVICE 0 GeForce GTX 480
+# CUDA_CONTEXT 1
+# TIMESTAMPFACTOR 13371fa11715541e
+method,gputime,cputime,occupancy
+method=[ memcpyHtoD ] gputime=[ 1.792 ] cputime=[ 7.943 ] 
+method=[ memcpyHtoD ] gputime=[ 20237.568 ] cputime=[ 20360.742 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 1913.216 ] cputime=[ 14.586 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 1623.040 ] cputime=[ 4.679 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 1908.896 ] cputime=[ 5.532 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 1619.040 ] cputime=[ 3.929 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 1907.552 ] cputime=[ 3.702 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 1623.456 ] cputime=[ 3.668 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 1907.584 ] cputime=[ 4.043 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 1623.136 ] cputime=[ 3.655 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 1907.584 ] cputime=[ 3.787 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 1622.880 ] cputime=[ 3.516 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 1907.520 ] cputime=[ 3.546 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 1623.584 ] cputime=[ 3.603 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 1907.584 ] cputime=[ 3.546 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 1622.752 ] cputime=[ 3.600 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 1907.552 ] cputime=[ 3.848 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 1621.888 ] cputime=[ 3.519 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 1907.328 ] cputime=[ 3.894 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 1620.576 ] cputime=[ 3.648 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 1907.104 ] cputime=[ 3.555 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 1618.432 ] cputime=[ 3.504 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 1922.176 ] cputime=[ 3.812 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 1638.976 ] cputime=[ 3.637 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 1923.392 ] cputime=[ 3.566 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 1636.128 ] cputime=[ 3.595 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 1938.240 ] cputime=[ 3.554 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 1657.248 ] cputime=[ 3.565 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 1938.880 ] cputime=[ 4.221 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 1654.304 ] cputime=[ 3.604 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 1941.952 ] cputime=[ 3.549 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 1658.144 ] cputime=[ 3.554 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 1940.384 ] cputime=[ 3.581 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 1658.080 ] cputime=[ 3.557 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 1939.136 ] cputime=[ 3.566 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 1655.072 ] cputime=[ 3.754 ] occupancy=[ 0.667 ] 
+method=[ memcpyDtoH ] gputime=[ 33819.297 ] cputime=[ 33998.438 ] 
+---------------
+[./convolutionSeparable] - Starting...
+GPU Device 0: "GeForce GTX 480" with compute capability 2.0
+
+Image Width x Height = 4992 x 4992
+
+Allocating and initializing host arrays...
+Allocating and initializing CUDA arrays...
+Running GPU convolution (16 identical iterations)...
+
+
+Reading back GPU results...
+
+convolutionSeparable, Throughput = 2.7835 MPixels/sec, Time = 8.95281 s, Size = 24920064 Pixels, NumDevsUsed = 1, Workgroup = 0
+Checking the results...
+ ...running convolutionRowCPU()
+ ...running convolutionColumnCPU()
+ ...comparing the results
+ ...Relative L2 norm: 0.000000E+00
+
+Shutting down...
+Test passed
+---------------
+# CUDA_PROFILE_LOG_VERSION 2.0
+# CUDA_DEVICE 0 GeForce GTX 480
+# CUDA_CONTEXT 1
+# TIMESTAMPFACTOR 13371fa116a52bc0
+method,gputime,cputime,occupancy
+method=[ memcpyHtoD ] gputime=[ 1.760 ] cputime=[ 8.036 ] 
+method=[ memcpyHtoD ] gputime=[ 25151.809 ] cputime=[ 25275.123 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 2374.816 ] cputime=[ 14.027 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2013.824 ] cputime=[ 4.597 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 2370.944 ] cputime=[ 5.344 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2009.856 ] cputime=[ 3.972 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 2369.792 ] cputime=[ 3.789 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2013.536 ] cputime=[ 4.108 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 2369.664 ] cputime=[ 4.247 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2013.760 ] cputime=[ 3.849 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 2369.952 ] cputime=[ 3.686 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2013.568 ] cputime=[ 3.623 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 2369.888 ] cputime=[ 3.639 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2013.056 ] cputime=[ 3.948 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 2369.376 ] cputime=[ 3.697 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2014.240 ] cputime=[ 3.611 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 2369.280 ] cputime=[ 3.640 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2009.408 ] cputime=[ 3.663 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 2369.088 ] cputime=[ 4.038 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2010.208 ] cputime=[ 4.016 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 2388.832 ] cputime=[ 3.723 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2034.464 ] cputime=[ 3.599 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 2387.808 ] cputime=[ 3.733 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2034.272 ] cputime=[ 3.621 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 2387.616 ] cputime=[ 3.693 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2033.664 ] cputime=[ 3.927 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 2389.376 ] cputime=[ 3.711 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2035.744 ] cputime=[ 3.640 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 2386.848 ] cputime=[ 4.134 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2033.568 ] cputime=[ 3.775 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 2387.456 ] cputime=[ 3.715 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2034.048 ] cputime=[ 3.953 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 2384.512 ] cputime=[ 3.663 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2032.256 ] cputime=[ 3.590 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 2388.608 ] cputime=[ 3.657 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2034.976 ] cputime=[ 3.635 ] occupancy=[ 0.667 ] 
+method=[ memcpyDtoH ] gputime=[ 41901.727 ] cputime=[ 42571.695 ] 
+---------------
+[./convolutionSeparable] - Starting...
+GPU Device 0: "GeForce GTX 480" with compute capability 2.0
+
+Image Width x Height = 5504 x 5504
+
+Allocating and initializing host arrays...
+Allocating and initializing CUDA arrays...
+Running GPU convolution (16 identical iterations)...
+
+
+Reading back GPU results...
+
+convolutionSeparable, Throughput = 2.7719 MPixels/sec, Time = 10.92912 s, Size = 30294016 Pixels, NumDevsUsed = 1, Workgroup = 0
+Checking the results...
+ ...running convolutionRowCPU()
+ ...running convolutionColumnCPU()
+ ...comparing the results
+ ...Relative L2 norm: 0.000000E+00
+
+Shutting down...
+Test passed
+---------------
+# CUDA_PROFILE_LOG_VERSION 2.0
+# CUDA_DEVICE 0 GeForce GTX 480
+# CUDA_CONTEXT 1
+# TIMESTAMPFACTOR 13371fa116940eca
+method,gputime,cputime,occupancy
+method=[ memcpyHtoD ] gputime=[ 1.792 ] cputime=[ 7.782 ] 
+method=[ memcpyHtoD ] gputime=[ 30492.129 ] cputime=[ 30628.416 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 2885.120 ] cputime=[ 14.110 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2454.624 ] cputime=[ 4.816 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 2880.736 ] cputime=[ 5.386 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2450.336 ] cputime=[ 3.909 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 2879.424 ] cputime=[ 3.806 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2450.656 ] cputime=[ 3.757 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 2878.720 ] cputime=[ 4.185 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2451.200 ] cputime=[ 4.019 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 2878.880 ] cputime=[ 3.669 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2452.192 ] cputime=[ 3.641 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 2878.080 ] cputime=[ 3.633 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2450.560 ] cputime=[ 3.660 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 2901.120 ] cputime=[ 3.680 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2479.168 ] cputime=[ 4.147 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 2900.128 ] cputime=[ 3.828 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2476.832 ] cputime=[ 3.618 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 2926.592 ] cputime=[ 4.078 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2506.016 ] cputime=[ 3.726 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 2924.768 ] cputime=[ 3.687 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2505.984 ] cputime=[ 3.961 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 2922.656 ] cputime=[ 3.635 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2504.256 ] cputime=[ 3.647 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 2923.616 ] cputime=[ 3.639 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2500.864 ] cputime=[ 3.681 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 2924.640 ] cputime=[ 3.659 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2503.488 ] cputime=[ 3.927 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 2952.224 ] cputime=[ 3.994 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2532.768 ] cputime=[ 3.679 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 2994.624 ] cputime=[ 3.703 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2584.384 ] cputime=[ 3.617 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 2997.248 ] cputime=[ 3.705 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2582.080 ] cputime=[ 3.920 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 3038.048 ] cputime=[ 3.689 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2637.856 ] cputime=[ 3.631 ] occupancy=[ 0.667 ] 
+method=[ memcpyDtoH ] gputime=[ 50835.457 ] cputime=[ 51451.023 ] 
+---------------
+[./convolutionSeparable] - Starting...
+GPU Device 0: "GeForce GTX 480" with compute capability 2.0
+
+Image Width x Height = 6016 x 6016
+
+Allocating and initializing host arrays...
+Allocating and initializing CUDA arrays...
+Running GPU convolution (16 identical iterations)...
+
+
+Reading back GPU results...
+
+convolutionSeparable, Throughput = 2.7650 MPixels/sec, Time = 13.08956 s, Size = 36192256 Pixels, NumDevsUsed = 1, Workgroup = 0
+Checking the results...
+ ...running convolutionRowCPU()
+ ...running convolutionColumnCPU()
+ ...comparing the results
+ ...Relative L2 norm: 0.000000E+00
+
+Shutting down...
+Test passed
+---------------
+# CUDA_PROFILE_LOG_VERSION 2.0
+# CUDA_DEVICE 0 GeForce GTX 480
+# CUDA_CONTEXT 1
+# TIMESTAMPFACTOR 13371fa1167a5ffe
+method,gputime,cputime,occupancy
+method=[ memcpyHtoD ] gputime=[ 2.144 ] cputime=[ 8.118 ] 
+method=[ memcpyHtoD ] gputime=[ 36940.574 ] cputime=[ 37046.855 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 3444.352 ] cputime=[ 15.138 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2922.880 ] cputime=[ 4.419 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 3440.192 ] cputime=[ 6.072 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2919.296 ] cputime=[ 3.866 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 3438.976 ] cputime=[ 3.670 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2922.336 ] cputime=[ 3.599 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 3439.040 ] cputime=[ 4.162 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2921.248 ] cputime=[ 3.597 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 3439.456 ] cputime=[ 3.822 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2921.920 ] cputime=[ 3.688 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 3438.720 ] cputime=[ 3.523 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2916.768 ] cputime=[ 3.516 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 3467.424 ] cputime=[ 3.540 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2951.264 ] cputime=[ 3.504 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 3467.776 ] cputime=[ 3.797 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2949.120 ] cputime=[ 3.497 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 3467.584 ] cputime=[ 3.887 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2947.616 ] cputime=[ 3.660 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 3493.632 ] cputime=[ 3.573 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2976.544 ] cputime=[ 3.518 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 3494.656 ] cputime=[ 3.812 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 2973.024 ] cputime=[ 3.591 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 3552.096 ] cputime=[ 3.548 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 3046.144 ] cputime=[ 3.580 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 3554.656 ] cputime=[ 3.536 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 3034.304 ] cputime=[ 3.616 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 3549.024 ] cputime=[ 4.288 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 3039.968 ] cputime=[ 3.599 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 3574.976 ] cputime=[ 3.556 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 3076.288 ] cputime=[ 3.499 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 3575.648 ] cputime=[ 3.482 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 3072.064 ] cputime=[ 3.497 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 3580.736 ] cputime=[ 3.846 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 3071.072 ] cputime=[ 3.516 ] occupancy=[ 0.667 ] 
+method=[ memcpyDtoH ] gputime=[ 61412.574 ] cputime=[ 61714.656 ] 
+---------------
+[./convolutionSeparable] - Starting...
+GPU Device 0: "GeForce GTX 480" with compute capability 2.0
+
+Image Width x Height = 6528 x 6528
+
+Allocating and initializing host arrays...
+Allocating and initializing CUDA arrays...
+Running GPU convolution (16 identical iterations)...
+
+
+Reading back GPU results...
+
+convolutionSeparable, Throughput = 2.6475 MPixels/sec, Time = 16.09644 s, Size = 42614784 Pixels, NumDevsUsed = 1, Workgroup = 0
+Checking the results...
+ ...running convolutionRowCPU()
+ ...running convolutionColumnCPU()
+ ...comparing the results
+ ...Relative L2 norm: 0.000000E+00
+
+Shutting down...
+Test passed
+---------------
+# CUDA_PROFILE_LOG_VERSION 2.0
+# CUDA_DEVICE 0 GeForce GTX 480
+# CUDA_CONTEXT 1
+# TIMESTAMPFACTOR 13371fa1166d5139
+method,gputime,cputime,occupancy
+method=[ memcpyHtoD ] gputime=[ 1.472 ] cputime=[ 8.240 ] 
+method=[ memcpyHtoD ] gputime=[ 62100.992 ] cputime=[ 62491.840 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 4055.584 ] cputime=[ 14.327 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 3443.072 ] cputime=[ 4.866 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 4051.232 ] cputime=[ 5.142 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 3440.960 ] cputime=[ 4.409 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 4049.856 ] cputime=[ 3.785 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 3440.896 ] cputime=[ 3.736 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 4048.896 ] cputime=[ 4.329 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 3434.464 ] cputime=[ 3.810 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 4049.280 ] cputime=[ 3.728 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 3435.680 ] cputime=[ 4.028 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 4083.392 ] cputime=[ 3.723 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 3476.608 ] cputime=[ 3.670 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 4084.192 ] cputime=[ 3.639 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 3468.896 ] cputime=[ 3.683 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 4081.536 ] cputime=[ 3.668 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 3469.472 ] cputime=[ 4.011 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 4081.600 ] cputime=[ 4.127 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 3467.904 ] cputime=[ 3.836 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 4078.208 ] cputime=[ 3.647 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 3501.472 ] cputime=[ 3.716 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 4112.800 ] cputime=[ 3.648 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 3506.304 ] cputime=[ 3.960 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 4146.336 ] cputime=[ 3.696 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 3547.200 ] cputime=[ 3.750 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 4148.736 ] cputime=[ 3.650 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 3545.824 ] cputime=[ 3.679 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 4145.856 ] cputime=[ 4.161 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 3541.536 ] cputime=[ 4.140 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 4180.288 ] cputime=[ 3.742 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 3586.048 ] cputime=[ 3.708 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 4212.128 ] cputime=[ 3.679 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 3616.992 ] cputime=[ 3.770 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 4212.736 ] cputime=[ 7.703 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 3614.112 ] cputime=[ 4.282 ] occupancy=[ 0.667 ] 
+method=[ memcpyDtoH ] gputime=[ 64622.559 ] cputime=[ 65255.941 ] 
+---------------
+[./convolutionSeparable] - Starting...
+GPU Device 0: "GeForce GTX 480" with compute capability 2.0
+
+Image Width x Height = 7040 x 7040
+
+Allocating and initializing host arrays...
+Allocating and initializing CUDA arrays...
+Running GPU convolution (16 identical iterations)...
+
+
+Reading back GPU results...
+
+convolutionSeparable, Throughput = 2.7895 MPixels/sec, Time = 17.76750 s, Size = 49561600 Pixels, NumDevsUsed = 1, Workgroup = 0
+Checking the results...
+ ...running convolutionRowCPU()
+ ...running convolutionColumnCPU()
+ ...comparing the results
+ ...Relative L2 norm: 0.000000E+00
+
+Shutting down...
+Test passed
+---------------
+# CUDA_PROFILE_LOG_VERSION 2.0
+# CUDA_DEVICE 0 GeForce GTX 480
+# CUDA_CONTEXT 1
+# TIMESTAMPFACTOR 13371fa1165ede02
+method,gputime,cputime,occupancy
+method=[ memcpyHtoD ] gputime=[ 1.792 ] cputime=[ 7.948 ] 
+method=[ memcpyHtoD ] gputime=[ 49999.457 ] cputime=[ 50110.797 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 4718.368 ] cputime=[ 13.600 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 4018.432 ] cputime=[ 4.551 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 4713.120 ] cputime=[ 6.128 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 4015.200 ] cputime=[ 3.966 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 4712.800 ] cputime=[ 4.173 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 4019.296 ] cputime=[ 3.658 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 4712.096 ] cputime=[ 4.344 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 4014.912 ] cputime=[ 3.713 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 4711.200 ] cputime=[ 3.664 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 4016.064 ] cputime=[ 3.600 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 4710.144 ] cputime=[ 3.921 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 4011.296 ] cputime=[ 3.593 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 4710.432 ] cputime=[ 3.631 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 4009.120 ] cputime=[ 3.540 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 4748.512 ] cputime=[ 3.572 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 4057.472 ] cputime=[ 3.590 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 4750.912 ] cputime=[ 4.289 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 4054.176 ] cputime=[ 3.654 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 4788.416 ] cputime=[ 3.632 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 4095.264 ] cputime=[ 3.609 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 4826.400 ] cputime=[ 3.646 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 4146.720 ] cputime=[ 3.587 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 4828.288 ] cputime=[ 3.901 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 4145.024 ] cputime=[ 3.605 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 4824.416 ] cputime=[ 3.617 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 4137.792 ] cputime=[ 3.571 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 4829.216 ] cputime=[ 3.961 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 4144.544 ] cputime=[ 3.895 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 4825.536 ] cputime=[ 3.881 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 4143.232 ] cputime=[ 3.619 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 4863.488 ] cputime=[ 3.643 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 4181.920 ] cputime=[ 3.643 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 4940.256 ] cputime=[ 3.612 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 4275.296 ] cputime=[ 3.553 ] occupancy=[ 0.667 ] 
+method=[ memcpyDtoH ] gputime=[ 82203.906 ] cputime=[ 82874.719 ] 
+---------------
+[./convolutionSeparable] - Starting...
+GPU Device 0: "GeForce GTX 480" with compute capability 2.0
+
+Image Width x Height = 7552 x 7552
+
+Allocating and initializing host arrays...
+Allocating and initializing CUDA arrays...
+Running GPU convolution (16 identical iterations)...
+
+
+Reading back GPU results...
+
+convolutionSeparable, Throughput = 2.7134 MPixels/sec, Time = 21.01869 s, Size = 57032704 Pixels, NumDevsUsed = 1, Workgroup = 0
+Checking the results...
+ ...running convolutionRowCPU()
+ ...running convolutionColumnCPU()
+ ...comparing the results
+ ...Relative L2 norm: 0.000000E+00
+
+Shutting down...
+Test passed
+---------------
+# CUDA_PROFILE_LOG_VERSION 2.0
+# CUDA_DEVICE 0 GeForce GTX 480
+# CUDA_CONTEXT 1
+# TIMESTAMPFACTOR 13371fa116510733
+method,gputime,cputime,occupancy
+method=[ memcpyHtoD ] gputime=[ 1.568 ] cputime=[ 8.312 ] 
+method=[ memcpyHtoD ] gputime=[ 77162.078 ] cputime=[ 77500.117 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 5425.344 ] cputime=[ 14.328 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 4600.000 ] cputime=[ 4.828 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 5420.640 ] cputime=[ 5.493 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 4597.824 ] cputime=[ 4.084 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 5419.616 ] cputime=[ 4.419 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 4598.080 ] cputime=[ 3.783 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 5419.584 ] cputime=[ 4.304 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 4591.616 ] cputime=[ 3.849 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 5418.656 ] cputime=[ 3.782 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 4585.920 ] cputime=[ 3.670 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 5464.672 ] cputime=[ 3.993 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 4635.232 ] cputime=[ 3.719 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 5463.968 ] cputime=[ 3.697 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 4638.112 ] cputime=[ 3.661 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 5459.936 ] cputime=[ 3.681 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 4637.504 ] cputime=[ 3.770 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 5506.976 ] cputime=[ 4.403 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 4693.632 ] cputime=[ 3.823 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 5510.720 ] cputime=[ 3.678 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 4692.896 ] cputime=[ 3.639 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 5505.152 ] cputime=[ 3.729 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 4691.552 ] cputime=[ 3.712 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 5502.240 ] cputime=[ 3.973 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 4689.504 ] cputime=[ 3.785 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 5504.672 ] cputime=[ 3.693 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 4683.584 ] cputime=[ 3.655 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 5503.072 ] cputime=[ 4.082 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 4683.616 ] cputime=[ 3.760 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 5537.984 ] cputime=[ 4.067 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 4734.080 ] cputime=[ 3.671 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 5542.112 ] cputime=[ 3.645 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 4744.800 ] cputime=[ 3.649 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 5549.728 ] cputime=[ 3.673 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 4736.608 ] cputime=[ 3.849 ] occupancy=[ 0.667 ] 
+method=[ memcpyDtoH ] gputime=[ 85483.523 ] cputime=[ 85971.844 ] 
+---------------
+[./convolutionSeparable] - Starting...
+GPU Device 0: "GeForce GTX 480" with compute capability 2.0
+
+Image Width x Height = 8064 x 8064
+
+Allocating and initializing host arrays...
+Allocating and initializing CUDA arrays...
+Running GPU convolution (16 identical iterations)...
+
+
+Reading back GPU results...
+
+convolutionSeparable, Throughput = 2.7965 MPixels/sec, Time = 23.25306 s, Size = 65028096 Pixels, NumDevsUsed = 1, Workgroup = 0
+Checking the results...
+ ...running convolutionRowCPU()
+ ...running convolutionColumnCPU()
+ ...comparing the results
+ ...Relative L2 norm: 0.000000E+00
+
+Shutting down...
+Test passed
+---------------
+# CUDA_PROFILE_LOG_VERSION 2.0
+# CUDA_DEVICE 0 GeForce GTX 480
+# CUDA_CONTEXT 1
+# TIMESTAMPFACTOR 13371fa11641fb09
+method,gputime,cputime,occupancy
+method=[ memcpyHtoD ] gputime=[ 1.792 ] cputime=[ 7.960 ] 
+method=[ memcpyHtoD ] gputime=[ 65429.055 ] cputime=[ 65541.047 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 6195.296 ] cputime=[ 21.248 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 5304.992 ] cputime=[ 4.702 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 6190.816 ] cputime=[ 5.217 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 5300.032 ] cputime=[ 3.940 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 6189.984 ] cputime=[ 4.090 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 5306.080 ] cputime=[ 3.641 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 6188.992 ] cputime=[ 4.174 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 5308.512 ] cputime=[ 3.674 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 6189.216 ] cputime=[ 3.620 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 5292.864 ] cputime=[ 3.619 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 6187.264 ] cputime=[ 3.907 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 5295.008 ] cputime=[ 3.558 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 6236.160 ] cputime=[ 3.584 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 5345.504 ] cputime=[ 3.552 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 6235.296 ] cputime=[ 3.595 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 5347.232 ] cputime=[ 3.566 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 6232.000 ] cputime=[ 4.256 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 5347.680 ] cputime=[ 3.696 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 6234.432 ] cputime=[ 3.590 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 5349.472 ] cputime=[ 3.595 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 6274.336 ] cputime=[ 3.574 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 5403.488 ] cputime=[ 3.593 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 6283.104 ] cputime=[ 3.896 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 5408.192 ] cputime=[ 3.576 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 6328.576 ] cputime=[ 3.604 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 5470.848 ] cputime=[ 3.592 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 6324.832 ] cputime=[ 3.855 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 5473.216 ] cputime=[ 3.613 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 6332.704 ] cputime=[ 3.844 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 5471.008 ] cputime=[ 3.703 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 6326.176 ] cputime=[ 3.593 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 5466.400 ] cputime=[ 3.544 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 6372.704 ] cputime=[ 3.542 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 5531.296 ] cputime=[ 3.562 ] occupancy=[ 0.667 ] 
+method=[ memcpyDtoH ] gputime=[ 107488.320 ] cputime=[ 108159.297 ] 
+---------------
+[./convolutionSeparable] - Starting...
+GPU Device 0: "GeForce GTX 480" with compute capability 2.0
+
+Image Width x Height = 8576 x 8576
+
+Allocating and initializing host arrays...
+Allocating and initializing CUDA arrays...
+Running GPU convolution (16 identical iterations)...
+
+
+Reading back GPU results...
+
+convolutionSeparable, Throughput = 2.6778 MPixels/sec, Time = 27.46556 s, Size = 73547776 Pixels, NumDevsUsed = 1, Workgroup = 0
+Checking the results...
+ ...running convolutionRowCPU()
+ ...running convolutionColumnCPU()
+ ...comparing the results
+ ...Relative L2 norm: 0.000000E+00
+
+Shutting down...
+Test passed
+---------------
+# CUDA_PROFILE_LOG_VERSION 2.0
+# CUDA_DEVICE 0 GeForce GTX 480
+# CUDA_CONTEXT 1
+# TIMESTAMPFACTOR 13371fa1163203da
+method,gputime,cputime,occupancy
+method=[ memcpyHtoD ] gputime=[ 1.472 ] cputime=[ 8.454 ] 
+method=[ memcpyHtoD ] gputime=[ 106417.953 ] cputime=[ 106771.648 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 6991.904 ] cputime=[ 15.148 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 5925.888 ] cputime=[ 4.814 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 6988.416 ] cputime=[ 5.551 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 5923.008 ] cputime=[ 4.137 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 6986.464 ] cputime=[ 4.462 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 5924.992 ] cputime=[ 3.838 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 6986.816 ] cputime=[ 4.282 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 5925.184 ] cputime=[ 3.793 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 6986.400 ] cputime=[ 3.664 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 5925.280 ] cputime=[ 3.739 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 6986.336 ] cputime=[ 4.206 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 5924.544 ] cputime=[ 3.721 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 6985.984 ] cputime=[ 3.676 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 5925.280 ] cputime=[ 3.686 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 6986.304 ] cputime=[ 3.721 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 5924.416 ] cputime=[ 3.974 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 6986.976 ] cputime=[ 4.101 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 5925.248 ] cputime=[ 3.711 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 6987.040 ] cputime=[ 3.705 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 5925.056 ] cputime=[ 3.657 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 6985.344 ] cputime=[ 3.652 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 5918.528 ] cputime=[ 3.737 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 6986.112 ] cputime=[ 4.040 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 5917.504 ] cputime=[ 3.668 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 7039.584 ] cputime=[ 3.722 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 5984.480 ] cputime=[ 4.090 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 7041.728 ] cputime=[ 3.684 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 5989.120 ] cputime=[ 3.724 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 7039.040 ] cputime=[ 4.023 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 5978.816 ] cputime=[ 3.719 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 7097.120 ] cputime=[ 3.670 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 6044.096 ] cputime=[ 3.718 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 7095.232 ] cputime=[ 3.668 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 6034.368 ] cputime=[ 3.706 ] occupancy=[ 0.667 ] 
+method=[ memcpyDtoH ] gputime=[ 111660.227 ] cputime=[ 111945.648 ] 
+---------------
+[./convolutionSeparable] - Starting...
+GPU Device 0: "GeForce GTX 480" with compute capability 2.0
+
+Image Width x Height = 9088 x 9088
+
+Allocating and initializing host arrays...
+Allocating and initializing CUDA arrays...
+Running GPU convolution (16 identical iterations)...
+
+
+Reading back GPU results...
+
+convolutionSeparable, Throughput = 2.8061 MPixels/sec, Time = 29.43281 s, Size = 82591744 Pixels, NumDevsUsed = 1, Workgroup = 0
+Checking the results...
+ ...running convolutionRowCPU()
+ ...running convolutionColumnCPU()
+ ...comparing the results
+ ...Relative L2 norm: 0.000000E+00
+
+Shutting down...
+Test passed
+---------------
+# CUDA_PROFILE_LOG_VERSION 2.0
+# CUDA_DEVICE 0 GeForce GTX 480
+# CUDA_CONTEXT 1
+# TIMESTAMPFACTOR 13371fa1161a256c
+method,gputime,cputime,occupancy
+method=[ memcpyHtoD ] gputime=[ 1.792 ] cputime=[ 7.766 ] 
+method=[ memcpyHtoD ] gputime=[ 83212.703 ] cputime=[ 83330.953 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 7858.048 ] cputime=[ 14.471 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 6688.224 ] cputime=[ 4.571 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 7853.600 ] cputime=[ 5.441 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 6684.288 ] cputime=[ 4.303 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 7851.520 ] cputime=[ 3.768 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 6687.872 ] cputime=[ 4.307 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 7851.328 ] cputime=[ 3.727 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 6687.488 ] cputime=[ 3.874 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 7851.488 ] cputime=[ 3.672 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 6687.296 ] cputime=[ 3.978 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 7850.336 ] cputime=[ 3.588 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 6687.168 ] cputime=[ 3.622 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 7849.792 ] cputime=[ 3.664 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 6675.936 ] cputime=[ 3.649 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 7848.608 ] cputime=[ 3.613 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 6675.104 ] cputime=[ 4.185 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 7915.520 ] cputime=[ 3.728 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 6752.736 ] cputime=[ 3.716 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 7915.616 ] cputime=[ 3.618 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 6752.928 ] cputime=[ 3.669 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 7914.816 ] cputime=[ 3.611 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 6755.648 ] cputime=[ 3.968 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 7974.144 ] cputime=[ 3.803 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 6837.600 ] cputime=[ 3.704 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 7978.176 ] cputime=[ 3.610 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 6826.304 ] cputime=[ 4.042 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 7982.240 ] cputime=[ 3.693 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 6847.008 ] cputime=[ 3.960 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 8041.728 ] cputime=[ 3.649 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 6933.632 ] cputime=[ 3.670 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 8105.184 ] cputime=[ 3.638 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 7094.304 ] cputime=[ 3.674 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 8299.488 ] cputime=[ 3.603 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 7228.672 ] cputime=[ 3.908 ] occupancy=[ 0.667 ] 
+method=[ memcpyDtoH ] gputime=[ 135962.938 ] cputime=[ 136555.891 ] 
+---------------
+[./convolutionSeparable] - Starting...
+GPU Device 0: "GeForce GTX 480" with compute capability 2.0
+
+Image Width x Height = 9600 x 9600
+
+Allocating and initializing host arrays...
+Allocating and initializing CUDA arrays...
+Running GPU convolution (16 identical iterations)...
+
+
+Reading back GPU results...
+
+convolutionSeparable, Throughput = 2.8408 MPixels/sec, Time = 32.44194 s, Size = 92160000 Pixels, NumDevsUsed = 1, Workgroup = 0
+Checking the results...
+ ...running convolutionRowCPU()
+ ...running convolutionColumnCPU()
+ ...comparing the results
+ ...Relative L2 norm: 0.000000E+00
+
+Shutting down...
+Test passed
+---------------
+# CUDA_PROFILE_LOG_VERSION 2.0
+# CUDA_DEVICE 0 GeForce GTX 480
+# CUDA_CONTEXT 1
+# TIMESTAMPFACTOR 13371fa11608131b
+method,gputime,cputime,occupancy
+method=[ memcpyHtoD ] gputime=[ 1.792 ] cputime=[ 10.565 ] 
+method=[ memcpyHtoD ] gputime=[ 86590.461 ] cputime=[ 86683.852 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 8759.712 ] cputime=[ 14.846 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 7454.496 ] cputime=[ 4.421 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 8754.912 ] cputime=[ 5.554 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 7451.456 ] cputime=[ 3.869 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 8754.272 ] cputime=[ 3.786 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 7453.056 ] cputime=[ 4.082 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 8754.304 ] cputime=[ 3.721 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 7455.744 ] cputime=[ 3.506 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 8754.112 ] cputime=[ 3.875 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 7446.592 ] cputime=[ 3.658 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 8754.368 ] cputime=[ 3.573 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 7451.840 ] cputime=[ 3.531 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 8753.440 ] cputime=[ 3.584 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 7434.528 ] cputime=[ 3.526 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 8752.992 ] cputime=[ 3.916 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 7434.368 ] cputime=[ 4.028 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 8825.184 ] cputime=[ 3.596 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 7523.040 ] cputime=[ 3.540 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 8827.008 ] cputime=[ 3.526 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 7523.456 ] cputime=[ 3.591 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 8823.232 ] cputime=[ 3.895 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 7603.104 ] cputime=[ 3.533 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 8900.256 ] cputime=[ 3.661 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 7595.712 ] cputime=[ 3.602 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 8894.144 ] cputime=[ 3.748 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 7590.560 ] cputime=[ 3.885 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 8888.864 ] cputime=[ 3.964 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 7575.520 ] cputime=[ 3.550 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 8965.472 ] cputime=[ 3.543 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 7648.608 ] cputime=[ 3.483 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 9177.632 ] cputime=[ 3.529 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 7907.520 ] cputime=[ 3.457 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 9160.512 ] cputime=[ 3.861 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 7907.840 ] cputime=[ 3.556 ] occupancy=[ 0.667 ] 
+method=[ memcpyDtoH ] gputime=[ 152090.625 ] cputime=[ 152835.031 ] 
+---------------
+[./convolutionSeparable] - Starting...
+GPU Device 0: "GeForce GTX 480" with compute capability 2.0
+
+Image Width x Height = 10112 x 10112
+
+Allocating and initializing host arrays...
+Allocating and initializing CUDA arrays...
+Running GPU convolution (16 identical iterations)...
+
+
+Reading back GPU results...
+
+convolutionSeparable, Throughput = 2.8258 MPixels/sec, Time = 36.18488 s, Size = 102252544 Pixels, NumDevsUsed = 1, Workgroup = 0
+Checking the results...
+ ...running convolutionRowCPU()
+ ...running convolutionColumnCPU()
+ ...comparing the results
+ ...Relative L2 norm: 0.000000E+00
+
+Shutting down...
+Test passed
+---------------
+# CUDA_PROFILE_LOG_VERSION 2.0
+# CUDA_DEVICE 0 GeForce GTX 480
+# CUDA_CONTEXT 1
+# TIMESTAMPFACTOR 13371fa115f410c4
+method,gputime,cputime,occupancy
+method=[ memcpyHtoD ] gputime=[ 1.792 ] cputime=[ 8.243 ] 
+method=[ memcpyHtoD ] gputime=[ 100291.773 ] cputime=[ 100408.594 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 9725.984 ] cputime=[ 15.151 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 8252.960 ] cputime=[ 4.483 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 9721.504 ] cputime=[ 5.300 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 8251.680 ] cputime=[ 3.791 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 9719.552 ] cputime=[ 3.693 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 8252.384 ] cputime=[ 4.118 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 9719.008 ] cputime=[ 3.892 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 8245.344 ] cputime=[ 3.556 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 9717.024 ] cputime=[ 3.554 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 8233.984 ] cputime=[ 3.608 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 9716.864 ] cputime=[ 3.508 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 8234.560 ] cputime=[ 3.516 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 9714.688 ] cputime=[ 3.767 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 8222.016 ] cputime=[ 3.493 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 9794.720 ] cputime=[ 3.504 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 8311.904 ] cputime=[ 3.977 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 9875.552 ] cputime=[ 3.568 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 8410.432 ] cputime=[ 3.467 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 9872.352 ] cputime=[ 4.032 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 8404.832 ] cputime=[ 3.552 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 9872.224 ] cputime=[ 3.514 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 8406.496 ] cputime=[ 3.501 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 9872.768 ] cputime=[ 3.478 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 8407.776 ] cputime=[ 3.501 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 9874.496 ] cputime=[ 3.772 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 8411.968 ] cputime=[ 3.835 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 9867.840 ] cputime=[ 3.522 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 8396.064 ] cputime=[ 3.508 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 9878.208 ] cputime=[ 3.511 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 8398.272 ] cputime=[ 3.512 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 9948.416 ] cputime=[ 3.905 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 8489.696 ] cputime=[ 3.517 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 9946.208 ] cputime=[ 3.538 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 8480.000 ] cputime=[ 3.480 ] occupancy=[ 0.667 ] 
+method=[ memcpyDtoH ] gputime=[ 168638.172 ] cputime=[ 169302.672 ] 
+---------------
+[./convolutionSeparable] - Starting...
+GPU Device 0: "GeForce GTX 480" with compute capability 2.0
+
+Image Width x Height = 10624 x 10624
+
+Allocating and initializing host arrays...
+Allocating and initializing CUDA arrays...
+Running GPU convolution (16 identical iterations)...
+
+
+Reading back GPU results...
+
+convolutionSeparable, Throughput = 2.8403 MPixels/sec, Time = 39.73800 s, Size = 112869376 Pixels, NumDevsUsed = 1, Workgroup = 0
+Checking the results...
+ ...running convolutionRowCPU()
+ ...running convolutionColumnCPU()
+ ...comparing the results
+ ...Relative L2 norm: 0.000000E+00
+
+Shutting down...
+Test passed
+---------------
+# CUDA_PROFILE_LOG_VERSION 2.0
+# CUDA_DEVICE 0 GeForce GTX 480
+# CUDA_CONTEXT 1
+# TIMESTAMPFACTOR 13371fa115c87d80
+method,gputime,cputime,occupancy
+method=[ memcpyHtoD ] gputime=[ 1.792 ] cputime=[ 7.908 ] 
+method=[ memcpyHtoD ] gputime=[ 107166.688 ] cputime=[ 107280.930 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 10728.928 ] cputime=[ 15.127 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 9105.056 ] cputime=[ 4.486 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 10725.664 ] cputime=[ 5.274 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 9100.128 ] cputime=[ 3.879 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 10725.568 ] cputime=[ 4.064 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 9105.056 ] cputime=[ 4.107 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 10725.216 ] cputime=[ 3.683 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 9104.320 ] cputime=[ 3.676 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 10725.152 ] cputime=[ 3.551 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 9103.456 ] cputime=[ 3.673 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 10724.864 ] cputime=[ 3.884 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 9101.376 ] cputime=[ 3.512 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 10723.488 ] cputime=[ 3.497 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 9099.872 ] cputime=[ 3.493 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 10724.256 ] cputime=[ 3.484 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 9088.384 ] cputime=[ 3.925 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 10808.416 ] cputime=[ 3.833 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 9188.800 ] cputime=[ 3.453 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 10808.128 ] cputime=[ 3.481 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 9187.360 ] cputime=[ 3.443 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 10809.056 ] cputime=[ 3.496 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 9179.008 ] cputime=[ 3.633 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 10806.400 ] cputime=[ 3.887 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 9180.608 ] cputime=[ 3.501 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 10804.000 ] cputime=[ 3.580 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 9168.672 ] cputime=[ 3.848 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 10980.640 ] cputime=[ 3.616 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 9359.296 ] cputime=[ 3.555 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 11063.104 ] cputime=[ 3.812 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 9471.712 ] cputime=[ 3.480 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 11054.176 ] cputime=[ 3.506 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 9445.568 ] cputime=[ 3.478 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 11219.232 ] cputime=[ 3.522 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 9657.568 ] cputime=[ 3.533 ] occupancy=[ 0.667 ] 
+method=[ memcpyDtoH ] gputime=[ 186939.484 ] cputime=[ 187129.891 ] 
+---------------
+[./convolutionSeparable] - Starting...
+GPU Device 0: "GeForce GTX 480" with compute capability 2.0
+
+Image Width x Height = 11136 x 11136
+
+Allocating and initializing host arrays...
+Allocating and initializing CUDA arrays...
+Running GPU convolution (16 identical iterations)...
+
+
+Reading back GPU results...
+
+convolutionSeparable, Throughput = 2.8361 MPixels/sec, Time = 43.72519 s, Size = 124010496 Pixels, NumDevsUsed = 1, Workgroup = 0
+Checking the results...
+ ...running convolutionRowCPU()
+ ...running convolutionColumnCPU()
+ ...comparing the results
+ ...Relative L2 norm: 0.000000E+00
+
+Shutting down...
+Test passed
+---------------
+# CUDA_PROFILE_LOG_VERSION 2.0
+# CUDA_DEVICE 0 GeForce GTX 480
+# CUDA_CONTEXT 1
+# TIMESTAMPFACTOR 13371fa115b1e90f
+method,gputime,cputime,occupancy
+method=[ memcpyHtoD ] gputime=[ 1.792 ] cputime=[ 8.240 ] 
+method=[ memcpyHtoD ] gputime=[ 119302.305 ] cputime=[ 119424.961 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 11794.368 ] cputime=[ 15.364 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 10026.336 ] cputime=[ 4.981 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 11791.168 ] cputime=[ 5.337 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 10019.904 ] cputime=[ 3.802 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 11789.088 ] cputime=[ 3.721 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 10013.472 ] cputime=[ 4.171 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 11789.248 ] cputime=[ 3.682 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 10014.624 ] cputime=[ 3.922 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 11788.512 ] cputime=[ 3.626 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 9995.680 ] cputime=[ 3.631 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 11787.104 ] cputime=[ 3.572 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 9995.040 ] cputime=[ 3.462 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 11786.048 ] cputime=[ 3.524 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 9990.816 ] cputime=[ 3.948 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 11882.880 ] cputime=[ 3.578 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 10107.456 ] cputime=[ 3.836 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 11973.920 ] cputime=[ 3.636 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 10238.880 ] cputime=[ 3.490 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 11974.624 ] cputime=[ 3.549 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 10231.488 ] cputime=[ 3.862 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 11973.024 ] cputime=[ 3.560 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 10235.520 ] cputime=[ 3.492 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 11972.832 ] cputime=[ 3.521 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 10240.064 ] cputime=[ 3.462 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 11972.864 ] cputime=[ 3.520 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 10238.400 ] cputime=[ 4.207 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 11973.856 ] cputime=[ 3.661 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 10236.608 ] cputime=[ 3.523 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 11974.368 ] cputime=[ 3.544 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 10230.656 ] cputime=[ 3.472 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 11973.536 ] cputime=[ 3.511 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 10233.824 ] cputime=[ 3.738 ] occupancy=[ 0.667 ] 
+method=[ _Z21convolutionRowsKernelPfS_iii ] gputime=[ 11964.512 ] cputime=[ 3.534 ] occupancy=[ 0.333 ] 
+method=[ _Z24convolutionColumnsKernelPfS_iii ] gputime=[ 10221.856 ] cputime=[ 3.467 ] occupancy=[ 0.667 ] 
+method=[ memcpyDtoH ] gputime=[ 204463.609 ] cputime=[ 205135.312 ] 
+---------------

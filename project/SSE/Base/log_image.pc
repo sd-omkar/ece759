@@ -1,0 +1,143 @@
+
+Width:          4000
+Height:         4000
+Filter Size:    16 x 16
+Iterations:     3
+CPU Timing:     True
+Testing:        CPU (1-threads) , 
+
+
+********    Starting CPU (1-threads) run    ********
+CPU (1-threads): 26.1397
+
+Width:          5000
+Height:         5000
+Filter Size:    16 x 16
+Iterations:     3
+CPU Timing:     True
+Testing:        CPU (1-threads) , 
+
+
+********    Starting CPU (1-threads) run    ********
+CPU (1-threads): 40.5097
+
+Width:          6000
+Height:         6000
+Filter Size:    16 x 16
+Iterations:     3
+CPU Timing:     True
+Testing:        CPU (1-threads) , 
+
+
+********    Starting CPU (1-threads) run    ********
+CPU (1-threads): 58.597
+
+Width:          7000
+Height:         7000
+Filter Size:    16 x 16
+Iterations:     3
+CPU Timing:     True
+Testing:        CPU (1-threads) , 
+
+
+********    Starting CPU (1-threads) run    ********
+CPU (1-threads): 84.0947
+
+Width:          8000
+Height:         8000
+Filter Size:    16 x 16
+Iterations:     3
+CPU Timing:     True
+Testing:        CPU (1-threads) , 
+
+
+********    Starting CPU (1-threads) run    ********
+CPU (1-threads): 112.167
+
+Width:          9000
+Height:         9000
+Filter Size:    16 x 16
+Iterations:     3
+CPU Timing:     True
+Testing:        CPU (1-threads) , 
+
+
+********    Starting CPU (1-threads) run    ********
+CPU (1-threads): 138.299
+
+Width:          10000
+Height:         10000
+Filter Size:    16 x 16
+Iterations:     3
+CPU Timing:     True
+Testing:        CPU (1-threads) , 
+
+
+********    Starting CPU (1-threads) run    ********
+CPU (1-threads): 170.471
+
+Width:          11000
+Height:         11000
+Filter Size:    16 x 16
+Iterations:     3
+CPU Timing:     True
+Testing:        CPU (1-threads) , 
+
+
+********    Starting CPU (1-threads) run    ********
+CPU (1-threads): 197.002
+
+Width:          12000
+Height:         12000
+Filter Size:    16 x 16
+Iterations:     3
+CPU Timing:     True
+Testing:        CPU (1-threads) , 
+
+
+********    Starting CPU (1-threads) run    ********
+CPU (1-threads): 240.445
+
+Width:          13000
+Height:         13000
+Filter Size:    16 x 16
+Iterations:     3
+CPU Timing:     True
+Testing:        CPU (1-threads) , 
+
+
+********    Starting CPU (1-threads) run    ********
+CPU (1-threads): 277.125
+
+Width:          14000
+Height:         14000
+Filter Size:    16 x 16
+Iterations:     3
+CPU Timing:     True
+Testing:        CPU (1-threads) , 
+
+
+********    Starting CPU (1-threads) run    ********
+CPU (1-threads): 319.719
+
+Width:          15000
+Height:         15000
+Filter Size:    16 x 16
+Iterations:     3
+CPU Timing:     True
+Testing:        CPU (1-threads) , 
+
+
+********    Starting CPU (1-threads) run    ********
+CPU (1-threads): 364.629
+
+Width:          16000
+Height:         16000
+Filter Size:    16 x 16
+Iterations:     3
+CPU Timing:     True
+Testing:        CPU (1-threads) , 
+
+
+********    Starting CPU (1-threads) run    ********
+CPU (1-threads): 415.471

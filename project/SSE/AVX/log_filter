@@ -1,0 +1,33 @@
+
+Width:          8192
+Height:         8192
+Filter Size:    8 x 8
+Iterations:     3
+CPU Timing:     True
+Testing:        CPU (1-threads) , 
+
+
+********    Starting CPU (1-threads) run    ********
+CPU (1-threads): 18.5997
+
+Width:          8192
+Height:         8192
+Filter Size:    16 x 16
+Iterations:     3
+CPU Timing:     True
+Testing:        CPU (1-threads) , 
+
+
+********    Starting CPU (1-threads) run    ********
+CPU (1-threads): 61.469
+
+Width:          8192
+Height:         8192
+Filter Size:    24 x 24
+Iterations:     3
+CPU Timing:     True
+Testing:        CPU (1-threads) , 
+
+
+********    Starting CPU (1-threads) run    ********
+CPU (1-threads): 131.502

@@ -1,0 +1,91 @@
+GPU Device 0: "Tesla K20Xm" with compute capability 3.5
+
+Image Width x Height = 3968 x 3968
+
+convolutionSeparable, Throughput = 0.2302 MPixels/sec, Time = 68.38600 ms, Size = 15745024 Pixels, NumDevsUsed = 1, Workgroup = 0
+CPU time = 929.80603 ms
+Test passed
+GPU Device 0: "Tesla K20Xm" with compute capability 3.5
+
+Image Width x Height = 4992 x 4992
+
+convolutionSeparable, Throughput = 0.1760 MPixels/sec, Time = 141.63000 ms, Size = 24920064 Pixels, NumDevsUsed = 1, Workgroup = 0
+CPU time = 1464.23804 ms
+Test passed
+GPU Device 0: "Tesla K20Xm" with compute capability 3.5
+
+Image Width x Height = 6016 x 6016
+
+convolutionSeparable, Throughput = 0.1599 MPixels/sec, Time = 226.36600 ms, Size = 36192256 Pixels, NumDevsUsed = 1, Workgroup = 0
+CPU time = 1984.76294 ms
+Test passed
+GPU Device 0: "Tesla K20Xm" with compute capability 3.5
+
+Image Width x Height = 7040 x 7040
+
+convolutionSeparable, Throughput = 0.2053 MPixels/sec, Time = 241.40900 ms, Size = 49561600 Pixels, NumDevsUsed = 1, Workgroup = 0
+CPU time = 2782.38892 ms
+Test passed
+GPU Device 0: "Tesla K20Xm" with compute capability 3.5
+
+Image Width x Height = 8064 x 8064
+
+convolutionSeparable, Throughput = 0.1935 MPixels/sec, Time = 336.08600 ms, Size = 65028096 Pixels, NumDevsUsed = 1, Workgroup = 0
+CPU time = 3644.52100 ms
+Test passed
+GPU Device 0: "Tesla K20Xm" with compute capability 3.5
+
+Image Width x Height = 9088 x 9088
+
+convolutionSeparable, Throughput = 0.1918 MPixels/sec, Time = 430.61200 ms, Size = 82591744 Pixels, NumDevsUsed = 1, Workgroup = 0
+CPU time = 4495.23779 ms
+Test passed
+GPU Device 0: "Tesla K20Xm" with compute capability 3.5
+
+Image Width x Height = 10112 x 10112
+
+convolutionSeparable, Throughput = 0.1833 MPixels/sec, Time = 557.89697 ms, Size = 102252544 Pixels, NumDevsUsed = 1, Workgroup = 0
+CPU time = 5576.22314 ms
+Test passed
+GPU Device 0: "Tesla K20Xm" with compute capability 3.5
+
+Image Width x Height = 11136 x 11136
+
+convolutionSeparable, Throughput = 0.1880 MPixels/sec, Time = 659.61902 ms, Size = 124010496 Pixels, NumDevsUsed = 1, Workgroup = 0
+CPU time = 6738.00977 ms
+Test passed
+GPU Device 0: "Tesla K20Xm" with compute capability 3.5
+
+Image Width x Height = 12160 x 12160
+
+convolutionSeparable, Throughput = 0.1920 MPixels/sec, Time = 770.07202 ms, Size = 147865600 Pixels, NumDevsUsed = 1, Workgroup = 0
+CPU time = 8074.62402 ms
+Test passed
+GPU Device 0: "Tesla K20Xm" with compute capability 3.5
+
+Image Width x Height = 13184 x 13184
+
+convolutionSeparable, Throughput = 0.1940 MPixels/sec, Time = 895.88501 ms, Size = 173817856 Pixels, NumDevsUsed = 1, Workgroup = 0
+CPU time = 9504.89648 ms
+Test passed
+GPU Device 0: "Tesla K20Xm" with compute capability 3.5
+
+Image Width x Height = 14208 x 14208
+
+convolutionSeparable, Throughput = 0.2125 MPixels/sec, Time = 949.74500 ms, Size = 201867264 Pixels, NumDevsUsed = 1, Workgroup = 0
+CPU time = 11015.42090 ms
+Test passed
+GPU Device 0: "Tesla K20Xm" with compute capability 3.5
+
+Image Width x Height = 15232 x 15232
+
+convolutionSeparable, Throughput = 0.1910 MPixels/sec, Time = 1215.00403 ms, Size = 232013824 Pixels, NumDevsUsed = 1, Workgroup = 0
+CPU time = 12630.92383 ms
+Test passed
+GPU Device 0: "Tesla K20Xm" with compute capability 3.5
+
+Image Width x Height = 16256 x 16256
+
+convolutionSeparable, Throughput = 0.1858 MPixels/sec, Time = 1422.51099 ms, Size = 264257536 Pixels, NumDevsUsed = 1, Workgroup = 0
+CPU time = 14372.33301 ms
+Test passed

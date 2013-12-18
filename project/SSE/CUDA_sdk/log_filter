@@ -1,0 +1,159 @@
+GPU Device 0: "Tesla K20Xm" with compute capability 3.5
+
+filter = 5
+Throughput = 0.2454 MPixels/sec, Time = 273.48199 s, Size = 1387157830 Pixels
+cpu time = 3684.74512
+Test passed
+---------------
+GPU Device 0: "Tesla K20Xm" with compute capability 3.5
+
+filter = 5
+Throughput = 0.3007 MPixels/sec, Time = 223.15500 s, Size = 1387157882 Pixels
+cpu time = 3675.46191
+Test passed
+---------------
+GPU Device 0: "Tesla K20Xm" with compute capability 3.5
+
+filter = 5
+Throughput = 0.2320 MPixels/sec, Time = 289.30701 s, Size = 1387157896 Pixels
+cpu time = 3675.30493
+Test passed
+---------------
+GPU Device 0: "Tesla K20Xm" with compute capability 3.5
+
+filter = 9
+Throughput = 0.2899 MPixels/sec, Time = 231.52200 s, Size = 1387157942 Pixels
+cpu time = 6295.50391
+Test passed
+---------------
+GPU Device 0: "Tesla K20Xm" with compute capability 3.5
+
+filter = 9
+Throughput = 0.2892 MPixels/sec, Time = 232.08600 s, Size = 1387157959 Pixels
+cpu time = 6271.31006
+Test passed
+---------------
+GPU Device 0: "Tesla K20Xm" with compute capability 3.5
+
+filter = 9
+Throughput = 0.3099 MPixels/sec, Time = 216.56500 s, Size = 1387157976 Pixels
+cpu time = 5928.67578
+Test passed
+---------------
+GPU Device 0: "Tesla K20Xm" with compute capability 3.5
+
+filter = 13
+Throughput = 0.2920 MPixels/sec, Time = 229.80499 s, Size = 1387158126 Pixels
+cpu time = 10884.02637
+Test passed
+---------------
+GPU Device 0: "Tesla K20Xm" with compute capability 3.5
+
+filter = 13
+Throughput = 0.2801 MPixels/sec, Time = 239.55901 s, Size = 1387158148 Pixels
+cpu time = 9236.30371
+Test passed
+---------------
+GPU Device 0: "Tesla K20Xm" with compute capability 3.5
+
+filter = 13
+Throughput = 0.2316 MPixels/sec, Time = 289.72900 s, Size = 1387158168 Pixels
+cpu time = 10796.02832
+Test passed
+---------------
+GPU Device 0: "Tesla K20Xm" with compute capability 3.5
+
+filter = 17
+Throughput = 0.2775 MPixels/sec, Time = 241.79201 s, Size = 1387158234 Pixels
+cpu time = 13631.36914
+Test passed
+---------------
+GPU Device 0: "Tesla K20Xm" with compute capability 3.5
+
+filter = 17
+Throughput = 0.2795 MPixels/sec, Time = 240.07899 s, Size = 1387158259 Pixels
+cpu time = 12854.17480
+Test passed
+---------------
+GPU Device 0: "Tesla K20Xm" with compute capability 3.5
+
+filter = 17
+Throughput = 0.2303 MPixels/sec, Time = 291.41501 s, Size = 1387158283 Pixels
+cpu time = 13143.26660
+Test passed
+---------------
+GPU Device 0: "Tesla K20Xm" with compute capability 3.5
+
+filter = 21
+---------------
+GPU Device 0: "Tesla K20Xm" with compute capability 3.5
+
+filter = 21
+---------------
+GPU Device 0: "Tesla K20Xm" with compute capability 3.5
+
+filter = 21
+---------------
+GPU Device 0: "Tesla K20Xm" with compute capability 3.5
+
+filter = 15
+Throughput = 0.2765 MPixels/sec, Time = 242.73399 s, Size = 1387158679 Pixels
+cpu time = 11172.12012
+Test passed
+---------------
+GPU Device 0: "Tesla K20Xm" with compute capability 3.5
+
+filter = 15
+Throughput = 0.2221 MPixels/sec, Time = 302.14899 s, Size = 1387158701 Pixels
+cpu time = 10704.74902
+Test passed
+---------------
+GPU Device 0: "Tesla K20Xm" with compute capability 3.5
+
+filter = 15
+Throughput = 0.2806 MPixels/sec, Time = 239.17300 s, Size = 1387158723 Pixels
+cpu time = 11798.81543
+Test passed
+---------------
+GPU Device 0: "Tesla K20Xm" with compute capability 3.5
+
+filter = 11
+Throughput = 0.2334 MPixels/sec, Time = 287.49100 s, Size = 1387158769 Pixels
+cpu time = 9022.15918
+Test passed
+---------------
+GPU Device 0: "Tesla K20Xm" with compute capability 3.5
+
+filter = 11
+Throughput = 0.2896 MPixels/sec, Time = 231.70500 s, Size = 1387158788 Pixels
+cpu time = 9017.64648
+Test passed
+---------------
+GPU Device 0: "Tesla K20Xm" with compute capability 3.5
+
+filter = 11
+Throughput = 0.3018 MPixels/sec, Time = 222.35300 s, Size = 1387158808 Pixels
+cpu time = 8437.95020
+Test passed
+---------------
+GPU Device 0: "Tesla K20Xm" with compute capability 3.5
+
+filter = 7
+Throughput = 0.2267 MPixels/sec, Time = 296.02600 s, Size = 1387159207 Pixels
+cpu time = 4242.10010
+Test passed
+---------------
+GPU Device 0: "Tesla K20Xm" with compute capability 3.5
+
+filter = 7
+Throughput = 0.2365 MPixels/sec, Time = 283.80701 s, Size = 1387159222 Pixels
+cpu time = 4336.02881
+Test passed
+---------------
+GPU Device 0: "Tesla K20Xm" with compute capability 3.5
+
+filter = 7
+Throughput = 0.2978 MPixels/sec, Time = 225.36700 s, Size = 1387159238 Pixels
+cpu time = 4949.23584
+Test passed
+---------------
