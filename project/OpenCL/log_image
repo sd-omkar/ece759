@@ -1,0 +1,1352 @@
+
+Width:          4000
+Height:         4000
+Filter Size:    16 x 16
+Iterations:     3
+Workgroup:      32 x 32
+Verify:         True
+CPU Timing:     True
+Device (kernel):True
+Testing:        CPU (4-threads) , Convolve , Convolve_Unroll , Convolve_UnrollIf , Convolve_Def , Convolve_Def_Unroll , Convolve_Def_UnrollIf , Convolve_Float4 , Convolve_Float4If , Convolve_Def_Float4 , Convolve_Def_Float4If , 
+
+
+********    Starting CPU (4-threads) run    ********
+CPU (4-threads): 0
+
+********    Kernel Convolve    ********
+
+********    Starting Verification    ********
+
+********    FAILED!!! With 16000000 errors!    ********
+
+Kernel: Convolve : 3.41
+
+
+********    Kernel Convolve_Unroll    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Unroll : 0
+
+
+********    Kernel Convolve_UnrollIf    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_UnrollIf : 0.000333333
+
+
+********    Kernel Convolve_Def    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def : 0.000333333
+
+
+********    Kernel Convolve_Def_Unroll    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Unroll : 0.000333333
+
+
+********    Kernel Convolve_Def_UnrollIf    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_UnrollIf : 0
+
+
+********    Kernel Convolve_Float4    ********
+
+********    Starting Verification    ********
+
+********    FAILED!!! With 16000000 errors!    ********
+
+Kernel: Convolve_Float4 : 0.995
+
+
+********    Kernel Convolve_Float4If    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Float4If : 0
+
+
+********    Kernel Convolve_Def_Float4    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Float4 : 0.000333333
+
+
+********    Kernel Convolve_Def_Float4If    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Float4If : 0
+
+
+Width:          5024
+Height:         5024
+Filter Size:    16 x 16
+Iterations:     3
+Workgroup:      32 x 32
+Verify:         True
+CPU Timing:     True
+Device (kernel):True
+Testing:        CPU (4-threads) , Convolve , Convolve_Unroll , Convolve_UnrollIf , Convolve_Def , Convolve_Def_Unroll , Convolve_Def_UnrollIf , Convolve_Float4 , Convolve_Float4If , Convolve_Def_Float4 , Convolve_Def_Float4If , 
+
+
+********    Starting CPU (4-threads) run    ********
+CPU (4-threads): 0
+
+********    Kernel Convolve    ********
+
+********    Starting Verification    ********
+
+********    FAILED!!! With 25240576 errors!    ********
+
+Kernel: Convolve : 5.35633
+
+
+********    Kernel Convolve_Unroll    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Unroll : 0
+
+
+********    Kernel Convolve_UnrollIf    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_UnrollIf : 0
+
+
+********    Kernel Convolve_Def    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def : 0.000333333
+
+
+********    Kernel Convolve_Def_Unroll    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Unroll : 0.000333333
+
+
+********    Kernel Convolve_Def_UnrollIf    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_UnrollIf : 0
+
+
+********    Kernel Convolve_Float4    ********
+
+********    Starting Verification    ********
+
+********    FAILED!!! With 25240576 errors!    ********
+
+Kernel: Convolve_Float4 : 1.55833
+
+
+********    Kernel Convolve_Float4If    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Float4If : 0.000333333
+
+
+********    Kernel Convolve_Def_Float4    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Float4 : 0
+
+
+********    Kernel Convolve_Def_Float4If    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Float4If : 0
+
+
+Width:          6048
+Height:         6048
+Filter Size:    16 x 16
+Iterations:     3
+Workgroup:      32 x 32
+Verify:         True
+CPU Timing:     True
+Device (kernel):True
+Testing:        CPU (4-threads) , Convolve , Convolve_Unroll , Convolve_UnrollIf , Convolve_Def , Convolve_Def_Unroll , Convolve_Def_UnrollIf , Convolve_Float4 , Convolve_Float4If , Convolve_Def_Float4 , Convolve_Def_Float4If , 
+
+
+********    Starting CPU (4-threads) run    ********
+CPU (4-threads): 0
+
+********    Kernel Convolve    ********
+
+********    Starting Verification    ********
+
+********    FAILED!!! With 36578304 errors!    ********
+
+Kernel: Convolve : 8.035
+
+
+********    Kernel Convolve_Unroll    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Unroll : 0.00333333
+
+
+********    Kernel Convolve_UnrollIf    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_UnrollIf : 0.003
+
+
+********    Kernel Convolve_Def    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def : 0.003
+
+
+********    Kernel Convolve_Def_Unroll    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Unroll : 0.003
+
+
+********    Kernel Convolve_Def_UnrollIf    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_UnrollIf : 0.00433333
+
+
+********    Kernel Convolve_Float4    ********
+
+********    Starting Verification    ********
+
+********    FAILED!!! With 36578304 errors!    ********
+
+Kernel: Convolve_Float4 : 2.599
+
+
+********    Kernel Convolve_Float4If    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Float4If : 0.000666667
+
+
+********    Kernel Convolve_Def_Float4    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Float4 : 0.000333333
+
+
+********    Kernel Convolve_Def_Float4If    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Float4If : 0.000333333
+
+
+Width:          7072
+Height:         7072
+Filter Size:    16 x 16
+Iterations:     3
+Workgroup:      32 x 32
+Verify:         True
+CPU Timing:     True
+Device (kernel):True
+Testing:        CPU (4-threads) , Convolve , Convolve_Unroll , Convolve_UnrollIf , Convolve_Def , Convolve_Def_Unroll , Convolve_Def_UnrollIf , Convolve_Float4 , Convolve_Float4If , Convolve_Def_Float4 , Convolve_Def_Float4If , 
+
+
+********    Starting CPU (4-threads) run    ********
+CPU (4-threads): 0
+
+********    Kernel Convolve    ********
+
+********    Starting Verification    ********
+
+********    FAILED!!! With 50013184 errors!    ********
+
+Kernel: Convolve : 11.0147
+
+
+********    Kernel Convolve_Unroll    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Unroll : 0.000333333
+
+
+********    Kernel Convolve_UnrollIf    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_UnrollIf : 0.000666667
+
+
+********    Kernel Convolve_Def    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def : 0.000333333
+
+
+********    Kernel Convolve_Def_Unroll    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Unroll : 0.000666667
+
+
+********    Kernel Convolve_Def_UnrollIf    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_UnrollIf : 0.000666667
+
+
+********    Kernel Convolve_Float4    ********
+
+********    Starting Verification    ********
+
+********    FAILED!!! With 50013184 errors!    ********
+
+Kernel: Convolve_Float4 : 3.15767
+
+
+********    Kernel Convolve_Float4If    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Float4If : 0.000333333
+
+
+********    Kernel Convolve_Def_Float4    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Float4 : 0.000333333
+
+
+********    Kernel Convolve_Def_Float4If    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Float4If : 0.000333333
+
+
+Width:          8096
+Height:         8096
+Filter Size:    16 x 16
+Iterations:     3
+Workgroup:      32 x 32
+Verify:         True
+CPU Timing:     True
+Device (kernel):True
+Testing:        CPU (4-threads) , Convolve , Convolve_Unroll , Convolve_UnrollIf , Convolve_Def , Convolve_Def_Unroll , Convolve_Def_UnrollIf , Convolve_Float4 , Convolve_Float4If , Convolve_Def_Float4 , Convolve_Def_Float4If , 
+
+
+********    Starting CPU (4-threads) run    ********
+CPU (4-threads): 0
+
+********    Kernel Convolve    ********
+
+********    Starting Verification    ********
+
+********    FAILED!!! With 65545216 errors!    ********
+
+Kernel: Convolve : 14.6043
+
+
+********    Kernel Convolve_Unroll    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Unroll : 0.001
+
+
+********    Kernel Convolve_UnrollIf    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_UnrollIf : 0.00133333
+
+
+********    Kernel Convolve_Def    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def : 0.000666667
+
+
+********    Kernel Convolve_Def_Unroll    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Unroll : 0.000333333
+
+
+********    Kernel Convolve_Def_UnrollIf    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_UnrollIf : 0.000666667
+
+
+********    Kernel Convolve_Float4    ********
+
+********    Starting Verification    ********
+
+********    FAILED!!! With 65545216 errors!    ********
+
+Kernel: Convolve_Float4 : 4.22333
+
+
+********    Kernel Convolve_Float4If    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Float4If : 0.000666667
+
+
+********    Kernel Convolve_Def_Float4    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Float4 : 0.000333333
+
+
+********    Kernel Convolve_Def_Float4If    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Float4If : 0.000666667
+
+
+Width:          9120
+Height:         9120
+Filter Size:    16 x 16
+Iterations:     3
+Workgroup:      32 x 32
+Verify:         True
+CPU Timing:     True
+Device (kernel):True
+Testing:        CPU (4-threads) , Convolve , Convolve_Unroll , Convolve_UnrollIf , Convolve_Def , Convolve_Def_Unroll , Convolve_Def_UnrollIf , Convolve_Float4 , Convolve_Float4If , Convolve_Def_Float4 , Convolve_Def_Float4If , 
+
+
+********    Starting CPU (4-threads) run    ********
+CPU (4-threads): 0
+
+********    Kernel Convolve    ********
+
+********    Starting Verification    ********
+
+********    FAILED!!! With 83174400 errors!    ********
+
+Kernel: Convolve : 17.655
+
+
+********    Kernel Convolve_Unroll    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Unroll : 0.000666667
+
+
+********    Kernel Convolve_UnrollIf    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_UnrollIf : 0.000666667
+
+
+********    Kernel Convolve_Def    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def : 0.000666667
+
+
+********    Kernel Convolve_Def_Unroll    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Unroll : 0.000666667
+
+
+********    Kernel Convolve_Def_UnrollIf    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_UnrollIf : 0.000666667
+
+
+********    Kernel Convolve_Float4    ********
+
+********    Starting Verification    ********
+
+********    FAILED!!! With 83174400 errors!    ********
+
+Kernel: Convolve_Float4 : 5.15567
+
+
+********    Kernel Convolve_Float4If    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Float4If : 0.00166667
+
+
+********    Kernel Convolve_Def_Float4    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Float4 : 0.000666667
+
+
+********    Kernel Convolve_Def_Float4If    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Float4If : 0.00133333
+
+
+Width:          10144
+Height:         10144
+Filter Size:    16 x 16
+Iterations:     3
+Workgroup:      32 x 32
+Verify:         True
+CPU Timing:     True
+Device (kernel):True
+Testing:        CPU (4-threads) , Convolve , Convolve_Unroll , Convolve_UnrollIf , Convolve_Def , Convolve_Def_Unroll , Convolve_Def_UnrollIf , Convolve_Float4 , Convolve_Float4If , Convolve_Def_Float4 , Convolve_Def_Float4If , 
+
+
+********    Starting CPU (4-threads) run    ********
+CPU (4-threads): 0
+
+********    Kernel Convolve    ********
+
+********    Starting Verification    ********
+
+********    FAILED!!! With 102900736 errors!    ********
+
+Kernel: Convolve : 22.908
+
+
+********    Kernel Convolve_Unroll    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Unroll : 0.001
+
+
+********    Kernel Convolve_UnrollIf    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_UnrollIf : 0.003
+
+
+********    Kernel Convolve_Def    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def : 0.000666667
+
+
+********    Kernel Convolve_Def_Unroll    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Unroll : 0.000666667
+
+
+********    Kernel Convolve_Def_UnrollIf    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_UnrollIf : 0.003
+
+
+********    Kernel Convolve_Float4    ********
+
+********    Starting Verification    ********
+
+********    FAILED!!! With 102900736 errors!    ********
+
+Kernel: Convolve_Float4 : 6.61333
+
+
+********    Kernel Convolve_Float4If    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Float4If : 0.002
+
+
+********    Kernel Convolve_Def_Float4    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Float4 : 0.00166667
+
+
+********    Kernel Convolve_Def_Float4If    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Float4If : 0.000666667
+
+
+Width:          11168
+Height:         11168
+Filter Size:    16 x 16
+Iterations:     3
+Workgroup:      32 x 32
+Verify:         True
+CPU Timing:     True
+Device (kernel):True
+Testing:        CPU (4-threads) , Convolve , Convolve_Unroll , Convolve_UnrollIf , Convolve_Def , Convolve_Def_Unroll , Convolve_Def_UnrollIf , Convolve_Float4 , Convolve_Float4If , Convolve_Def_Float4 , Convolve_Def_Float4If , 
+
+
+********    Starting CPU (4-threads) run    ********
+CPU (4-threads): 0
+
+********    Kernel Convolve    ********
+
+********    Starting Verification    ********
+
+********    FAILED!!! With 124724224 errors!    ********
+
+Kernel: Convolve : 27.236
+
+
+********    Kernel Convolve_Unroll    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Unroll : 0.001
+
+
+********    Kernel Convolve_UnrollIf    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_UnrollIf : 0.000666667
+
+
+********    Kernel Convolve_Def    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def : 0.000666667
+
+
+********    Kernel Convolve_Def_Unroll    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Unroll : 0.000666667
+
+
+********    Kernel Convolve_Def_UnrollIf    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_UnrollIf : 0.001
+
+
+********    Kernel Convolve_Float4    ********
+
+********    Starting Verification    ********
+
+********    FAILED!!! With 124724224 errors!    ********
+
+Kernel: Convolve_Float4 : 7.71733
+
+
+********    Kernel Convolve_Float4If    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Float4If : 0.000666667
+
+
+********    Kernel Convolve_Def_Float4    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Float4 : 0.001
+
+
+********    Kernel Convolve_Def_Float4If    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Float4If : 0.001
+
+
+Width:          12192
+Height:         12192
+Filter Size:    16 x 16
+Iterations:     3
+Workgroup:      32 x 32
+Verify:         True
+CPU Timing:     True
+Device (kernel):True
+Testing:        CPU (4-threads) , Convolve , Convolve_Unroll , Convolve_UnrollIf , Convolve_Def , Convolve_Def_Unroll , Convolve_Def_UnrollIf , Convolve_Float4 , Convolve_Float4If , Convolve_Def_Float4 , Convolve_Def_Float4If , 
+
+
+********    Starting CPU (4-threads) run    ********
+CPU (4-threads): 0
+
+********    Kernel Convolve    ********
+
+********    Starting Verification    ********
+
+********    FAILED!!! With 148644864 errors!    ********
+
+Kernel: Convolve : 33.3883
+
+
+********    Kernel Convolve_Unroll    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Unroll : 0.00166667
+
+
+********    Kernel Convolve_UnrollIf    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_UnrollIf : 0.001
+
+
+********    Kernel Convolve_Def    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def : 0.00166667
+
+
+********    Kernel Convolve_Def_Unroll    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Unroll : 0.00133333
+
+
+********    Kernel Convolve_Def_UnrollIf    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_UnrollIf : 0.001
+
+
+********    Kernel Convolve_Float4    ********
+
+********    Starting Verification    ********
+
+********    FAILED!!! With 148644864 errors!    ********
+
+Kernel: Convolve_Float4 : 9.518
+
+
+********    Kernel Convolve_Float4If    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Float4If : 0.001
+
+
+********    Kernel Convolve_Def_Float4    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Float4 : 0.002
+
+
+********    Kernel Convolve_Def_Float4If    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Float4If : 0.00166667
+
+
+Width:          13216
+Height:         13216
+Filter Size:    16 x 16
+Iterations:     3
+Workgroup:      32 x 32
+Verify:         True
+CPU Timing:     True
+Device (kernel):True
+Testing:        CPU (4-threads) , Convolve , Convolve_Unroll , Convolve_UnrollIf , Convolve_Def , Convolve_Def_Unroll , Convolve_Def_UnrollIf , Convolve_Float4 , Convolve_Float4If , Convolve_Def_Float4 , Convolve_Def_Float4If , 
+
+
+********    Starting CPU (4-threads) run    ********
+CPU (4-threads): 0
+
+********    Kernel Convolve    ********
+
+********    Starting Verification    ********
+
+********    FAILED!!! With 174662656 errors!    ********
+
+Kernel: Convolve : 37.522
+
+
+********    Kernel Convolve_Unroll    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Unroll : 0.00133333
+
+
+********    Kernel Convolve_UnrollIf    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_UnrollIf : 0.00133333
+
+
+********    Kernel Convolve_Def    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def : 0.002
+
+
+********    Kernel Convolve_Def_Unroll    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Unroll : 0.002
+
+
+********    Kernel Convolve_Def_UnrollIf    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_UnrollIf : 0.001
+
+
+********    Kernel Convolve_Float4    ********
+
+********    Starting Verification    ********
+
+********    FAILED!!! With 174662656 errors!    ********
+
+Kernel: Convolve_Float4 : 10.7497
+
+
+********    Kernel Convolve_Float4If    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Float4If : 0.00133333
+
+
+********    Kernel Convolve_Def_Float4    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Float4 : 0.00133333
+
+
+********    Kernel Convolve_Def_Float4If    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Float4If : 0.00266667
+
+
+Width:          14240
+Height:         14240
+Filter Size:    16 x 16
+Iterations:     3
+Workgroup:      32 x 32
+Verify:         True
+CPU Timing:     True
+Device (kernel):True
+Testing:        CPU (4-threads) , Convolve , Convolve_Unroll , Convolve_UnrollIf , Convolve_Def , Convolve_Def_Unroll , Convolve_Def_UnrollIf , Convolve_Float4 , Convolve_Float4If , Convolve_Def_Float4 , Convolve_Def_Float4If , 
+
+
+********    Starting CPU (4-threads) run    ********
+CPU (4-threads): 0
+
+********    Kernel Convolve    ********
+
+********    Starting Verification    ********
+
+********    FAILED!!! With 202777600 errors!    ********
+
+Kernel: Convolve : 53.235
+
+
+********    Kernel Convolve_Unroll    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Unroll : 0.00266667
+
+
+********    Kernel Convolve_UnrollIf    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_UnrollIf : 0.00133333
+
+
+********    Kernel Convolve_Def    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def : 0.002
+
+
+********    Kernel Convolve_Def_Unroll    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Unroll : 0.00166667
+
+
+********    Kernel Convolve_Def_UnrollIf    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_UnrollIf : 0.00166667
+
+
+********    Kernel Convolve_Float4    ********
+
+********    Starting Verification    ********
+
+********    FAILED!!! With 202777600 errors!    ********
+
+Kernel: Convolve_Float4 : 12.498
+
+
+********    Kernel Convolve_Float4If    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Float4If : 0.00133333
+
+
+********    Kernel Convolve_Def_Float4    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Float4 : 0.00133333
+
+
+********    Kernel Convolve_Def_Float4If    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Float4If : 0.003
+
+
+Width:          15264
+Height:         15264
+Filter Size:    16 x 16
+Iterations:     3
+Workgroup:      32 x 32
+Verify:         True
+CPU Timing:     True
+Device (kernel):True
+Testing:        CPU (4-threads) , Convolve , Convolve_Unroll , Convolve_UnrollIf , Convolve_Def , Convolve_Def_Unroll , Convolve_Def_UnrollIf , Convolve_Float4 , Convolve_Float4If , Convolve_Def_Float4 , Convolve_Def_Float4If , 
+
+
+********    Starting CPU (4-threads) run    ********
+CPU (4-threads): 0
+
+********    Kernel Convolve    ********
+
+********    Starting Verification    ********
+
+********    FAILED!!! With 232989696 errors!    ********
+
+Kernel: Convolve : 67.3223
+
+
+********    Kernel Convolve_Unroll    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Unroll : 0.00466667
+
+
+********    Kernel Convolve_UnrollIf    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_UnrollIf : 0.00166667
+
+
+********    Kernel Convolve_Def    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def : 0.00166667
+
+
+********    Kernel Convolve_Def_Unroll    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Unroll : 0.00166667
+
+
+********    Kernel Convolve_Def_UnrollIf    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_UnrollIf : 0.00166667
+
+
+********    Kernel Convolve_Float4    ********
+
+********    Starting Verification    ********
+
+********    FAILED!!! With 232989696 errors!    ********
+
+Kernel: Convolve_Float4 : 14.501
+
+
+********    Kernel Convolve_Float4If    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Float4If : 0.002
+
+
+********    Kernel Convolve_Def_Float4    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Float4 : 0.00266667
+
+
+********    Kernel Convolve_Def_Float4If    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Float4If : 0.00233333
+
+
+Width:          16288
+Height:         16288
+Filter Size:    16 x 16
+Iterations:     3
+Workgroup:      32 x 32
+Verify:         True
+CPU Timing:     True
+Device (kernel):True
+Testing:        CPU (4-threads) , Convolve , Convolve_Unroll , Convolve_UnrollIf , Convolve_Def , Convolve_Def_Unroll , Convolve_Def_UnrollIf , Convolve_Float4 , Convolve_Float4If , Convolve_Def_Float4 , Convolve_Def_Float4If , 
+
+
+********    Starting CPU (4-threads) run    ********
+CPU (4-threads): 0
+
+********    Kernel Convolve    ********
+
+********    Starting Verification    ********
+
+********    FAILED!!! With 265298944 errors!    ********
+
+Kernel: Convolve : 194.276
+
+
+********    Kernel Convolve_Unroll    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Unroll : 0.153
+
+
+********    Kernel Convolve_UnrollIf    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_UnrollIf : 0.105
+
+
+********    Kernel Convolve_Def    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def : 0.005
+
+
+********    Kernel Convolve_Def_Unroll    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Unroll : 0.0156667
+
+
+********    Kernel Convolve_Def_UnrollIf    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_UnrollIf : 0.00166667
+
+
+********    Kernel Convolve_Float4    ********
+
+********    Starting Verification    ********
+
+********    FAILED!!! With 265298944 errors!    ********
+
+Kernel: Convolve_Float4 : 165.303
+
+
+********    Kernel Convolve_Float4If    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Float4If : 0.0496667
+
+
+********    Kernel Convolve_Def_Float4    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Float4 : 0.0476667
+
+
+********    Kernel Convolve_Def_Float4If    ********
+
+********    Starting Verification    ********
+
+********    Passed!    ********
+
+Kernel: Convolve_Def_Float4If : 0.00166667
+
